@@ -1,0 +1,23 @@
+.main_list {
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
