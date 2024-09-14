@@ -52,6 +52,7 @@ const Property = ({ formData, onFormDataChange }) => {
           onChange={handleChange("price")}
           placeholder="Enter Price"
           size="small"
+          type="number"
         />
       </FormGrid>
       <FormGrid size={{ xs: 6 }}>
@@ -61,6 +62,7 @@ const Property = ({ formData, onFormDataChange }) => {
           onChange={handleChange("area")}
           placeholder="Enter Area"
           size="small"
+          type="number"
         />
       </FormGrid>
     </Grid>
