@@ -218,8 +218,8 @@ export default function Checkout() {
                   <Button
                     startIcon={<ChevronLeftRoundedIcon />}
                     onClick={handleBack}
-                    variant="text"
-                    sx={{ display: { xs: "none", sm: "flex" } }}
+                    variant="outlined"
+                    sx={{ width: { xs: "100%", sm: "fit-content" } }}
                   >
                     Previous
                   </Button>

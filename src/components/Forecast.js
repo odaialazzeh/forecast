@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NumericFormat } from "react-number-format";
 import {
   Button,
   Typography,
@@ -6,6 +7,8 @@ import {
   Alert,
   Tooltip,
   Stack,
+  CircularProgress,
+  Dialog,
 } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
 import "./Forecast.css";
@@ -115,13 +118,17 @@ const Forecast = ({ formData }) => {
   const [forecastPrices, setForecastPrices] = useState([]);
   const [forecastDate, setForecastDate] = useState([]);
   const [preDate, setPreDate] = useState([]);
-  const [isEditing, setIsEditing] = useState([]);
+  const [isEditingAll, setIsEditingAll] = useState(false);
   const [originalPrices, setOriginalPrices] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [openDialog, setOpenDialog] = useState(false);
 
   const handlePredict = async () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000);
     try {
-      const response = await fetch("https://forecast-app-jhchb.ondigitalocean.app/forecast", {
+      const response = await fetch("http://127.0.0.1:5000/forecast", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -176,20 +183,18 @@ const Forecast = ({ formData }) => {
   };
 
   // Toggle edit mode for a specific price input
-  const toggleEditMode = (index) => {
-    setIsEditing((prevEditing) => {
-      const newEditing = [...prevEditing];
-      newEditing[index] = !newEditing[index]; // Toggle the edit mode for the specific index
-      return newEditing;
-    });
+  const toggleEditAllMode = () => {
+    setIsEditingAll((prev) => !prev);
   };
 
-  const handleCancelEdit = (index) => {
-    setUpdatedPrices((prevPrices) => {
-      const updatedPrices = [...originalPrices];
-      return updatedPrices;
-    });
-    toggleEditMode(index);
+  const handleSaveAll = () => {
+    handleUpdateImage();
+    toggleEditAllMode();
+  };
+
+  const handleCancelAll = () => {
+    setUpdatedPrices(originalPrices);
+    toggleEditAllMode();
   };
 
   React.useEffect(() => {
@@ -207,9 +212,11 @@ const Forecast = ({ formData }) => {
   };
 
   const handleUpdateImage = async () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000);
     try {
       // Send updated prices to the server to regenerate the image
-      const response = await fetch("https://forecast-app-jhchb.ondigitalocean.app/update-image", {
+      const response = await fetch("http://127.0.0.1:5000/update-image", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -246,90 +253,124 @@ const Forecast = ({ formData }) => {
     }
   };
 
+  const handleClickOpen = () => {
+    setOpenDialog(true);
+  };
+
+  const handleClose = () => {
+    setOpenDialog(false);
+  };
+
   return (
     <Stack spacing={{ xs: 3, sm: 6 }} useFlexGap>
-      <Button variant="outlined" onClick={handlePredict}>
+      <Button variant="outlined" onClick={handlePredict} disabled={loading}>
         Get Forecast
       </Button>
-      <Grid2 item="true" xs={12} md={6}>
-        <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-          The Forecast Prices
-        </Typography>
-        {image && (
-          <>
-            <img
-              src={image}
-              alt="Forecast plot"
-              style={{ marginTop: "20px", width: "100%", height: "auto" }}
-            />
-            <a
-              href={image}
-              download="forecast_image.png"
-              style={{ textDecoration: "none" }}
-            >
-              <Button variant="contained" sx={{ mt: 2, mb: 4 }}>
-                Download Image
-              </Button>
-            </a>
-          </>
-        )}
-        {error ? (
+
+      <Grid2 item xs={12} md={6}>
+        {loading ? (
+          <CircularProgress />
+        ) : error ? (
           <Alert severity="error">Failed to load resource</Alert>
         ) : (
-          forecastData?.map((item, index) => (
-            <div key={index} className="main_list">
-              <div>
-                {new Intl.DateTimeFormat("en-US", {
-                  month: "long",
-                  year: "numeric",
-                }).format(new Date(item.Date))}
-              </div>
-              {isEditing[index] ? (
-                <div className="list">
-                  <TextField
-                    type="number"
-                    value={updatedPrices[index]}
-                    onChange={(e) =>
-                      handlePriceChange(index, Number(e.target.value))
-                    }
-                    fullWidth
+          <>
+            {image && (
+              <>
+                <img
+                  src={image}
+                  alt="Forecast plot"
+                  style={{ width: "100%", height: "auto", cursor: "pointer" }}
+                  onClick={handleClickOpen}
+                />
+                <Dialog open={openDialog} onClose={handleClose} maxWidth="md">
+                  <img
+                    src={image}
+                    alt="Forecast plot"
+                    style={{ width: "100%", height: "auto" }}
                   />
-                  <div className="icons">
-                    <Tooltip title="Update" arrow>
-                      <SaveTwoToneIcon
-                        variant="outlined"
-                        onClick={() => {
-                          toggleEditMode(index);
-                          handleUpdateImage();
-                        }}
-                        sx={{ cursor: "pointer" }}
-                      />
-                    </Tooltip>
-                    <Tooltip title="Cancel" arrow>
-                      <CancelTwoToneIcon
-                        variant="outlined"
-                        onClick={() => handleCancelEdit(index)}
-                        sx={{ cursor: "pointer" }}
-                      />
-                    </Tooltip>
-                  </div>
-                </div>
-              ) : (
-                <div className="list">
-                  <Typography variant="body1">
-                    {updatedPrices[index]}
+                </Dialog>
+                <a
+                  href={image}
+                  download="forecast_image.png"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button variant="contained" sx={{ mt: 2, mb: 4 }}>
+                    Download Image
+                  </Button>
+                </a>
+                <div className="flex-row">
+                  <Typography
+                    sx={{ mt: 4, mb: 2 }}
+                    variant="h6"
+                    component="div"
+                  >
+                    The Forecast Prices
                   </Typography>
-                  <Tooltip title="Edit" arrow>
-                    <EditTwoToneIcon
-                      variant="outlined"
-                      onClick={() => toggleEditMode(index)}
-                      sx={{ cursor: "pointer" }}
-                    />
-                  </Tooltip>
+                  {isEditingAll ? (
+                    <div className="icons">
+                      <Tooltip title="Update" arrow>
+                        <SaveTwoToneIcon
+                          variant="outlined"
+                          onClick={() => {
+                            handleSaveAll();
+                            handleUpdateImage();
+                          }}
+                          sx={{ cursor: "pointer" }}
+                        />
+                      </Tooltip>
+                      <Tooltip title="Cancel" arrow>
+                        <CancelTwoToneIcon
+                          variant="outlined"
+                          onClick={() => handleCancelAll()}
+                          sx={{ cursor: "pointer" }}
+                        />
+                      </Tooltip>
+                    </div>
+                  ) : (
+                    <div className="icons">
+                      <Tooltip title="Edit" arrow>
+                        <EditTwoToneIcon
+                          variant="outlined"
+                          onClick={toggleEditAllMode}
+                          sx={{ cursor: "pointer" }}
+                        />
+                      </Tooltip>
+                    </div>
+                  )}
+                 
                 </div>
-              )}
-            </div>
-          ))
+                {forecastData.map((item, index) => (
+                    <div key={index} className="main_list">
+                      <div>
+                        {new Intl.DateTimeFormat("en-US", {
+                          month: "long",
+                          year: "numeric",
+                        }).format(new Date(item.Date))}
+                      </div>
+                      {isEditingAll ? (
+                        <div className="list">
+                          <NumericFormat
+                            value={updatedPrices[index]}
+                            thousandSeparator={true}
+                            onValueChange={(values) =>
+                              handlePriceChange(index, Number(values.value))
+                            }
+                            customInput={TextField}
+                            size="small"
+                          />
+                        </div>
+                      ) : (
+                        <div className="list">
+                          <Typography variant="body1">
+                            {Math.round(forecastPrices[index]).toLocaleString()}
+                          </Typography>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+              </>
+            )}
+          </>
         )}
       </Grid2>
     </Stack>
