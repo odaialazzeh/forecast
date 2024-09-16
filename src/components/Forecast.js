@@ -128,7 +128,7 @@ const Forecast = ({ formData }) => {
     setLoading(true);
     setTimeout(() => setLoading(false), 2000);
     try {
-      const response = await fetch("http://127.0.0.1:5000/forecast", {
+      const response = await fetch("https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -216,7 +216,7 @@ const Forecast = ({ formData }) => {
     setTimeout(() => setLoading(false), 2000);
     try {
       // Send updated prices to the server to regenerate the image
-      const response = await fetch("http://127.0.0.1:5000/update-image", {
+      const response = await fetch("https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
