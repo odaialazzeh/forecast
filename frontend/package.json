@@ -1,0 +1,67 @@
+{
+  "name": "real-estate-main",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@faker-js/faker": "^9.0.1",
+    "@heroicons/react": "^2.1.5",
+    "@iconify/react": "^5.0.2",
+    "@mui/icons-material": "^6.0.1",
+    "@mui/material": "^6.1.1",
+    "@mui/x-data-grid": "^7.18.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
+    "datatables.net": "^2.1.7",
+    "datatables.net-dt": "^2.1.7",
+    "datatables.net-responsive": "^3.0.3",
+    "datatables.net-responsive-dt": "^3.0.3",
+    "faker": "^6.6.6",
+    "jquery": "^3.7.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^9.1.2",
+    "react-scripts": "5.0.1",
+    "react-table": "^7.8.0",
+    "react-toastify": "^10.0.5",
+    "simplebar-react": "^3.2.6",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@headlessui/react": "^1.6.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "tailwindcss": "^3.4.10"
+  }
+}
