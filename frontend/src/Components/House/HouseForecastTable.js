@@ -90,7 +90,7 @@ const HouseForecastTable = ({
                     type="number"
                     value={Math.round(editedPrice)}
                     onChange={(e) => setEditedPrice(e.target.value)}
-                    className="border border-gray-300 px-2 py-1 rounded w-32"
+                    className="border border-gray-300 px-2 py-1 rounded w-28"
                   />
                 ) : (
                   Math.round(data.forecast_price[index])

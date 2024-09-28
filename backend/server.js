@@ -28,6 +28,7 @@ const app = express();
 
 // Body parser
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Cookie parser
 app.use(cookieParser());
@@ -36,27 +37,35 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-app.set("trust proxy", true);
-// File uploading
+
+// Trust proxy
+app.set("trust proxy", 1);
 
 // Sanitize data
 app.use(mongoSanitize());
 
+// Set security headers and update CSP
 app.use(
-  bodyParser.urlencoded({
-    extended: true,
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: ["'self'", "https://forecastmetro-app-uxtiu.ondigitalocean.app"], // Allow API calls to external service
+        scriptSrc: ["'self'", "https://trusted-scripts.com"], // Example for other sources like scripts
+        styleSrc: ["'self'", "'unsafe-inline'"], // Example for styles
+        // Add other CSP directives as needed
+      },
+    },
   })
 );
-// Set security headers
-app.use(helmet());
 
 // Prevent XSS attacks
 app.use(xss());
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 60 * 1000,
-  max: 100,
+  windowMs: 60 * 1000, // 1 minute
+  max: 100, // Limit each IP to 100 requests per minute
 });
 app.use(limiter);
 
@@ -64,26 +73,32 @@ app.use(limiter);
 app.use(hpp());
 
 // Enable CORS
-app.use(cors());
+const corsOptions = {
+  origin: ["https://forecast-6uiy.onrender.com"], // Replace with your frontend URL
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 // Mount routers
 app.use("/api/v1/users", users);
 app.use("/api/v1/record", record);
 
+// Error Handler Middleware
 app.use(errorHandler);
 
-if (process.env.NODE_ENV === 'production') {
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, '/frontend/build')));
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   );
 } else {
-  app.get('/',(req, res) => {
-    res.send('API is running....')
-  })
-} 
+  app.get("/", (req, res) => {
+    res.send("API is running....");
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 
@@ -98,5 +113,5 @@ const server = app.listen(
 process.on("unhandledRejection", (err, promise) => {
   console.log(`Error: ${err.message}`.red);
   // Close server & exit process
-  // server.close(() => process.exit(1));
+  server.close(() => process.exit(1));
 });
