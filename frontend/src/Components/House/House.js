@@ -68,24 +68,6 @@ const House = ({ house, data }) => {
     }
   };
 
-  const getQuarterFromDate = (dateString) => {
-    const date = new Date(dateString);
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-
-    let quarter;
-    if (month >= 1 && month <= 3) {
-      quarter = "Q1";
-    } else if (month >= 4 && month <= 6) {
-      quarter = "Q2";
-    } else if (month >= 7 && month <= 9) {
-      quarter = "Q3";
-    } else {
-      quarter = "Q4";
-    }
-    return `${quarter} ${year}`;
-  };
-
   return (
     <div>
       <div className="bg-white shadow-1 p-5 rounded-xl w-full max-w-[400px] lg:max-w-[700px] mx-auto hover:shadow-2xl transition md:max-w-[600px] sm:max-w-[500px]">
@@ -120,7 +102,6 @@ const House = ({ house, data }) => {
       <HouseForecastTable
         data={data}
         housedata={house}
-        getQuarterFromDate={getQuarterFromDate}
         setUpdatedImage={setUpdatedImage}
         setImageLoading={setImageLoading}
       />

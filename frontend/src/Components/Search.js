@@ -5,7 +5,7 @@ import PropertyDropdown from "./PropertyDropdown";
 import BedroomDropdown from "./BedroomDropdown";
 import PriceInput from "./PriceInput";
 import AreaInput from "./AreaInput";
-import { RiSearch2Line, RiMapPinLine } from "react-icons/ri";
+import { RiMapPinLine } from "react-icons/ri";
 import locationData from "../Assets/abu_dhabi_sub_areas.json";
 import modelData from "../Assets/model_data.json";
 import House from "./House/House";
@@ -98,24 +98,21 @@ const Search = () => {
         };
 
         // Fetch the images from the forecast API
-        const response = await fetch(
-          "https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              bedroom: bedrooms,
-              propertyType: propertyType,
-              area: area,
-              price: price,
-              location: selectedLocation,
-              region: selectedRegion,
-              email: userInfo.email,
-            }),
-          }
-        );
+        const response = await fetch("http://127.0.0.1:5000/forecast", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            bedroom: bedrooms,
+            propertyType: propertyType,
+            area: area,
+            price: price,
+            location: selectedLocation,
+            region: selectedRegion,
+            email: userInfo.email,
+          }),
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -203,7 +200,7 @@ const Search = () => {
           onClick={handleSearch}
           className="bg-primary hover:bg-secondary transition w-full lg:max-w-[162px] h-16 rounded-lg flex justify-center items-center text-white text-lg"
         >
-          <RiSearch2Line />
+          Get Forecast
         </button>
       </div>
       {loading ? (
