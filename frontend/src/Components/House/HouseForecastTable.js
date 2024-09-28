@@ -30,16 +30,19 @@ const HouseForecastTable = ({
     try {
       setLoading(true);
       setImageLoading(true);
-      const response = await axios.post("https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image", {
-        prePrices: data.pre_price,
-        forecastPrices: updatedData.forecast_price,
-        preDate: data.original_dates,
-        forecastDate: data.forecast_dates,
-        bedroom: housedata.bedrooms,
-        propertyType: housedata.type,
-        location: housedata.location,
-        email: housedata.email, // Include the email if needed for watermark
-      });
+      const response = await axios.post(
+        "https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image",
+        {
+          prePrices: data.pre_price,
+          forecastPrices: updatedData.forecast_price,
+          preDate: data.original_dates,
+          forecastDate: data.forecast_dates,
+          bedroom: housedata.bedrooms,
+          propertyType: housedata.type,
+          location: housedata.location,
+          email: housedata.email, // Include the email if needed for watermark
+        }
+      );
 
       // Convert base64 image to URL
       const standardImageUrl = await imageToUrl(response.data.image_standard);
@@ -79,26 +82,26 @@ const HouseForecastTable = ({
           </tr>
         </thead>
         <tbody className="bg-white">
-          {data.forecast_dates.map((date, index) => (
+          {data.forecast_dates.slice(0, 2).map((date, index) => (
             <tr key={index}>
-              <td className="py-4 px-6 border-b font-normal text-secondary border-gray-200">
+              <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
                 {getQuarterFromDate(date)}
               </td>
-              <td className="py-4 px-6 border-b font-normal text-secondary border-gray-200">
+              <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
                 {isEditing === index ? (
                   <input
                     type="number"
                     value={Math.round(editedPrice)}
                     onChange={(e) => setEditedPrice(e.target.value)}
-                    className="border border-gray-300 px-2 py-1 rounded w-28"
+                    className="border border-gray-300 px-2 py-1 rounded w-36"
                   />
                 ) : (
                   Math.round(data.forecast_price[index])
                 )}
               </td>
-              <td className="py-4 px-6 border-b font-normal text-secondary border-gray-200">
+              <td className="py-2 pl-12 border-b font-normal text-secondary border-gray-200">
                 {isEditing === index ? (
-                  <div className="flex flex-row gap-3">
+                  <div className="flex flex-row gap-1 ml-4">
                     <button
                       onClick={() => handleSaveClick(index)}
                       disabled={loading} // Disable button while saving

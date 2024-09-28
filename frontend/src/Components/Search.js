@@ -98,21 +98,24 @@ const Search = () => {
         };
 
         // Fetch the images from the forecast API
-        const response = await fetch("https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            bedroom: bedrooms,
-            propertyType: propertyType,
-            area: area,
-            price: price,
-            location: selectedLocation,
-            region: selectedRegion,
-            email: userInfo.email,
-          }),
-        });
+        const response = await fetch(
+          "https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              bedroom: bedrooms,
+              propertyType: propertyType,
+              area: area,
+              price: price,
+              location: selectedLocation,
+              region: selectedRegion,
+              email: userInfo.email,
+            }),
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -221,8 +224,7 @@ const Search = () => {
             <div className="flex flex-row flex-wrap gap-2">
               <p>
                 <span>The available data for a</span> {propertyType}{" "}
-                <span>in</span> {selectedLocation}{" "}
-                <span>are for:</span>
+                <span>in</span> {selectedLocation} <span>are for:</span>
               </p>
               <div className="flex flex-row gap-1">
                 {model
