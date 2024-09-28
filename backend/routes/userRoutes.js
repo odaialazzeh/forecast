@@ -10,9 +10,12 @@ import {
 const router = express.Router();
 import { admin, protect } from "../middleware/authMiddleware.js";
 
-router.route("/").post(protect, admin, RegisterUser).get(protect, getUsers);
+router
+  .route("/")
+  .post(protect, admin, RegisterUser)
+  .get(protect, admin, getUsers);
 router.post("/login", authUser);
 router.post("/logout", logoutUser);
-router.route("/:id").get(protect, getUserById).put(updateUser);
+router.route("/:id").get(protect, getUserById).put(admin, protect, updateUser);
 
 export default router;

@@ -9,7 +9,7 @@ import {
 const router = express.Router();
 import { admin, protect } from "../middleware/authMiddleware.js";
 
-router.route("/").post(protect, addRecord).get(protect, getRecord);
+router.route("/").post(protect, addRecord).get(protect, admin, getRecord);
 router
   .route("/:id")
   .get(protect, getRecordsByUserId)

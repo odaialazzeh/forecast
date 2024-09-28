@@ -95,6 +95,7 @@ const updateUser = asyncHandler(async (req, res) => {
     user.first_name = req.body.first_name || user.first_name;
     user.last_name = req.body.last_name || user.last_name;
     user.email = req.body.email || user.email;
+    user.isAdmin = req.body.isAdmin || user.isAdmin;
 
     // Only update the password if it's provided
     if (req.body.password) {
