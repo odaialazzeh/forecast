@@ -9,9 +9,10 @@ const HouseImage = ({
   imageStory,
   handleDownload,
   loadingAdd,
+  selectedImage, // Receive from parent
+  setSelectedImage, // Receive from parent
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("standard");
   const [isIconBoxVisible, setIsIconBoxVisible] = useState(false);
 
   const handleImageError = (e) => {
@@ -27,7 +28,7 @@ const HouseImage = ({
   };
 
   const handleImageSelection = (format) => {
-    setSelectedImage(format);
+    setSelectedImage(format); // Update the image format in the parent component
     setIsIconBoxVisible(false); // Close the icon box after selection
   };
 

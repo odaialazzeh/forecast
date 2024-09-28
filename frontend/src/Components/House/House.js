@@ -19,7 +19,7 @@ const House = ({ house, data }) => {
     email,
   } = house;
 
-  const [selectedImage, setSelectedImage] = useState("standard");
+  const [selectedImage, setSelectedImage] = useState("standard"); // Lifted state
   const [updatedImages, setUpdatedImage] = useState({
     imageStandard: "", // New image standard format
     imageStory: "", // New image story format
@@ -46,6 +46,7 @@ const House = ({ house, data }) => {
       let imageToDownload;
       let filename;
 
+      // Use the selected image from state
       if (selectedImage === "standard") {
         imageToDownload = updatedImages.imageStandard || imageStandard;
         filename = updatedImages.imageStandard
@@ -81,9 +82,9 @@ const House = ({ house, data }) => {
             imageStory={updatedImages.imageStory || imageStory}
             handleDownload={handleDownload}
             loadingAdd={loadingAdd}
-            selectedImage={selectedImage}
-            setSelectedImage={setSelectedImage}
-            imageLoading={imageLoading} // Pass the imageLoading state to the HouseImage component
+            selectedImage={selectedImage} // Pass selectedImage as a prop
+            setSelectedImage={setSelectedImage} // Pass setSelectedImage to update it
+            imageLoading={imageLoading}
           />
         )}
 
