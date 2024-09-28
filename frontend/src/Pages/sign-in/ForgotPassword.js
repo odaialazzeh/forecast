@@ -1,12 +1,12 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import OutlinedInput from '@mui/material/OutlinedInput';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 function ForgotPassword({ open, handleClose }) {
   return (
@@ -14,20 +14,22 @@ function ForgotPassword({ open, handleClose }) {
       open={open}
       onClose={handleClose}
       PaperProps={{
-        component: 'form',
+        component: "form",
         onSubmit: (event) => {
           event.preventDefault();
           handleClose();
         },
       }}
     >
-      <DialogTitle>Reset password</DialogTitle>
+      <span className="text-secondary mt-2 ml-6 font-semibold text-lg">
+        Reset password
+      </span>
       <DialogContent
-        sx={{ display: 'flex', flexDirection: 'column', gap: 2, width: '100%' }}
+        sx={{ display: "flex", flexDirection: "column", gap: 2, width: "100%" }}
       >
         <DialogContentText>
-          Enter your account&apos;s email address, and we&apos;ll send you a link to
-          reset your password.
+          Enter your account&apos;s email address, and we&apos;ll send you a
+          link to reset your password.
         </DialogContentText>
         <OutlinedInput
           autoFocus
@@ -43,9 +45,13 @@ function ForgotPassword({ open, handleClose }) {
       </DialogContent>
       <DialogActions sx={{ pb: 3, px: 3 }}>
         <Button onClick={handleClose}>Cancel</Button>
-        <Button variant="contained" type="submit">
-          Continue
-        </Button>
+
+        <button
+          type="submit"
+          className="bg-primary hover:bg-secondary shadow-sm transition w-24 h-10 rounded-lg items-center text-white font-medium"
+        >
+          Continue{" "}
+        </button>
       </DialogActions>
     </Dialog>
   );

@@ -3,15 +3,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
-  Button,
   Checkbox,
   CssBaseline,
   FormControlLabel,
   FormLabel,
   FormControl,
-  Link,
   TextField,
-  Typography,
   Stack,
   Alert,
 } from "@mui/material";
@@ -108,13 +105,10 @@ const SignIn = () => {
         <SignInContainer direction="column" justifyContent="space-between">
           <Card variant="outlined">
             <img src={logo} style={{ width: "180px" }} alt="logo"></img>
-            <Typography
-              component="h1"
-              variant="h4"
-              sx={{ width: "100%", fontSize: "clamp(2rem, 10vw, 2.15rem)" }}
-            >
+            <h1 className="w-full text-3xl text-start font-medium text-secondary">
               Sign in
-            </Typography>
+            </h1>
+
             <Box
               component="form"
               onSubmit={submitHandler}
@@ -144,17 +138,21 @@ const SignIn = () => {
                 />
               </FormControl>
               <FormControl>
-                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                  <FormLabel htmlFor="password">Password</FormLabel>
-                  <Link
-                    component="button"
-                    onClick={handleClickOpen}
-                    variant="body2"
-                    sx={{ alignSelf: "baseline" }}
+                {/* <div className="flex justify-between">
+                  <label htmlFor="password" className="text-base">
+                    Password
+                  </label>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault(); // Prevent form submission
+                      handleClickOpen();
+                    }}
+                    className="text-sm self-baseline text-secondary font-medium hover:underline"
                   >
                     Forgot your password?
-                  </Link>
-                </Box>
+                  </button>
+                </div> */}
+
                 <TextField
                   name="password"
                   placeholder="••••••"
@@ -180,9 +178,12 @@ const SignIn = () => {
                 label="Remember me"
               />
               <ForgotPassword open={open} handleClose={handleClose} />
-              <Button type="submit" fullWidth variant="contained">
+              <button
+                type="submit"
+                className="bg-primary hover:bg-secondary shadow-sm transition w-full lg:max-w-[162px] h-12 rounded-lg flex justify-center items-center text-white text-lg"
+              >
                 Sign in
-              </Button>
+              </button>
               {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
             </Box>
           </Card>
