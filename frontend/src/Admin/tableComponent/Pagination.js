@@ -19,14 +19,17 @@ const Pagination = ({
   setPageSize,
 }) => (
   <div className="py-1 mx-4 flex items-center justify-between">
+    {/* Mobile version: simple "Previous" and "Next" buttons */}
     <div className="flex-1 flex justify-between sm:hidden">
-      <PageButton onClick={() => previousPage()} disabled={!canPreviousPage}>
+      <PageButton onClick={previousPage} disabled={!canPreviousPage}>
         Previous
       </PageButton>
-      <PageButton onClick={() => nextPage()} disabled={!canNextPage}>
+      <PageButton onClick={nextPage} disabled={!canNextPage}>
         Next
       </PageButton>
     </div>
+
+    {/* Desktop version: full pagination controls */}
     <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
       <div className="flex gap-x-2 items-baseline">
         <span className="text-sm text-gray-700 ml-3">
@@ -34,6 +37,8 @@ const Pagination = ({
           <span className="font-medium">{state.pageIndex + 1}</span> of{" "}
           <span className="font-medium">{pageOptions.length}</span>
         </span>
+
+        {/* Select to change items per page */}
         <label>
           <span className="sr-only">Items Per Page</span>
           <select
@@ -49,32 +54,43 @@ const Pagination = ({
           </select>
         </label>
       </div>
+
+      {/* Pagination buttons */}
       <div>
         <nav
           className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
           aria-label="Pagination"
         >
           <PageButton
-            className="rounded-l-md cursor-pointer"
+            className="rounded-l-md"
             onClick={() => gotoPage(0)}
             disabled={!canPreviousPage}
+            aria-label="Go to first page"
           >
             <ChevronDoubleLeftIcon className="h-5 w-5 text-gray-400" />
           </PageButton>
+
           <PageButton
-            onClick={() => previousPage()}
+            onClick={previousPage}
             disabled={!canPreviousPage}
-            className="cursor-pointer"
+            aria-label="Go to previous page"
           >
             <ChevronLeftIcon className="h-5 w-5 text-gray-400" />
           </PageButton>
-          <PageButton onClick={() => nextPage()} disabled={!canNextPage}>
-            <ChevronRightIcon className="h-5 w-5 text-gray-400 cursor-pointer" />
-          </PageButton>
+
           <PageButton
-            className="rounded-r-md cursor-pointer"
+            onClick={nextPage}
+            disabled={!canNextPage}
+            aria-label="Go to next page"
+          >
+            <ChevronRightIcon className="h-5 w-5 text-gray-400" />
+          </PageButton>
+
+          <PageButton
+            className="rounded-r-md"
             onClick={() => gotoPage(pageCount - 1)}
             disabled={!canNextPage}
+            aria-label="Go to last page"
           >
             <ChevronDoubleRightIcon className="h-5 w-5 text-gray-400" />
           </PageButton>

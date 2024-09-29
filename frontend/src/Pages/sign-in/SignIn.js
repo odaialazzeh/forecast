@@ -152,7 +152,7 @@ const SignIn = () => {
                     Forgot your password?
                   </button>
                 </div> */}
-
+                <FormLabel htmlFor="password">Password</FormLabel>
                 <TextField
                   name="password"
                   placeholder="••••••"

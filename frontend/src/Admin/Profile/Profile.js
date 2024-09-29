@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Alert, Tooltip } from "@mui/material";
-import SaveTwoToneIcon from "@mui/icons-material/SaveTwoTone";
-import CancelTwoToneIcon from "@mui/icons-material/CancelTwoTone";
+import { Alert } from "@mui/material";
 import { useGetUserQuery, useUpdateMutation } from "../../slices/usersApiSlice";
 import "./Profile.css";
+import cancelIcon from "../../Assets/icons-cancel.svg";
+import saveIcon from "../../Assets/save_icon.svg";
+import editIcon from "../../Assets/edit.svg";
 
-const AddProperty = () => {
+const Profile = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -14,7 +15,7 @@ const AddProperty = () => {
     password: "",
   });
   const [alert, setAlert] = useState({ type: "", message: "" });
-  const [isEditing, setIsEditing] = useState(false);
+  const [editingField, setEditingField] = useState(null); // Tracks the field currently being edited
 
   const userInfo = useSelector((state) => state.auth.userInfo);
   const { data: user, error } = useGetUserQuery(userInfo?._id, {
@@ -23,173 +24,302 @@ const AddProperty = () => {
   const [update] = useUpdateMutation();
 
   useEffect(() => {
-    if (user)
+    if (user) {
       setFormData({
         firstname: user.first_name,
         lastname: user.last_name,
         email: user.email,
         password: "",
       });
+    }
   }, [user]);
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    update({ userId: userInfo._id, ...formData })
-      .unwrap()
-      .then(() => {
-        setAlert({ type: "success", message: "Profile updated successfully!" });
+  const handleSubmit = (fieldName) => {
+    const updatedField = {};
 
-        // Remove alert after 5 seconds (5000ms)
+    // Only add the field being edited to the update payload
+    if (fieldName === "password") {
+      if (!formData.password || formData.password.trim() === "") {
+        setAlert({
+          type: "error",
+          message: "Please enter a valid password.",
+        });
+        return;
+      }
+
+      // Password-specific validation
+      const specialCharRegex = /[+\-*/]/;
+      const letterRegex = /[a-zA-Z]/;
+      if (
+        formData.password.length < 8 ||
+        !specialCharRegex.test(formData.password) ||
+        !letterRegex.test(formData.password)
+      ) {
+        setAlert({
+          type: "error",
+          message:
+            "Password must be at least 8 characters long and contain at least one letter and one special character (+, -, *, /).",
+        });
         setTimeout(() => {
           setAlert({ type: "", message: "" });
         }, 2000);
+        return;
+      }
+      updatedField.password = formData.password; // Add password only if it's being edited
+    } else {
+      updatedField[fieldName] = formData[fieldName]; // Add other fields if they are being edited
+    }
+
+    // Proceed with update if there is a valid field to update
+    update({ userId: userInfo._id, ...updatedField })
+      .unwrap()
+      .then(() => {
+        setAlert({
+          type: "success",
+          message: `${fieldName} updated successfully!`,
+        });
+
+        setTimeout(() => {
+          setAlert({ type: "", message: "" });
+        }, 3000);
       })
       .catch((error) => {
         setAlert({
           type: "error",
-          message:
-            error?.data?.message
-              .replace("User validation failed: password:", "")
-              .trim() || "Update failed. Please try again.",
+          message: error?.data?.message || "Update failed. Please try again.",
         });
 
-        // Remove alert after 5 seconds (5000ms)
         setTimeout(() => {
           setAlert({ type: "", message: "" });
         }, 4000);
       })
-      .finally(() => setIsEditing(false));
+      .finally(() => setEditingField(null));
   };
 
   const handleCancel = () => {
-    setFormData({
-      firstname: user.first_name,
-      lastname: user.last_name,
-      email: user.email,
-      password: "",
-    });
-    setIsEditing(false);
+    setEditingField(null);
   };
-
-  const renderField = (label, name, type = "text", value, isEditable) => (
-    <div className=" mb-5">
-      <label
-        htmlFor={name}
-        className="mb-1 block text-lg font-semibold text-gray-700"
-      >
-        {label}
-      </label>
-      {isEditable ? (
-        <input
-          type={type}
-          name={name}
-          id={name}
-          value={value}
-          onChange={handleChange}
-          placeholder={label}
-          className="w-full rounded-md border border-[#e0e0e0] py-3 px-6 text-base font-medium text-[#6B7280] focus:border-[#6A64F1] focus:shadow-md"
-        />
-      ) : (
-        <p className="text-base font-medium text-gray-600">
-          {type === "password" ? "••••••" : value}
-        </p>
-      )}
-    </div>
-  );
 
   return (
     <div>
       {error ? (
         <Alert severity="error">Error fetching data from API</Alert>
       ) : (
-        <div className="mx-auto w-full max-w-[550px] bg-white p-4">
-          <form onSubmit={handleSubmit}>
-            {renderField(
-              "First Name",
-              "firstname",
-              "text",
-              formData.firstname,
-              isEditing
-            )}
-            {renderField(
-              "Last Name",
-              "lastname",
-              "text",
-              formData.lastname,
-              isEditing
-            )}
-            {renderField("Email", "email", "email", formData.email, isEditing)}
-            {renderField(
-              "Password",
-              "password",
-              "password",
-              formData.password,
-              isEditing
-            )}
-
-            <div className="px-0 py-2 space-x-2">
-              {isEditing ? (
-                <>
-                  <Tooltip title="Update" arrow>
-                    <Tooltip title="Update" arrow>
-                      <button
-                        type="submit"
-                        style={{
-                          background: "none",
-                          border: "none",
-                          cursor: "pointer",
-                        }}
-                      >
-                        <SaveTwoToneIcon variant="outlined" />
-                      </button>
-                    </Tooltip>
-                  </Tooltip>
-                  <Tooltip title="Cancel" arrow>
-                    <CancelTwoToneIcon
-                      variant="outlined"
-                      onClick={() => handleCancel()}
-                      sx={{ cursor: "pointer" }}
-                    />
-                  </Tooltip>
-                </>
-              ) : (
-                <button
-                  onClick={() => setIsEditing(true)}
-                  class="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-lg font-medium px-4 py-2 inline-flex space-x-1 items-center"
-                >
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      class="w-6 h-6"
+        <div className="mx-auto  max-w-[550px] bg-white p-4">
+          <form>
+            {/* First Name Field */}
+            <div className="mb-5">
+              <label
+                htmlFor="firstname"
+                className="mb-1 block text-lg font-semibold text-secondary"
+              >
+                First Name
+              </label>
+              {editingField === "firstname" ? (
+                <div className=" flex flex-row justify-between items-center">
+                  <input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    value={formData.firstname}
+                    onChange={handleChange}
+                    placeholder="First Name"
+                    className=" rounded-md border border-[#e0e0e0] py-3 px-6 text-base font-medium text-[#6B7280] focus:border-[#6A64F1] focus:shadow-md"
+                  />
+                  <div className="px-0 py-2 space-x-2">
+                    <button
+                      type="button"
+                      onClick={() => handleSubmit("firstname")}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-                      />
-                    </svg>
-                  </span>
-                  <span class="hidden md:inline-block">Edit</span>
-                </button>
+                      <img src={saveIcon} alt="save" />
+                    </button>
+                    <button type="button" onClick={() => handleCancel()}>
+                      <img src={cancelIcon} alt="cancel" />
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex justify-between">
+                  <p className="text-base font-medium text-primary">
+                    {formData.firstname}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setEditingField("firstname")}
+                  >
+                    <div className="relative group">
+                      <img src={editIcon} alt="edit" />
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-secondary bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Edit
+                      </span>
+                    </div>
+                  </button>
+                </div>
               )}
-              {alert.message && (
-                <Alert severity={alert.type} className="mt-4">
-                  {alert.message}
-                </Alert>
+            </div>
+
+            {/* Last Name Field */}
+            <div className="mb-5">
+              <label
+                htmlFor="lastname"
+                className="mb-1 block text-lg font-semibold text-secondary"
+              >
+                Last Name
+              </label>
+              {editingField === "lastname" ? (
+                <div className=" flex flex-row justify-between items-center">
+                  <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    value={formData.lastname}
+                    onChange={handleChange}
+                    placeholder="Last Name"
+                    className=" rounded-md border border-[#e0e0e0] py-3 px-6 text-base font-medium text-[#6B7280] focus:border-[#6A64F1] focus:shadow-md"
+                  />
+                  <div className="px-0 py-2 space-x-2">
+                    <button
+                      type="button"
+                      onClick={() => handleSubmit("lastname")}
+                    >
+                      <img src={saveIcon} alt="save" />
+                    </button>
+                    <button type="button" onClick={() => handleCancel()}>
+                      <img src={cancelIcon} alt="cancel" />
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-row justify-between items-center">
+                  <p className="text-base font-medium text-primary">
+                    {formData.lastname}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setEditingField("lastname")}
+                  >
+                    <div className="relative group">
+                      <img src={editIcon} alt="edit" />
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-secondary bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Edit
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Email Field */}
+            <div className="mb-5">
+              <label
+                htmlFor="email"
+                className="mb-1 block text-lg font-semibold text-secondary"
+              >
+                Email
+              </label>
+              {editingField === "email" ? (
+                <div className=" flex flex-row justify-between items-center">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    className=" w-72 rounded-md border border-[#e0e0e0] py-3 px-6 text-base font-medium text-[#6B7280] focus:border-[#6A64F1] focus:shadow-md"
+                  />
+                  <div className="px-0 py-2 space-x-2">
+                    <button type="button" onClick={() => handleSubmit("email")}>
+                      <img src={saveIcon} alt="save" />
+                    </button>
+                    <button type="button" onClick={() => handleCancel()}>
+                      <img src={cancelIcon} alt="cancel" />
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex justify-between">
+                  <p className="text-base font-medium text-primary">
+                    {formData.email}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setEditingField("email")}
+                  >
+                    <div className="relative group">
+                      <img src={editIcon} alt="edit" />
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-secondary bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Edit
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Password Field */}
+            <div className="mb-5">
+              <label
+                htmlFor="password"
+                className="mb-1 block text-lg font-semibold text-secondary"
+              >
+                Password
+              </label>
+              {editingField === "password" ? (
+                <div className=" flex flex-row justify-between items-center">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    placeholder="Password"
+                    className="rounded-md border border-[#e0e0e0] py-3 px-6 text-base font-medium text-[#6B7280] focus:border-[#6A64F1] focus:shadow-md"
+                  />
+                  <div className="px-0 py-2 space-x-2">
+                    <button
+                      type="button"
+                      onClick={() => handleSubmit("password")}
+                    >
+                      <img src={saveIcon} alt="save" />
+                    </button>
+                    <button type="button" onClick={() => handleCancel()}>
+                      <img src={cancelIcon} alt="cancel" />
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex justify-between">
+                  <p className="text-base font-medium text-primary">••••••</p>
+                  <button
+                    type="button"
+                    onClick={() => setEditingField("password")}
+                  >
+                    <div className="relative group">
+                      <img src={editIcon} alt="edit" />
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-secondary bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Edit
+                      </span>
+                    </div>
+                  </button>
+                </div>
               )}
             </div>
           </form>
+
+          {alert.message && (
+            <Alert severity={alert.type} className="mt-4">
+              {alert.message}
+            </Alert>
+          )}
         </div>
       )}
     </div>
   );
 };
 
-export default AddProperty;
+export default Profile;
