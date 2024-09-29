@@ -20,6 +20,8 @@ import { Alert, CircularProgress } from "@mui/material";
 const AccountLog = () => {
   const [selectedColumn, setSelectedColumn] = useState(""); // Track selected column for filtering
   const [resetToggle, setResetToggle] = useState(false);
+  const [dateFilter, setDateFilter] = useState(""); // Add state for the date filter
+  const [showDateFilter, setShowDateFilter] = useState(false);
 
   const userInfo = useSelector((state) => state.auth.userInfo);
 
@@ -27,49 +29,75 @@ const AccountLog = () => {
     () => [
       {
         Header: "Full Name",
-        id: "fullName", // Explicit ID
-        accessor: (row) => `${row.user.first_name} ${row.user.last_name}`, // Combine first and last name for rendering
+        id: "fullName",
+        accessor: (row) => `${row.user.first_name} ${row.user.last_name}`,
         Filter: ColumnFilter,
         filter: (rows, id, filterValue) => {
           return rows.filter((row) => {
             const name = `${row.original.user.first_name.toLowerCase()} ${row.original.user.last_name.toLowerCase()}`;
-            return name.includes(filterValue.toLowerCase()); // Check if the first or last name includes the filterValue
+            return name.includes(filterValue.toLowerCase());
           });
         },
-        Cell: ({ value }) => value, // Display combined full name in the cell
+        Cell: ({ value }) => value,
       },
       {
         Header: "Location",
         accessor: "location",
         Filter: ColumnFilter,
         id: "location",
-      }, // Add ID if necessary
-      { Header: "Type", accessor: "type", Filter: ColumnFilter, id: "type" }, // Add ID if necessary
+      },
+      {
+        Header: "Type",
+        accessor: "type",
+        Filter: ColumnFilter,
+        id: "type",
+      },
       {
         Header: "Bedroom",
         accessor: "bedrooms",
         Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value}</div>,
         Filter: ColumnFilter,
-        id: "bedrooms", // Add ID if necessary
+        id: "bedrooms",
       },
-      { Header: "Area", accessor: "area", Filter: ColumnFilter, id: "area" }, // Add ID if necessary
-      { Header: "Price", accessor: "price", Filter: ColumnFilter, id: "price" }, // Add ID if necessary
+      {
+        Header: "Area",
+        accessor: "area",
+        Filter: ColumnFilter,
+        id: "area",
+      },
+      {
+        Header: "Price",
+        accessor: "price",
+        Filter: ColumnFilter,
+        id: "price",
+      },
       {
         Header: "Count",
         accessor: "count",
-        Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value}</div>,
-        Filter: ColumnFilter,
-        id: "count", // Add ID if necessary
+        // Custom filter for exact matching
+        filter: (rows, id, filterValue) => {
+          return rows.filter((row) => row.values[id] === filterValue);
+        },
       },
       {
         Header: "Date",
         accessor: "updatedAt",
         Cell: ({ value }) => {
           const date = new Date(value);
-          return date.toLocaleDateString();
+          return date.toLocaleDateString(); // Display as MM/DD/YYYY
         },
-        Filter: ColumnFilter,
-        id: "updatedAt", // Add ID if necessary
+        // Custom filter logic for date filtering
+        filter: (rows, id, filterValue) => {
+          if (!filterValue) return rows; // If no filter value, return all rows
+          const filterDate = new Date(filterValue);
+          return rows.filter((row) => {
+            const rowDate = new Date(row.original.updatedAt);
+            return (
+              rowDate.toLocaleDateString() === filterDate.toLocaleDateString()
+            );
+          });
+        },
+        id: "updatedAt",
       },
     ],
     []
@@ -119,8 +147,15 @@ const AccountLog = () => {
     usePagination
   );
 
+  // Function to handle the column selection change
   const handleColumnChange = (columnId) => {
     setSelectedColumn(columnId);
+    // Show the date filter if "Date" is selected
+    if (columnId === "updatedAt") {
+      setShowDateFilter(true);
+    } else {
+      setShowDateFilter(false);
+    }
   };
 
   const resetFilters = () => {
@@ -132,19 +167,38 @@ const AccountLog = () => {
       }
     });
     setResetToggle(!resetToggle); // Trigger the reset toggle for the dropdown
+    setDateFilter(""); // Reset the date filter
+    setShowDateFilter(false); // Hide the date filter input
+  };
+
+  // Function to handle date filtering
+  const handleDateFilterChange = (e) => {
+    const { value } = e.target;
+    setDateFilter(value);
+    setFilter("updatedAt", value); // Apply the date filter to the 'updatedAt' column
   };
 
   return (
     <>
       <div className="sm:flex grid grid-cols-1 sm:grid-cols-3 gap-y-4 sm:gap-x-2 mx-4">
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={state.globalFilter}
-          setGlobalFilter={setGlobalFilter}
-          setFilter={setFilter}
-          selectedColumn={selectedColumn}
-          resetToggle={resetToggle}
-        />
+        {showDateFilter ? (
+          <input
+            type="date"
+            value={dateFilter}
+            onChange={handleDateFilterChange}
+            className="border p-2 rounded w-64 cursor-pointer"
+            placeholder="Filter by Date"
+          />
+        ) : (
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+            setFilter={setFilter} // Pass the setFilter for column-specific filtering
+            selectedColumn={selectedColumn} // Pass selected column to GlobalFilter
+            resetToggle={resetToggle} // Pass the reset toggle to trigger reset in GlobalFilter
+          />
+        )}
         <div className="flex flex-row items-center justify-start gap-2">
           <div>
             <CustomDropdown
@@ -177,26 +231,25 @@ const AccountLog = () => {
           No data available.
         </Alert>
       ) : (
-<div className="m-4 flex flex-col">
-  <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
-    <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-      <div className="shadow font-normal text-sm text-start overflow-hidden border-b border-gray-200 sm:rounded-lg">
-        <table
-          {...getTableProps()}
-          className="min-w-full divide-y divide-gray-200"
-        >
-          <TableHeader headerGroups={headerGroups} />
-          <TableBody
-            getTableBodyProps={getTableBodyProps}
-            page={page}
-            prepareRow={prepareRow}
-          />
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-
+        <div className="m-4 flex flex-col">
+          <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
+            <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+              <div className="shadow font-normal text-sm text-start overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <table
+                  {...getTableProps()}
+                  className="min-w-full divide-y divide-gray-200"
+                >
+                  <TableHeader headerGroups={headerGroups} />
+                  <TableBody
+                    getTableBodyProps={getTableBodyProps}
+                    page={page}
+                    prepareRow={prepareRow}
+                  />
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
 
       <Pagination

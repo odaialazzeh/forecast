@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const CustomDropdown = ({
   headerGroups,
@@ -11,6 +11,8 @@ const CustomDropdown = ({
     selectedColumn || "Select to Filter"
   ); // Track selected option
 
+  const dropdownRef = useRef(null); // Ref for dropdown
+
   // Toggle dropdown open/close
   const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -21,13 +23,30 @@ const CustomDropdown = ({
     setIsOpen(false); // Close dropdown after selection
   };
 
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false); // Close the dropdown
+      }
+    };
+
+    // Add event listener to detect outside clicks
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      // Cleanup event listener on unmount
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   // Reset the selected option when resetToggle changes
   useEffect(() => {
     setSelectedOption("Select to Filter");
   }, [resetToggle]);
 
   return (
-    <div className="relative inline-block w-48">
+    <div ref={dropdownRef} className="relative inline-block w-48">
       {" "}
       {/* Adjust width here */}
       {/* Dropdown Button */}

@@ -14,12 +14,14 @@ import ColumnFilter from "../tableComponent/ColumnFilter";
 import TableHeader from "../tableComponent/TableHeader";
 import TableBody from "../tableComponent/TableBody";
 import Pagination from "../tableComponent/Pagination";
-import CustomDropdown from "../tableComponent/CustomDropdown"; // Import CustomDropdown
+import CustomDropdown from "../tableComponent/CustomDropdown";
 import { useGetRecordQuery } from "../../slices/recordApiSlice";
 
 const ActivityLog = () => {
   const [selectedColumn, setSelectedColumn] = useState(""); // Track selected column for filtering
   const [resetToggle, setResetToggle] = useState(false);
+  const [dateFilter, setDateFilter] = useState(""); // Add state for the date filter
+  const [showDateFilter, setShowDateFilter] = useState(false); // Toggle to show/hide the date input
 
   const navigate = useNavigate();
   const userInfo = useSelector((state) => state.auth.userInfo);
@@ -34,49 +36,75 @@ const ActivityLog = () => {
     () => [
       {
         Header: "Full Name",
-        id: "fullName", // Explicit ID
-        accessor: (row) => `${row.user.first_name} ${row.user.last_name}`, // Combine first and last name for rendering
+        id: "fullName",
+        accessor: (row) => `${row.user.first_name} ${row.user.last_name}`,
         Filter: ColumnFilter,
         filter: (rows, id, filterValue) => {
           return rows.filter((row) => {
             const name = `${row.original.user.first_name.toLowerCase()} ${row.original.user.last_name.toLowerCase()}`;
-            return name.includes(filterValue.toLowerCase()); // Check if the first or last name includes the filterValue
+            return name.includes(filterValue.toLowerCase());
           });
         },
-        Cell: ({ value }) => value, // Display combined full name in the cell
+        Cell: ({ value }) => value,
       },
       {
         Header: "Location",
         accessor: "location",
         Filter: ColumnFilter,
         id: "location",
-      }, // Add ID if necessary
-      { Header: "Type", accessor: "type", Filter: ColumnFilter, id: "type" }, // Add ID if necessary
+      },
+      {
+        Header: "Type",
+        accessor: "type",
+        Filter: ColumnFilter,
+        id: "type",
+      },
       {
         Header: "Bedroom",
         accessor: "bedrooms",
         Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value}</div>,
         Filter: ColumnFilter,
-        id: "bedrooms", // Add ID if necessary
+        id: "bedrooms",
       },
-      { Header: "Area", accessor: "area", Filter: ColumnFilter, id: "area" }, // Add ID if necessary
-      { Header: "Price", accessor: "price", Filter: ColumnFilter, id: "price" }, // Add ID if necessary
+      {
+        Header: "Area",
+        accessor: "area",
+        Filter: ColumnFilter,
+        id: "area",
+      },
+      {
+        Header: "Price",
+        accessor: "price",
+        Filter: ColumnFilter,
+        id: "price",
+      },
       {
         Header: "Count",
         accessor: "count",
-        Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value}</div>,
-        Filter: ColumnFilter,
-        id: "count", // Add ID if necessary
+        // Custom filter for exact matching
+        filter: (rows, id, filterValue) => {
+          return rows.filter((row) => row.values[id] === filterValue);
+        },
       },
       {
         Header: "Date",
         accessor: "updatedAt",
         Cell: ({ value }) => {
           const date = new Date(value);
-          return date.toLocaleDateString();
+          return date.toLocaleDateString(); // Display as MM/DD/YYYY
         },
-        Filter: ColumnFilter,
-        id: "updatedAt", // Add ID if necessary
+        // Custom filter logic for date filtering
+        filter: (rows, id, filterValue) => {
+          if (!filterValue) return rows; // If no filter value, return all rows
+          const filterDate = new Date(filterValue);
+          return rows.filter((row) => {
+            const rowDate = new Date(row.original.updatedAt);
+            return (
+              rowDate.toLocaleDateString() === filterDate.toLocaleDateString()
+            );
+          });
+        },
+        id: "updatedAt",
       },
     ],
     []
@@ -118,6 +146,12 @@ const ActivityLog = () => {
   // Function to handle the column selection change
   const handleColumnChange = (columnId) => {
     setSelectedColumn(columnId);
+    // Show the date filter if "Date" is selected
+    if (columnId === "updatedAt") {
+      setShowDateFilter(true);
+    } else {
+      setShowDateFilter(false);
+    }
   };
 
   const resetFilters = () => {
@@ -129,19 +163,39 @@ const ActivityLog = () => {
       }
     });
     setResetToggle(!resetToggle); // Trigger the reset toggle for the dropdown
+    setDateFilter(""); // Reset the date filter
+    setShowDateFilter(false); // Hide the date filter input
+  };
+
+  // Function to handle date filtering
+  const handleDateFilterChange = (e) => {
+    const { value } = e.target;
+    setDateFilter(value);
+    setFilter("updatedAt", value); // Apply the date filter to the 'updatedAt' column
   };
 
   return (
     <>
       <div className="sm:flex grid grid-cols-1 sm:grid-cols-3 gap-y-4 sm:gap-x-2 mx-4">
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={state.globalFilter}
-          setGlobalFilter={setGlobalFilter}
-          setFilter={setFilter} // Pass the setFilter for column-specific filtering
-          selectedColumn={selectedColumn} // Pass selected column to GlobalFilter
-          resetToggle={resetToggle} // Pass the reset toggle to trigger reset in GlobalFilter
-        />
+        {showDateFilter ? (
+          <input
+            type="date"
+            value={dateFilter}
+            onChange={handleDateFilterChange}
+            className="border p-2 rounded w-64 cursor-pointer"
+            placeholder="Filter by Date"
+          />
+        ) : (
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+            setFilter={setFilter} // Pass the setFilter for column-specific filtering
+            selectedColumn={selectedColumn} // Pass selected column to GlobalFilter
+            resetToggle={resetToggle} // Pass the reset toggle to trigger reset in GlobalFilter
+          />
+        )}
+
         <div className="flex flex-row items-center justify-start gap-2">
           <div>
             <CustomDropdown
@@ -153,7 +207,7 @@ const ActivityLog = () => {
           </div>
           <button
             onClick={resetFilters}
-            className="border p-2  rounded text-white bg-primary hover:bg-secondary"
+            className="border p-2 rounded text-white bg-primary hover:bg-secondary"
           >
             Reset
           </button>
@@ -164,7 +218,7 @@ const ActivityLog = () => {
         <div className="flex justify-center items-center w-full h-[400px]">
           <CircularProgress />
         </div>
-      ) : error ? ( // Show error alert if data fetching fails, display message from API if available
+      ) : error ? (
         <Alert severity="error" className="m-4">
           {error?.data?.message ||
             "Failed to load data. Please try again later."}

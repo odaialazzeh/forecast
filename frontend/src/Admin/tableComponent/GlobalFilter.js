@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 const GlobalFilter = ({
-  preGlobalFilteredRows,
-  globalFilter,
   setGlobalFilter,
   setFilter,
   selectedColumn,
   resetToggle, // Reset toggle to trigger input reset
 }) => {
-  const count = preGlobalFilteredRows.length;
   const [filterValue, setFilterValue] = useState(""); // Track the input value
 
   // Effect to reset input when resetToggle changes
@@ -18,11 +15,20 @@ const GlobalFilter = ({
 
   // Handle filtering logic
   const handleFilterChange = (e) => {
-    const value = e.target.value || undefined;
-    setFilterValue(value);
+    let value = e.target.value;
+
+    if (selectedColumn === "price" || selectedColumn === "count") {
+      // Convert value to number for numeric columns
+      value = value !== "" ? parseFloat(value) : undefined;
+    } else {
+      // Otherwise use text as filter
+      value = value || undefined;
+    }
+
+    setFilterValue(e.target.value); // Update input display
 
     if (selectedColumn) {
-      // If a column is selected, apply the filter to that column specifically
+      // Apply filter to the selected column
       setFilter(selectedColumn, value);
     } else {
       // Apply global filter if no column is selected
@@ -37,6 +43,11 @@ const GlobalFilter = ({
         onChange={handleFilterChange}
         placeholder={`Search`}
         className="border rounded p-2 w-64"
+        type={
+          selectedColumn === "price" || selectedColumn === "count"
+            ? "number"
+            : "text"
+        } // Use a number input for numeric columns
       />
     </span>
   );

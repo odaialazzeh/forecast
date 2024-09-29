@@ -52,7 +52,7 @@ const Search = () => {
             return {
               name: subRegion,
               path: `${region}`,
-              fullPath: `${region} ${subRegion}`, // Used for filtering
+              fullPath: `${region}, ${subRegion}`, // Used for filtering
             };
           }
         });
