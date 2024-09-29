@@ -52,12 +52,14 @@ app.use(
         defaultSrc: ["'self'"],
         connectSrc: ["'self'", "https://forecastmetro-app-uxtiu.ondigitalocean.app"], // Allow API calls to external service
         scriptSrc: ["'self'", "https://trusted-scripts.com"], // Example for other sources like scripts
-        styleSrc: ["'self'", "'unsafe-inline'"], // Example for styles
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"], // Allow Google Fonts CSS
+        fontSrc: ["'self'", "https://fonts.gstatic.com"], // Allow Google Fonts
         // Add other CSP directives as needed
       },
     },
   })
 );
+
 
 // Prevent XSS attacks
 app.use(xss());
