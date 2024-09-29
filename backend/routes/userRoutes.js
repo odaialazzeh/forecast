@@ -16,6 +16,6 @@ router
   .get(protect, admin, getUsers);
 router.post("/login", authUser);
 router.post("/logout", logoutUser);
-router.route("/:id").get(protect, getUserById).put(admin, protect, updateUser);
+router.route("/:id").get(protect, getUserById).put(protect, updateUser);
 
 export default router;

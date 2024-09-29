@@ -23,17 +23,6 @@ const userSchema = mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
-      validate: {
-        // Custom validator to check password requirements
-        validator: (value) => {
-          // Regular expression to check for letters and special characters
-          const passwordRegex = /^(?=.*[A-Za-z])(?=.*[\+\-\*\/]).{8,}$/;
-          return passwordRegex.test(value);
-        },
-        message:
-          "Password must be at least 8 characters long and contain at least one letter and one special character (+, -, *, /).",
-      },
     },
     isAdmin: {
       type: Boolean,

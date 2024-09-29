@@ -45,22 +45,15 @@ app.set("trust proxy", 1);
 app.use(mongoSanitize());
 
 // Set security headers and update CSP
-// Set security headers and update CSP
 app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        connectSrc: [
-          "'self'",
-          "https://forecastmetro-app-uxtiu.ondigitalocean.app",
-        ], // Allow API calls to external service
-        scriptSrc: ["'self'", "https://trusted-scripts.com"], // Allow trusted scripts
-        styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"], // Allow Google Fonts and inline styles
-        fontSrc: ["'self'", "https://fonts.gstatic.com"], // Allow fonts from Google Fonts
-        imgSrc: ["'self'", "data:"], // Allow images from self and data URIs
-        objectSrc: ["'none'"], // Disallow object sources
-        upgradeInsecureRequests: [], // Optional: force all requests to be secure
+        connectSrc: ["'self'", "https://forecastmetro-app-uxtiu.ondigitalocean.app"], // Allow API calls to external service
+        scriptSrc: ["'self'", "https://trusted-scripts.com"], // Example for other sources like scripts
+        styleSrc: ["'self'", "'unsafe-inline'"], // Example for styles
+        // Add other CSP directives as needed
       },
     },
   })
