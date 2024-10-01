@@ -15,8 +15,11 @@
             "The Cedars"
         ],
         "Yas Park Views": [],
+        "Yas Park Gate": [],
         "West Yas": [],
-        "Yas Riva": []
+        "Yas Riva": [],
+        "Mayan": [],
+        "The Sustainable City": []
     },
     "Saadiyat Island": {
         "Saadiyat Lagoons": [],
@@ -62,7 +65,8 @@
     },
     "Al Reem Island": {
         "Najmat Abu Dhabi": [
-            "Reem Hills"
+            "Reem Hills",
+            "Reem Hills 2"
         ]
     },
     "Al Raha Gardens": {
@@ -96,5 +100,11 @@
     },
     "Madinat Zayed": {
         "Seville Bloom": []
+    },
+    "AlJurf": {
+        "Al Jurf Gardens": []
+    },
+    "Abu Dhabi Gate City": {
+        "Mangrove Village": []
     }
 }

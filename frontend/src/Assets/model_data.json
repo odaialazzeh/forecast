@@ -685,7 +685,7 @@
             "type": "Villa"
         }
     ],
-    "Sidra Community _model": [
+    "Sidra Community_model": [
         {
             "name": "Sidra Community",
             "bedroom": 3,
@@ -850,14 +850,14 @@
             "type": "Villa"
         }
     ],
-    "Yas Park_model": [
+    "Yas Park Gate_model": [
         {
-            "name": "Yas Park",
+            "name": "Yas Park Gate",
             "bedroom": 3,
             "type": "Villa"
         },
         {
-            "name": "Yas Park",
+            "name": "Yas Park Gate",
             "bedroom": 4,
             "type": "Villa"
         }
