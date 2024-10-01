@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Assets/logo.svg";
@@ -14,6 +14,14 @@ const Header = () => {
   const navigate = useNavigate();
 
   const userInfo = useSelector((state) => state.auth.userInfo);
+
+  useEffect(() => {
+    const expirationTime = localStorage.getItem("expirationTime");
+    if (expirationTime && new Date().getTime() > expirationTime) {
+      dispatch(logoutAction()); // Auto logout if expirationTime has passed
+      navigate("/login");
+    }
+  }, [dispatch, navigate]);
 
   const handleLogout = async () => {
     try {

@@ -6,15 +6,27 @@ const initialState = {
     : null,
 };
 
+// Helper function to check if expirationTime has passed
+const checkExpiration = () => {
+  const expirationTime = localStorage.getItem("expirationTime");
+  if (expirationTime && new Date().getTime() > expirationTime) {
+    return true; // Expired
+  }
+  return false; // Not expired
+};
+
 const authSlice = createSlice({
   name: "login",
-  initialState,
+  initialState: {
+    ...initialState,
+    userInfo: checkExpiration() ? null : initialState.userInfo, // Set userInfo to null if expired
+  },
   reducers: {
     setCredentials: (state, action) => {
       state.userInfo = action.payload;
       localStorage.setItem("userInfo", JSON.stringify(action.payload));
 
-      const expirationTime = new Date().getTime() + 30 * 24 * 60 * 60 * 1000; // 30 days
+      const expirationTime = new Date().getTime() + 1 * 24 * 60 * 60 * 1000; // 1 day expiration
       localStorage.setItem("expirationTime", expirationTime);
     },
     logout: (state) => {

@@ -3,11 +3,10 @@ import { useSelector } from "react-redux";
 import { Alert, CircularProgress } from "@mui/material";
 import PropertyDropdown from "./PropertyDropdown";
 import BedroomDropdown from "./BedroomDropdown";
-import PriceInput from "./PriceInput";
-import AreaInput from "./AreaInput";
 import { RiMapPinLine } from "react-icons/ri";
 import locationData from "../Assets/abu_dhabi_sub_areas.json";
 import modelData from "../Assets/model_data.json";
+import averagePrice from "../Assets/average_price.json";
 import House from "./House/House";
 import { imageToUrl } from "../utils/ImageToUrl";
 
@@ -16,10 +15,9 @@ const Search = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [propertyType, setPropertyType] = useState(""); // State for Property type
   const [bedrooms, setBedrooms] = useState(""); // State for Bedrooms
-  const [price, setPrice] = useState(""); // State for Price
-  const [area, setArea] = useState(""); // State for Area
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [mainRegion, setMainRegion] = useState("");
   const [houseData, setHouseData] = useState(null); // State for the house data
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false); // State to track errors
@@ -36,19 +34,17 @@ const Search = () => {
       return;
     }
 
-    // Flatten the location data to create a list of regions, sub-regions, and areas
     const allLocations = Object.entries(locationData).flatMap(
       ([region, subLocations]) => {
         return Object.entries(subLocations).flatMap(([subRegion, areas]) => {
           if (areas.length > 0) {
-            // Return an object with the area as the name and the full path (region and sub-region)
             return areas.map((area) => ({
               name: area,
               path: subRegion,
+              mainRegion: region,
               fullPath: `${region}, ${subRegion}, ${area}`, // Used for filtering
             }));
           } else {
-            // If there are no areas, just return the sub-region as the name
             return {
               name: subRegion,
               path: `${region}`,
@@ -59,7 +55,6 @@ const Search = () => {
       }
     );
 
-    // Filter suggestions based on whether the input matches any part of the region, sub-region, or area
     const filteredSuggestions = allLocations.filter((location) =>
       location.fullPath.toLowerCase().includes(value.toLowerCase())
     );
@@ -67,52 +62,57 @@ const Search = () => {
     setSuggestions(filteredSuggestions);
   };
 
-  // Handle location selection
-  const handleLocationSelect = (location, region) => {
+  const handleLocationSelect = (location, region, main) => {
     setInputValue(location);
     setSelectedLocation(location);
     setSelectedRegion(region);
+    setMainRegion(main);
     setSuggestions([]);
   };
 
   const handleSearch = async () => {
-    if (
-      propertyType &&
-      selectedLocation &&
-      selectedRegion &&
-      bedrooms &&
-      price &&
-      area
-    ) {
-      setLoading(true);
+    if (propertyType && selectedLocation && selectedRegion && bedrooms) {
       try {
+        const selectedModelData = averagePrice[mainRegion]?.find(
+          (item) =>
+            item.bedroom === parseInt(bedrooms) && item.type === propertyType
+        );
+
+        if (!selectedModelData) {
+          throw new Error("No matching data found");
+        }
+        setError(false);
+        setLoading(true);
         const house = {
           userId: userInfo._id,
           type: propertyType,
           location: selectedLocation,
           region: selectedRegion,
+          mainRegion: mainRegion,
           bedrooms: bedrooms,
-          area: area,
-          price: price,
+          area: selectedModelData.area,
+          price: selectedModelData.price,
           email: userInfo.email,
         };
 
-        // Fetch the images from the forecast API
-        const response = await fetch("https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            bedroom: bedrooms,
-            propertyType: propertyType,
-            area: area,
-            price: price,
-            location: selectedLocation,
-            region: selectedRegion,
-            email: userInfo.email,
-          }),
-        });
+        const response = await fetch(
+          "https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              bedroom: bedrooms,
+              propertyType: propertyType,
+              area: selectedModelData.area,
+              price: selectedModelData.price,
+              location: selectedLocation,
+              region: selectedRegion,
+              email: userInfo.email,
+            }),
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -120,7 +120,6 @@ const Search = () => {
 
         const data = await response.json();
 
-        // Handle both standard and story image formats
         const standardImageUrl = await imageToUrl(data.image_standard);
         const storyImageUrl = await imageToUrl(data.image_story);
 
@@ -136,7 +135,7 @@ const Search = () => {
           setError(false);
         }, 10000);
       } finally {
-        setLoading(false); // Stop loading after search is done
+        setLoading(false);
       }
     } else {
       alert("Please fill in all fields");
@@ -144,7 +143,6 @@ const Search = () => {
   };
 
   useEffect(() => {
-    // Load data from JSON and transform it into a simple array
     const transformedData = [];
     Object.keys(modelData).forEach((key) => {
       transformedData.push(...modelData[key]);
@@ -170,7 +168,11 @@ const Search = () => {
                 <li
                   key={index}
                   onClick={() =>
-                    handleLocationSelect(suggestion.name, suggestion.path)
+                    handleLocationSelect(
+                      suggestion.name,
+                      suggestion.path,
+                      suggestion.mainRegion
+                    )
                   }
                   className="cursor-pointer hover:bg-gray-200 px-3 py-2 flex items-start gap-2"
                 >
@@ -188,13 +190,9 @@ const Search = () => {
             </ul>
           )}
         </div>
-      </div>
 
-      <div className="px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 relative lg:-top-4 lg:shadow-md bg-white rounded-lg">
         <PropertyDropdown onChange={setPropertyType} />
         <BedroomDropdown onChange={setBedrooms} />
-        <PriceInput onChange={setPrice} />
-        <AreaInput onChange={setArea} />
 
         <button
           onClick={handleSearch}

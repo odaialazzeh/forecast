@@ -1,0 +1,440 @@
+{
+    "Yas Island": [
+        {
+            "bedroom": 2,
+            "price": 2959422,
+            "area": 1753,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 3,
+            "price": 4854110,
+            "area": 3669,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 4647055,
+            "area": 3411,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 7709939,
+            "area": 5229,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 10781998,
+            "area": 8266,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 13139625,
+            "area": 10714,
+            "type": "Villa"
+        }
+    ],
+    "Saadiyat Island": [
+        {
+            "bedroom": 2,
+            "price": 6508521,
+            "area": 2660,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 3,
+            "price": 7012642,
+            "area": 3549,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 12160829,
+            "area": 5567,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 15243984,
+            "area": 7039,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 21900493,
+            "area": 10430,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 35776606,
+            "area": 12596,
+            "type": "Villa"
+        }
+    ],
+    "Al Shamkha": [
+        {
+            "bedroom": 2,
+            "price": 1700000,
+            "area": 1520,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 3,
+            "price": 3754898,
+            "area": 4018,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 3730843,
+            "area": 4503,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 4172862,
+            "area": 5422,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 4840158,
+            "area": 5447,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 5129248,
+            "area": 11129,
+            "type": "Villa"
+        }
+    ],
+    "Al Reef": [
+        {
+            "bedroom": 2,
+            "price": 1288603,
+            "area": 1782,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 3,
+            "price": 1653187,
+            "area": 2364,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 2340303,
+            "area": 2841,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 2675516,
+            "area": 3534,
+            "type": "Villa"
+        }
+    ],
+    "Khalifa City": [
+        {
+            "bedroom": 2,
+            "price": 1809513,
+            "area": 1329,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 3,
+            "price": 3499039,
+            "area": 3244,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 4317939,
+            "area": 4482,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 6181059,
+            "area": 6437,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 5330620,
+            "area": 7232,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 6394621,
+            "area": 7653,
+            "type": "Villa"
+        }
+    ],
+    "Ramhan Island": [
+        {
+            "bedroom": 3,
+            "price": 8932142,
+            "area": 3007,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 9042099,
+            "area": 2924,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 14455570,
+            "area": 5084,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 14366422,
+            "area": 5312,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 22370689,
+            "area": 6877,
+            "type": "Villa"
+        }
+    ],
+    "Al Hudayriat Island": [
+        {
+            "bedroom": 3,
+            "price": 7026873,
+            "area": 4198,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 7262685,
+            "area": 4508,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 13859154,
+            "area": 7338,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 16852953,
+            "area": 10434,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 46905345,
+            "area": 22963,
+            "type": "Villa"
+        }
+    ],
+    "Al Reem Island": [
+        {
+            "bedroom": 3,
+            "price": 3828776,
+            "area": 2976,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 3895210,
+            "area": 3621,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 11965500,
+            "area": 11119,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 15180572,
+            "area": 14382,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 18277987,
+            "area": 17435,
+            "type": "Villa"
+        }
+    ],
+    "Al Raha Gardens": [
+        {
+            "bedroom": 3,
+            "price": 2352746,
+            "area": 2805,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 2809819,
+            "area": 3210,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 4198172,
+            "area": 5441,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 5500000,
+            "area": 6200,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 7,
+            "price": 4300000,
+            "area": 6220,
+            "type": "Villa"
+        }
+    ],
+    "Baniyas": [
+        {
+            "bedroom": 3,
+            "price": 3112927,
+            "area": 3070,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 3944108,
+            "area": 6270,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 4187874,
+            "area": 6943,
+            "type": "Villa"
+        }
+    ],
+    "Rabdan": [
+        {
+            "bedroom": 2,
+            "price": 2113894,
+            "area": 1852,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 3,
+            "price": 3092316,
+            "area": 2442,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 3997022,
+            "area": 3496,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 4598424,
+            "area": 3884,
+            "type": "Villa"
+        }
+    ],
+    "Al Raha Golf Gardens": [
+        {
+            "bedroom": 4,
+            "price": 4001907,
+            "area": 3900,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 5054253,
+            "area": 5288,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 6807857,
+            "area": 7217,
+            "type": "Villa"
+        }
+    ],
+    "Al Salam Street": [
+        {
+            "bedroom": 3,
+            "price": 3777335,
+            "area": 2685,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 5860860,
+            "area": 4064,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 6226573,
+            "area": 4574,
+            "type": "Villa"
+        }
+    ],
+    "Al Samha": [
+        {
+            "bedroom": 2,
+            "price": 1646782,
+            "area": 2343,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 3,
+            "price": 1630851,
+            "area": 2516,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 2803170,
+            "area": 4690,
+            "type": "Villa"
+        }
+    ],
+    "Madinat Zayed": [
+        {
+            "bedroom": 3,
+            "price": 2642353,
+            "area": 1851,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 4,
+            "price": 4566490,
+            "area": 3407,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 5,
+            "price": 7061255,
+            "area": 4593,
+            "type": "Villa"
+        },
+        {
+            "bedroom": 6,
+            "price": 8511266,
+            "area": 5533,
+            "type": "Villa"
+        }
+    ]
+}

@@ -16,92 +16,23 @@
         ],
         "Yas Park Views": [],
         "West Yas": [],
-        "Yas Park Gate": [],
-        "Yas Riva": [],
-        "Waters Edge": [],
-        "Gardenia Bay": [],
-        "Yas Golf Collection": [
-            "Residences D",
-            "Views A",
-            "Residences C",
-            "Residences E",
-            "Views B",
-            "Views F",
-            "Apartments 1",
-            "Views G",
-            "Yas Golf Collection H",
-            "Yas Golf Collection J"
-        ],
-        "Yas Bay": [
-            "Sea La Vie",
-            "Perla 3",
-            "Yas Beach Residences",
-            "Mayyas at The Bay",
-            "Perla 1",
-            "Perla 2"
-        ],
-        "The Sustainable City - Yas Island": [],
-        "Ansam": [
-            "Ansam 1",
-            "Ansam 2",
-            "Ansam 4",
-            "Ansam 3"
-        ],
-        "Mayan": [
-            "Mayan 1",
-            "Mayan 2",
-            "Mayan 4",
-            "Mayan 3",
-            "Mayan 5"
-        ],
-        "Sama Yas": [],
-        "Diva": [],
-        "Selina Bay": [],
-        "The Bay Residence By Baraka": [],
-        "Icon Tower": [],
-        "Vista Del Mar": []
+        "Yas Riva": []
     },
     "Saadiyat Island": {
         "Saadiyat Lagoons": [],
-        "Saadiyat Reserve": [],
+        "Saadiyat Reserve": [
+            "The Dunes"
+        ],
         "Saadiyat Beach": [
-            "Saadiyat Beach Residences",
-            "Saadiyat Beach Villas",
-            "St. Regis",
-            "Mediterranean Villas"
+            "Saadiyat Beach Villas"
         ],
         "HIDD Al Saadiyat": [],
-        "Jawaher Saadiyat": [],
-        "Saadiyat Cultural District": [
-            "Manarat Living",
-            "Louvre Abu Dhabi Residences",
-            "Saadiyat Grove",
-            "Mamsha Al Saadiyat",
-            "The Source II",
-            "The Source",
-            "The Arthouse",
-            "Ajwan Towers",
-            "The Source Terraces"
-        ],
-        "Nouran Living": [],
-        "Soho Square": [],
-        "Park View": [],
-        "Grove Uptown Views": [],
-        "Grove Fountain Views": [],
-        "Grove Beach Views": [],
-        "Grove Museum Views": [],
-        "Grove Gallery Views": [],
-        "Nobu Residences": [],
-        "Bloom Arjaan": [],
-        "Murjan Al Saadiyat": []
+        "Jawaher Saadiyat": []
     },
     "Al Shamkha": {
         "Fay Al Reeman II": [],
         "Fay Alreeman": [],
-        "Alreeman": [],
-        "Alreeman II": [],
-        "Reeman Living II": [],
-        "Reeman Living": []
+        "Alreeman": []
     },
     "Al Reef": {
         "Al Reef Villas": [
@@ -109,33 +40,10 @@
             "Contemporary Style",
             "Mediterranean Style",
             "Desert Style"
-        ],
-        "Al Reef Downtown": [
-            "Tower 1",
-            "Tower 3",
-            "Tower 21",
-            "Tower 12",
-            "Tower 8",
-            "Tower 39",
-            "Tower 18",
-            "Tower 11",
-            "Tower 23",
-            "Tower 22",
-            "Tower 31",
-            "Tower 37",
-            "Tower 20",
-            "Tower 9",
-            "Tower 40",
-            "Tower 13",
-            "Tower 5",
-            "Tower 32",
-            "Tower 26",
-            "Tower 2",
-            "Tower 4"
         ]
     },
     "Khalifa City": {
-        "Zayed City ": [
+        "Zayed City": [
             "Bloom Living",
             "Toledo"
         ],
@@ -150,78 +58,12 @@
     "Al Hudayriat Island": {
         "Nawayef West": [],
         "Al Naseem": [],
-        "Nawayef East": [],
-        "South Hudayriat": [],
-        "North Hudayriat": []
-    },
-    "Al Jubail Island": {
-        "Seef Al Jubail": [],
-        "Souk Al Jubail": [],
-        "Ain Al Maha": [],
-        "Bada Al Jubail": [],
-        "Nad Al Dhabi": [],
-        "Marfaa Al Jubail": []
+        "Nawayef East": []
     },
     "Al Reem Island": {
         "Najmat Abu Dhabi": [
-            "Reem Hills",
-            "Marina Bay by DAMAC",
-            "Reem Hills 2",
-            "The Wave"
-        ],
-        "Shams Abu Dhabi": [
-            "The Bridges",
-            "Sun Tower",
-            "Beach Towers",
-            "The Gate Tower 1",
-            "The Gate Tower 3",
-            "The Gate Tower 2",
-            "Reflection",
-            "Sky Tower",
-            "Mangrove Place",
-            "Oceanscape",
-            "MEERA Shams",
-            "Meera 2",
-            "Amaya Towers",
-            "Reem Nine",
-            "Meera 1",
-            "Azure",
-            "Oasis Residences",
-            "Parkside Residence",
-            "Park View",
-            "Reem Five",
-            "Marlin Towers"
-        ],
-        "Marina Square": [
-            "Tala Tower",
-            "Ocean Terrace",
-            "MAG 5",
-            "RAK Tower",
-            "Marina Blue Tower",
-            "Marina Heights 2",
-            "Burooj Views",
-            "Marina Heights",
-            "Al Maha Tower"
-        ],
-        "City Of Lights": [
-            "Hydra Avenue Towers",
-            "Radiant Boulevard",
-            "Radiant Square",
-            "Radiant Height",
-            "Radiant Viewz 1",
-            "Marina Bay",
-            "Radiant Bay",
-            "Radiant Viewz 2",
-            "Sigma Towers",
-            "Horizon Tower B"
-        ],
-        "Makers District": [
-            "Pixel"
-        ],
-        "Vista 3": [],
-        "Renad Tower": [],
-        "Julphar Residence": [],
-        "Elie Saab Waterfront": []
+            "Reem Hills"
+        ]
     },
     "Al Raha Gardens": {
         "Khannour Community": [],
@@ -229,25 +71,19 @@
         "Al Mariah Community": [],
         "Hemaim Community": [],
         "Sidra Community": [],
-        "Yasmin Community": [],
-        "Samra Community": []
+        "Yasmin Community": []
     },
-    "Ghantoot": {
-        "AlJurf": [
-            "Al Jurf Gardens"
-        ],
-        "Ohana By The Sea": []
-    },
-    "Abu Dhabi Gate City": {
-        "Mangrove Village": []
+    "Baniyas": {
+        "Baniyas East": [
+            "Bawabat Al Sharq"
+        ]
     },
     "Rabdan": {
         "Seashore": []
     },
     "Al Raha Golf Gardens": {
         "Narjis": [],
-        "Gardenia": [],
-        "Lailak": []
+        "Gardenia": []
     },
     "Al Salam Street": {
         "Bloom Gardens": [
@@ -258,95 +94,7 @@
     "Al Samha": {
         "Manazel Al Reef 2": []
     },
-    "Baniyas": {
-        "Baniyas East": [
-            "Bawabat Al Sharq"
-        ]
-    },
-    "Al Shawamekh": {
-        "Fay Alreeman 2": []
-    },
     "Madinat Zayed": {
         "Seville Bloom": []
-    },
-    "Al Mushrif": {
-        "Al Mushrif Villas": []
-    },
-    "Hydra Village": {
-        "Zone 7": [],
-        "Zone 8": [],
-        "Zone 4": []
-    },
-    "Shakhbout City": {},
-    "Madinat Al Riyad": {},
-    "Mohamed Bin Zayed City": {
-        "Mohamed Bin Zayed City Villas": []
-    },
-    "Al Maqtaa": {
-        "Hills Abu Dhabi": []
-    },
-    "Al Bateen": {
-        "Al Bateen Villas": []
-    },
-    "The Marina": {
-        "Marina Sunset Bay": [],
-        "Fairmont Marina Residences": []
-    },
-    "Al Ghadeer": {
-        "Al Ghadeer 2": [],
-        "Al Khaleej Village": [],
-        "Al Sabeel Building": [],
-        "Al Waha": [],
-        "Waterfall District": []
-    },
-    "Marina Village": {
-        "Royal Marina Villas": []
-    },
-    "Al Raha Beach": {
-        "Al Zeina": [
-            "Building A",
-            "Building C",
-            "Building D"
-        ],
-        "Al Muneera": [
-            "Al Rahba",
-            "Al Nada 1",
-            "Al Nada 2",
-            "Al Maha",
-            "Al Sana 1",
-            "Al Sana 2",
-            "Al Nada",
-            "Manarat Living"
-        ],
-        "Al Bandar": [
-            "Al Hadeel",
-            "Al Naseem Residences A",
-            "Al Barza",
-            "Al Naseem Residences C",
-            "Al Naseem Residences B"
-        ],
-        "Al Seef": [
-            "Lamar Residences"
-        ],
-        "Al Raha Lofts": [],
-        "Jamam Residence": [],
-        "The View": []
-    },
-    "Masdar City": {
-        "Royal Park": [],
-        "Oasis Residences": [
-            "Oasis 1",
-            "Oasis 2"
-        ],
-        "Plaza": [],
-        "The Gate": [],
-        "Ville 11": [],
-        "Al Mahra Residence": [],
-        "Leonardo Residences": []
-    },
-    "Al Maryah Island": {
-        "Al Maryah Vista": [],
-        "Al Maryah Vista 2": [],
-        "Four Seasons Hotel": []
     }
 }

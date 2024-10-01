@@ -16,6 +16,7 @@ const House = ({ house, data }) => {
     imageStandard,
     imageStory,
     userId,
+    mainRegion,
     email,
   } = house;
 
@@ -95,6 +96,7 @@ const House = ({ house, data }) => {
           bedrooms={bedrooms}
           area={area}
           price={price}
+          mainRegion={mainRegion}
         />
       </div>
       {isError && (
