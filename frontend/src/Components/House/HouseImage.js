@@ -128,12 +128,15 @@ const HouseImage = ({
           </IconButton>
         </div>
         <img
-          className="mx-auto rounded-lg"
+          className={`mx-auto rounded-lg ${
+            selectedImage === "story" ? "w-56" : "w-full"
+          }`}
           src={selectedImage === "standard" ? imageStandard : imageStory}
           alt="House"
           onError={handleImageError}
           onClick={handleImageClick}
         />
+
         {isIconBoxVisible && (
           <div className="absolute top-10 right-2 bg-gray-200 p-2 rounded-lg shadow-lg flex gap-2">
             <IconButton
