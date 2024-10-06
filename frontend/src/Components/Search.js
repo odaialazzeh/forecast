@@ -5,6 +5,7 @@ import PropertyDropdown from "./PropertyDropdown";
 import BedroomDropdown from "./BedroomDropdown";
 import UnitAreaDropdown from "./AreaDropdown";
 import { RiMapPinLine } from "react-icons/ri";
+import logoImage from "../Assets/logo.png";
 import locationData from "../Assets/abu_dhabi_sub_areas.json";
 import modelData from "../Assets/model_data.json";
 import averagePrice from "../Assets/average_price.json";
@@ -134,6 +135,29 @@ const Search = () => {
 
         setError(false);
         setLoading(true);
+
+        const convertImageToBase64 = (imagePath) => {
+          return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+              const reader = new FileReader();
+              reader.onloadend = function () {
+                // Strip the prefix (data:image/png;base64,)
+                const base64String = reader.result.split(",")[1];
+                resolve(base64String);
+              };
+              reader.readAsDataURL(xhr.response);
+            };
+            xhr.onerror = () => reject(xhr.statusText);
+            xhr.open("GET", imagePath);
+            xhr.responseType = "blob";
+            xhr.send();
+          });
+        };
+
+        // Convert logoImage to base64
+        const base64Logo = await convertImageToBase64(logoImage);
+
         const house = {
           userId: userInfo._id,
           type: propertyType,
@@ -145,26 +169,25 @@ const Search = () => {
           plotArea: selectedModelData.plot_area,
           price: selectedModelData.price,
           email: userInfo.email,
+          logo: base64Logo, // Include the logo image in base64 format
         };
 
-        const response = await fetch(
-          "https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              bedroom: bedrooms,
-              propertyType: propertyType,
-              area: selectedModelData.unit_area,
-              price: selectedModelData.price,
-              location: selectedLocation,
-              region: selectedRegion,
-              email: userInfo.email,
-            }),
-          }
-        );
+        const response = await fetch("http://127.0.0.1:5000/forecast", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            bedroom: bedrooms,
+            propertyType: propertyType,
+            area: selectedModelData.unit_area,
+            price: selectedModelData.price,
+            location: selectedLocation,
+            region: selectedRegion,
+            email: userInfo.email,
+            logo: base64Logo, // Include the logo image in base64 format
+          }),
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -205,7 +228,7 @@ const Search = () => {
   const handleClearInput = () => {
     setInputValue("");
     setSelectedLocation(""); // Reset location selection
-  };
+  };  
 
   return (
     <>

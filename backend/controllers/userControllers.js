@@ -106,6 +106,11 @@ const updateUser = asyncHandler(async (req, res) => {
     user.whatsapp = req.body.whatsapp || user.whatsapp;
     user.image = req.body.image || user.image;
 
+    // Update the isAdmin field if provided
+    if (req.body.isAdmin) {
+      user.isAdmin = req.body.isAdmin;
+    }
+
     // Only update the password if it's provided and not empty
     if (req.body.password && req.body.password.trim() !== "") {
       user.password = req.body.password;

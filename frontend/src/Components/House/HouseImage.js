@@ -1,21 +1,30 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { FaImage, FaMobileAlt, FaFilePdf } from "react-icons/fa"; // Import PDF icon
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useAddRecordMutation } from "../../slices/recordApiSlice";
 
 const HouseImage = ({
   imageStandard,
   imageStory,
-  handleDownload,
-  loadingAdd,
-  selectedImage, // Receive from parent
-  setSelectedImage, // Receive from parent
-  setShowPDF, // New prop to toggle PDF display
-  showPDF, // To control which button to show
+  selectedImage,
+  setSelectedImage,
+  setShowPDF,
+  showPDF,
+  bedrooms, // New prop
+  type, // New prop
+  location, // New prop
+  area, // New prop
+  plotArea, // New prop
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isIconBoxVisible, setIsIconBoxVisible] = useState(false);
+
+  const [addRecord] = useAddRecordMutation();
+
+  const userInfo = useSelector((state) => state.auth.userInfo);
 
   const handleImageError = (e) => {
     e.target.src = "https://via.placeholder.com/400";
@@ -31,22 +40,88 @@ const HouseImage = ({
 
   const handleImageSelection = (format) => {
     if (format === "pdf") {
-      setShowPDF(true); // Show PDF button when PDF is selected
-      setSelectedImage("standard"); // Switch to the standard image by default
+      setShowPDF(true);
+      setSelectedImage("standard");
     } else {
-      setSelectedImage(format); // Update the image format in the parent component
-      setShowPDF(false); // Show the Download Image button for image formats
+      setSelectedImage(format);
+      setShowPDF(false);
     }
-    setIsIconBoxVisible(false); // Close the icon box after selection
+    setIsIconBoxVisible(false);
   };
 
   const toggleIconBox = () => {
     setIsIconBoxVisible((prev) => !prev);
   };
 
+  const handleCustomDownload = async () => {
+    const bedroomText =
+      bedrooms === "studio" ? "studio" : `${bedrooms} bedroom(s)`;
+    const plotAreaText = plotArea ? `and plot area ${plotArea} sqft` : "";
+    const additionalText = `Past 18 months, Upcoming 6 months for ${bedroomText} ${type} in ${location} with Built up area ${area} sqft ${plotAreaText}`;
+
+    // Create a canvas
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+
+    // Create an image element to draw on the canvas
+    const img = new Image();
+    img.crossOrigin = "anonymous"; // Avoid CORS issues with downloading the image
+    img.src = selectedImage === "standard" ? imageStandard : imageStory;
+
+    img.onload = async () => {
+      // Set canvas dimensions to match the image
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      // Draw the image on the canvas
+      context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      // Set text properties
+      context.font = "40px Arial";
+      context.fillStyle = "black";
+      context.strokeStyle = "white";
+      context.lineWidth = 2;
+
+      // Measure the width of the text to center it
+      const textWidth = context.measureText(additionalText).width;
+      const x = (canvas.width - textWidth) / 2; // X-coordinate to center the text
+      const y = 50; // Y-coordinate for the text (near the top of the image)
+
+      // Add centered text overlay on the image
+      context.strokeText(additionalText, x, y); // Add a black stroke to the text for contrast
+      context.fillText(additionalText, x, y); // Fill the text with white color
+
+      // Convert the canvas to a data URL and trigger the download
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/jpeg");
+      link.download = "house-image.jpg"; // Name for the downloaded file
+      link.click();
+
+      // Add record mutation
+      const recordData = {
+        user: userInfo._id,
+        type,
+        location,
+        bedrooms,
+        area,
+      };
+
+      try {
+        await addRecord(recordData);
+        console.log("Record successfully added");
+      } catch (error) {
+        console.error("Error adding record:", error);
+      }
+    };
+
+    img.onerror = () => {
+      console.error("Failed to load image for download.");
+    };
+  };
+
   return (
     <>
-      <div className="relative flex justify-center cursor-pointer h-72 mb-8 ">
+      <div className="relative flex justify-center cursor-pointer h-72 mb-8">
         <div className="absolute top-0 -right-4">
           <IconButton onClick={toggleIconBox}>
             <BsThreeDotsVertical className="text-black" />
@@ -91,10 +166,10 @@ const HouseImage = ({
           ""
         ) : (
           <button
-            onClick={handleDownload}
+            onClick={handleCustomDownload}
             className="bg-primary text-white py-2 px-4 shadow-sm rounded-lg hover:bg-secondary transition"
           >
-            {loadingAdd ? "Processing..." : "Download Image"}
+            Download Image
           </button>
         )}
       </div>

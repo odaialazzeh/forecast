@@ -5,13 +5,9 @@ import HouseImage from "./HouseImage";
 import HouseDetails from "./HouseDetails";
 import HouseForecastTable from "./HouseForecastTable";
 import GeneratePDFComponent from "../../utils/GeneratePDFComponent";
-import { useAddRecordMutation } from "../../slices/recordApiSlice";
 import { useGetUserQuery } from "../../slices/usersApiSlice";
 
 const House = ({ house = {}, data = [] }) => {
-  // Add default empty object for house and data
-
-  // Destructure the house properties, but ensure house is not undefined
   const {
     type,
     location,
@@ -22,7 +18,6 @@ const House = ({ house = {}, data = [] }) => {
     region,
     imageStandard,
     imageStory,
-    userId,
     mainRegion,
     email,
   } = house || {}; // Fallback to an empty object if house is undefined
@@ -35,53 +30,10 @@ const House = ({ house = {}, data = [] }) => {
   const [imageLoading, setImageLoading] = useState(false);
   const [showPDF, setShowPDF] = useState(false); // New state to show the PDF option
 
-  const [addRecord, { isLoading: loadingAdd, isError, error }] =
-    useAddRecordMutation();
-
   const userInfo = useSelector((state) => state.auth.userInfo);
   const { data: user } = useGetUserQuery(userInfo?._id, {
     skip: !userInfo?._id,
   });
-
-  const handleDownload = async () => {
-    try {
-      const recordData = {
-        user: userId,
-        type,
-        location,
-        bedrooms,
-        area,
-        price,
-      };
-      await addRecord(recordData);
-
-      const link = document.createElement("a");
-
-      let imageToDownload;
-      let filename;
-
-      // Use the selected image from state
-      if (selectedImage === "standard") {
-        imageToDownload = updatedImages.imageStandard || imageStandard;
-        filename = updatedImages.imageStandard
-          ? "house_updated_image_standard.jpg"
-          : "house_standard_image.jpg";
-      } else if (selectedImage === "story") {
-        imageToDownload = updatedImages.imageStory || imageStory;
-        filename = updatedImages.imageStory
-          ? "house_updated_image_story.jpg"
-          : "house_story_image.jpg";
-      }
-
-      link.href = imageToDownload;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error("Error adding record:", error);
-    }
-  };
 
   return (
     <div>
@@ -95,13 +47,16 @@ const House = ({ house = {}, data = [] }) => {
             <HouseImage
               imageStandard={updatedImages.imageStandard || imageStandard}
               imageStory={updatedImages.imageStory || imageStory}
-              handleDownload={handleDownload}
-              loadingAdd={loadingAdd}
               selectedImage={selectedImage} // Pass selectedImage as a prop
               setSelectedImage={setSelectedImage} // Pass setSelectedImage to update it
               imageLoading={imageLoading}
               showPDF={showPDF} // Pass showPDF state to control button display
               setShowPDF={setShowPDF} // Pass function to toggle PDF view
+              type={type}
+              location={location}
+              bedrooms={bedrooms}
+              area={area}
+              plotArea={plotArea}
             />
             {showPDF && (
               <GeneratePDFComponent
@@ -110,6 +65,11 @@ const House = ({ house = {}, data = [] }) => {
                 updatedImages={updatedImages}
                 imageStandard={imageStandard}
                 imageStory={imageStory}
+                type={type}
+                location={location}
+                bedrooms={bedrooms}
+                area={area}
+                plotArea={plotArea}
                 email={email}
               />
             )}
@@ -128,9 +88,7 @@ const House = ({ house = {}, data = [] }) => {
           unitArea={area}
         />
       </div>
-      {isError && (
-        <div className="text-primary">Error adding record: {error.message}</div>
-      )}
+
       <HouseForecastTable
         data={data}
         housedata={house}

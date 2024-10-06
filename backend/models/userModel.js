@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
-import validator from "validator";
+import Record from "./recordModel.js"; // Import Record model
 
 const userSchema = mongoose.Schema(
   {
@@ -16,10 +16,6 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
       unique: true,
-      validate: {
-        validator: (value) => validator.isEmail(value),
-        message: "Invalid email address.",
-      },
     },
     password: {
       type: String,
@@ -60,6 +56,16 @@ userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
+
+// Middleware to delete all records associated with the user when user is deleted
+userSchema.pre(
+  "deleteOne",
+  { document: true, query: false },
+  async function (next) {
+    await Record.deleteMany({ user: this._id }); // Delete all records linked to the user
+    next();
+  }
+);
 
 const User = mongoose.model("User", userSchema);
 

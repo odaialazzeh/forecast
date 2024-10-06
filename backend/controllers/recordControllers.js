@@ -2,7 +2,7 @@ import asyncHandler from "express-async-handler";
 import Record from "../models/recordModel.js";
 
 const addRecord = asyncHandler(async (req, res) => {
-  const { user, location, type, bedrooms, area, price } = req.body;
+  const { user, location, type, bedrooms, area } = req.body;
 
   // Set the initial count to 1
   let count = 1;
@@ -14,7 +14,6 @@ const addRecord = asyncHandler(async (req, res) => {
     type,
     bedrooms,
     area,
-    price,
   });
 
   if (recordExists) {
@@ -34,7 +33,6 @@ const addRecord = asyncHandler(async (req, res) => {
       type,
       bedrooms,
       area,
-      price,
     });
 
     res.status(201).json({
@@ -87,7 +85,6 @@ const updateRecord = asyncHandler(async (req, res) => {
     record.type = req.body.type || record.type;
     record.bedrooms = req.body.bedrooms || record.bedrooms;
     record.area = req.body.area || record.area;
-    record.price = req.body.price || record.price;
 
     const updatedRecord = await record.save();
 
@@ -99,7 +96,6 @@ const updateRecord = asyncHandler(async (req, res) => {
       type: updatedRecord.type,
       bedrooms: updatedRecord.bedrooms,
       area: updatedRecord.area,
-      price: updatedRecord.price,
       message: "Record updated successfully",
     });
   } else {
