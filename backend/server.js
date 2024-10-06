@@ -53,11 +53,12 @@ app.use(
         defaultSrc: ["'self'"],
         connectSrc: [
           "'self'",
-          "https://forecastmetro-app-uxtiu.ondigitalocean.app",
-        ], // Allow API calls to external service
-        scriptSrc: ["'self'", "https://trusted-scripts.com"], // Example for other sources like scripts
-        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"], // Allow Google Fonts CSS
+          "https://forecastmetro-app-uxtiu.ondigitalocean.app", // External API
+        ],
+        scriptSrc: ["'self'", "https://trusted-scripts.com"], // Example for script sources
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"], // Allow Google Fonts
         fontSrc: ["'self'", "https://fonts.gstatic.com"], // Allow Google Fonts
+        imgSrc: ["'self'", "data:"], // Allow inline Base64 images
         // Add other CSP directives as needed
       },
     },
