@@ -91,32 +91,30 @@ const House = ({ house = {}, data = [] }) => {
             <CircularProgress />
           </div>
         ) : (
-          <HouseImage
-            imageStandard={updatedImages.imageStandard || imageStandard}
-            imageStory={updatedImages.imageStory || imageStory}
-            handleDownload={handleDownload}
-            loadingAdd={loadingAdd}
-            selectedImage={selectedImage} // Pass selectedImage as a prop
-            setSelectedImage={setSelectedImage} // Pass setSelectedImage to update it
-            imageLoading={imageLoading}
-            showPDF={showPDF} // Pass showPDF state to control button display
-            setShowPDF={setShowPDF} // Pass function to toggle PDF view
-          />
-        )}
-
-        {/* Conditionally render the Generate PDF button */}
-        <div className="ml-52">
-          {showPDF && (
-            <GeneratePDFComponent
-              user={user}
-              selectedImage={selectedImage}
-              updatedImages={updatedImages}
-              imageStandard={imageStandard}
-              imageStory={imageStory}
-              email={email}
+          <div className="flex flex-col justify-center items-center mb-6">
+            <HouseImage
+              imageStandard={updatedImages.imageStandard || imageStandard}
+              imageStory={updatedImages.imageStory || imageStory}
+              handleDownload={handleDownload}
+              loadingAdd={loadingAdd}
+              selectedImage={selectedImage} // Pass selectedImage as a prop
+              setSelectedImage={setSelectedImage} // Pass setSelectedImage to update it
+              imageLoading={imageLoading}
+              showPDF={showPDF} // Pass showPDF state to control button display
+              setShowPDF={setShowPDF} // Pass function to toggle PDF view
             />
-          )}
-        </div>
+            {showPDF && (
+              <GeneratePDFComponent
+                user={user}
+                selectedImage={selectedImage}
+                updatedImages={updatedImages}
+                imageStandard={imageStandard}
+                imageStory={imageStory}
+                email={email}
+              />
+            )}
+          </div>
+        )}
 
         <HouseDetails
           type={type}
@@ -131,7 +129,7 @@ const House = ({ house = {}, data = [] }) => {
         />
       </div>
       {isError && (
-        <div className="text-red-500">Error adding record: {error.message}</div>
+        <div className="text-primary">Error adding record: {error.message}</div>
       )}
       <HouseForecastTable
         data={data}

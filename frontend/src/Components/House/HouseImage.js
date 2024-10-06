@@ -88,7 +88,7 @@ const HouseImage = ({
       </div>
       <div className="text-center mb-4">
         {showPDF ? (
-          <></>
+          ""
         ) : (
           <button
             onClick={handleDownload}

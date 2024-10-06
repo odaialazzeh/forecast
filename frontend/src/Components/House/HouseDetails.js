@@ -19,7 +19,7 @@ const HouseDetails = ({
       <div className="text-lg font-semibold text-secondary max-w-[400px]">
         {location}, {region}, {mainRegion}
       </div>
-      <div className="flex gap-x-4 my-4">
+      <div className="flex flex-wrap gap-x-4 gap-y-2 my-4">
         <div className="flex items-center text-secondary gap-1">
           <div className="text-[20px]">
             <BiBed />

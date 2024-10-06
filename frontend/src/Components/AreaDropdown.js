@@ -41,7 +41,7 @@ const UnitAreaDropdown = ({ unitAreas = [], onChange }) => {
         <div className="flex items-center">
           {unitArea !== "Select Area" && (
             <RiCloseLine
-              className="text-red-500 ml-2 cursor-pointer"
+              className="text-primary ml-2 cursor-pointer"
               onClick={resetUnitArea} // Reset the unit area
             />
           )}

@@ -202,60 +202,79 @@ const Search = () => {
     setModel(transformedData);
   }, []);
 
+  const handleClearInput = () => {
+    setInputValue("");
+    setSelectedLocation(""); // Reset location selection
+  };
+
   return (
     <>
-      <div className="relative px-[30px] py-6 -mb-4 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 lg:shadow-1 bg-white rounded-lg">
-        <div className="relative w-full z-50">
-          <input
-            type="search"
-            className="dropdown-btn w-full text-left flex items-center justify-between"
-            id="exampleSearch"
-            value={inputValue}
-            onChange={handleInputChange}
-            placeholder="Search For Location"
-          />
-          {suggestions.length > 0 && (
-            <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg max-h-60 overflow-y-auto">
-              {suggestions.map((suggestion, index) => (
-                <li
-                  key={index}
-                  onClick={() =>
-                    handleLocationSelect(
-                      suggestion.name,
-                      suggestion.path,
-                      suggestion.mainRegion
-                    )
-                  }
-                  className="cursor-pointer hover:bg-gray-200 px-3 py-2 flex items-start gap-2"
+      <div className="relative px-[30px] py-6 -mb-4 max-w-[1170px] mx-auto flex flex-col lg:flex-col justify-between gap-4 lg:gap-x-3 lg:shadow-1 bg-white rounded-lg">
+        <div className=" w-full max-w-[1170px]">
+          <div className="w-full z-50">
+            <div className="relative flex flex-row items-center justify-center gap-0 w-full">
+              <input
+                type="text"
+                className="dropdown-btn w-full text-left flex items-center justify-between pr-8" // Add padding-right to avoid overlap with the 'x' button
+                id="exampleSearch"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="Search For Location"
+              />
+              {selectedLocation && (
+                <button
+                  type="button"
+                  onClick={handleClearInput}
+                  className="absolute top-[22px] right-[3.2rem] text-primary text-[0.8rem] font-bold"
                 >
-                  <div className="flex flex-row gap-3 justify-center items-center">
-                    <RiMapPinLine className="text-gray-400 text-xl" />
-                    <div>
-                      <div className="text-base">{suggestion.name}</div>
-                      <div className="text-sm text-gray-500">
-                        {suggestion.fullPath}
+                  ✕
+                </button>
+              )}
+            </div>
+            {suggestions.length > 0 && (
+              <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg max-h-60 overflow-y-auto">
+                {suggestions.map((suggestion, index) => (
+                  <li
+                    key={index}
+                    onClick={() =>
+                      handleLocationSelect(
+                        suggestion.name,
+                        suggestion.path,
+                        suggestion.mainRegion
+                      )
+                    }
+                    className="cursor-pointer hover:bg-gray-200 px-3 py-2 flex items-start gap-2"
+                  >
+                    <div className="flex flex-row gap-3 justify-center items-center">
+                      <RiMapPinLine className="text-gray-400 text-xl" />
+                      <div>
+                        <div className="text-base">{suggestion.name}</div>
+                        <div className="text-sm text-gray-500">
+                          {suggestion.fullPath}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
 
-        <PropertyDropdown onChange={setPropertyType} />
-        <BedroomDropdown onChange={setBedrooms} />
-        <UnitAreaDropdown
-          unitAreas={availableUnitAreas}
-          onChange={(selectedUnitArea) => setUnitArea(selectedUnitArea)}
-        />
-
-        <button
-          onClick={handleSearch}
-          className="bg-primary hover:bg-secondary transition w-full lg:max-w-[162px] h-16 rounded-lg flex justify-center items-center text-white text-lg"
-        >
-          Get Forecast
-        </button>
+        <div className="max-w-[1170px] w-full  flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 bg-white rounded-lg">
+          <PropertyDropdown onChange={setPropertyType} />
+          <BedroomDropdown onChange={setBedrooms} />
+          <UnitAreaDropdown
+            unitAreas={availableUnitAreas}
+            onChange={(selectedUnitArea) => setUnitArea(selectedUnitArea)}
+          />
+          <button
+            onClick={handleSearch}
+            className="bg-primary hover:bg-secondary transition w-full lg:max-w-[162px] h-16 rounded-lg flex justify-center items-center text-white text-lg"
+          >
+            Get Forecast
+          </button>
+        </div>
       </div>
       {loading ? (
         <div className="flex justify-center items-center w-full h-[400px]">

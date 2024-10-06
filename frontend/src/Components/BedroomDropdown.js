@@ -47,7 +47,7 @@ const BedroomDropdown = ({ onChange }) => {
         <div className="flex items-center">
           {bedroom !== "Select Bedroom" && (
             <RiCloseLine
-              className="text-red-500 ml-2 cursor-pointer"
+              className="text-primary ml-2 cursor-pointer"
               onClick={resetBedroom} // Reset the bedroom selection
             />
           )}
