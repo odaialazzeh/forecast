@@ -172,7 +172,7 @@ const Search = () => {
           logo: base64Logo, // Include the logo image in base64 format
         };
 
-        const response = await fetch("http://127.0.0.1:5000/forecast", {
+        const response = await fetch("https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
