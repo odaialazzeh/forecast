@@ -642,17 +642,20 @@
             "3 Bedrooms": [
                 {
                     "price": 4550000,
-                    "unit_area": 3045
+                    "unit_area": 3045,
+                    "plot_area": 0
                 }
             ],
             "4 Bedrooms": [
                 {
                     "price": 5375000,
-                    "unit_area": 3389
+                    "unit_area": 3389,
+                    "plot_area": 0
                 },
                 {
                     "price": 5775000,
-                    "unit_area": 3600
+                    "unit_area": 3600,
+                    "plot_area": 0
                 }
             ]
         },
@@ -660,21 +663,25 @@
             "3 Bedrooms": [
                 {
                     "price": 4200000,
-                    "unit_area": 3044
+                    "unit_area": 3044,
+                    "plot_area": 0
                 },
                 {
                     "price": 4500000,
-                    "unit_area": 3147
+                    "unit_area": 3147,
+                    "plot_area": 0
                 }
             ],
             "4 Bedrooms": [
                 {
                     "price": 5500000,
-                    "unit_area": 3389
+                    "unit_area": 3389,
+                    "plot_area": 0
                 },
                 {
                     "price": 5600000,
-                    "unit_area": 3600
+                    "unit_area": 3600,
+                    "plot_area": 0
                 }
             ]
         },
@@ -682,7 +689,8 @@
             "4 Bedrooms": [
                 {
                     "price": 6300000,
-                    "unit_area": 3819
+                    "unit_area": 3819,
+                    "plot_area": 0
                 }
             ]
         },
@@ -690,7 +698,8 @@
             "3 Bedrooms": [
                 {
                     "price": 4800000,
-                    "unit_area": 4197
+                    "unit_area": 4197,
+                    "plot_area": 0
                 }
             ]
         },
@@ -698,7 +707,8 @@
             "4 Bedrooms": [
                 {
                     "price": 6750000,
-                    "unit_area": 4900
+                    "unit_area": 4900,
+                    "plot_area": 0
                 }
             ]
         }
@@ -708,23 +718,27 @@
             "1 Bedrooms": [
                 {
                     "price": 1053285,
-                    "unit_area": 720
+                    "unit_area": 720,
+                    "plot_area": 0
                 },
                 {
                     "price": 1095000,
-                    "unit_area": 812
+                    "unit_area": 812,
+                    "plot_area": 0
                 }
             ],
             "2 Bedrooms": [
                 {
                     "price": 1500000,
-                    "unit_area": 1099
+                    "unit_area": 1099,
+                    "plot_area": 0
                 }
             ],
             "3 Bedrooms": [
                 {
                     "price": 2230000,
-                    "unit_area": 1555
+                    "unit_area": 1555,
+                    "plot_area": 0
                 }
             ]
         }
