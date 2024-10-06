@@ -23,6 +23,7 @@ connectDB();
 // Route files
 import users from "./routes/userRoutes.js";
 import record from "./routes/recordRoutes.js";
+import upload from "./routes/uploadRoutes.js";
 
 const app = express();
 
@@ -50,7 +51,10 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        connectSrc: ["'self'", "https://forecastmetro-app-uxtiu.ondigitalocean.app"], // Allow API calls to external service
+        connectSrc: [
+          "'self'",
+          "https://forecastmetro-app-uxtiu.ondigitalocean.app",
+        ], // Allow API calls to external service
         scriptSrc: ["'self'", "https://trusted-scripts.com"], // Example for other sources like scripts
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"], // Allow Google Fonts CSS
         fontSrc: ["'self'", "https://fonts.gstatic.com"], // Allow Google Fonts
@@ -59,7 +63,6 @@ app.use(
     },
   })
 );
-
 
 // Prevent XSS attacks
 app.use(xss());
@@ -84,6 +87,11 @@ app.use(cors(corsOptions));
 // Mount routers
 app.use("/api/v1/users", users);
 app.use("/api/v1/record", record);
+app.use("/api/v1", upload);
+
+// Serve static files from the uploads folder
+const __dirname = path.resolve(); // Ensure __dirname is available
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 // Error Handler Middleware
 app.use(errorHandler);

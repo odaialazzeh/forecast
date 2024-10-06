@@ -5,7 +5,7 @@ import {
   RiArrowUpSLine,
   RiCloseLine,
 } from "react-icons/ri";
-import { Menu } from "@headlessui/react";
+import { Menu, MenuItem, MenuButton, MenuItems } from "@headlessui/react";
 
 const BedroomDropdown = ({ onChange }) => {
   const [bedroom, setBedroom] = useState("Select Bedroom");
@@ -17,13 +17,25 @@ const BedroomDropdown = ({ onChange }) => {
   const handleBedroomSelect = (option) => {
     setBedroom(option);
     onChange(option); // Notify parent of selected value
-    setIsOpen(false);
+    setIsOpen(false); // Close the dropdown after selection
+  };
+
+  // Function to toggle the dropdown open/close
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  // Function to reset the bedroom selection
+  const resetBedroom = (e) => {
+    e.stopPropagation(); // Prevent dropdown from closing
+    setBedroom("Select Bedroom");
+    onChange(""); // Notify parent of reset value
   };
 
   return (
     <Menu as="div" className="dropdown relative">
-      <Menu.Button
-        onClick={() => setIsOpen(!isOpen)}
+      <MenuButton
+        onClick={toggleDropdown} // Toggle the dropdown open/close
         className="dropdown-btn w-full text-left flex items-center justify-between"
       >
         <div className="flex items-center">
@@ -36,11 +48,7 @@ const BedroomDropdown = ({ onChange }) => {
           {bedroom !== "Select Bedroom" && (
             <RiCloseLine
               className="text-red-500 ml-2 cursor-pointer"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent dropdown from closing
-                setBedroom("Select Bedroom");
-                onChange(""); // Notify parent of reset value
-              }}
+              onClick={resetBedroom} // Reset the bedroom selection
             />
           )}
           {isOpen ? (
@@ -49,22 +57,22 @@ const BedroomDropdown = ({ onChange }) => {
             <RiArrowDownSLine className="dropdown-icon-secondary ml-2" />
           )}
         </div>
-      </Menu.Button>
+      </MenuButton>
       {isOpen && (
-        <Menu.Items className="dropdown-menu mt-2 p-4">
-          <div className="flex flex-wrap gap-1 justify-start ">
+        <MenuItems className="dropdown-menu mt-2 p-4">
+          <div className="flex flex-wrap gap-1 justify-start">
             {bedrooms.map((option, index) => (
-              <Menu.Item
+              <MenuItem
                 as="div"
                 key={index}
                 className="cursor-pointer hover:bg-primary text-center text-white bg-gray-500 transition px-4 py-2 w-14 h-10 flex items-center justify-center rounded-lg"
                 onClick={() => handleBedroomSelect(option)}
               >
                 {option}
-              </Menu.Item>
+              </MenuItem>
             ))}
           </div>
-        </Menu.Items>
+        </MenuItems>
       )}
     </Menu>
   );

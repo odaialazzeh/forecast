@@ -505,7 +505,17 @@
         {
             "name": "Noya 1",
             "bedroom": 2,
+            "type": "Townhouse"
+        },
+        {
+            "name": "Noya 1",
+            "bedroom": 2,
             "type": "Villa"
+        },
+        {
+            "name": "Noya 1",
+            "bedroom": 3,
+            "type": "Townhouse"
         },
         {
             "name": "Noya 1",
@@ -530,11 +540,6 @@
         {
             "name": "Noya 2",
             "bedroom": 4,
-            "type": "Villa"
-        },
-        {
-            "name": "Noya Luma",
-            "bedroom": 2,
             "type": "Villa"
         },
         {
@@ -554,8 +559,23 @@
         },
         {
             "name": "Noya Viva",
+            "bedroom": 2,
+            "type": "Townhouse"
+        },
+        {
+            "name": "Noya Viva",
+            "bedroom": 3,
+            "type": "Townhouse"
+        },
+        {
+            "name": "Noya Viva",
             "bedroom": 3,
             "type": "Villa"
+        },
+        {
+            "name": "Noya Viva",
+            "bedroom": 4,
+            "type": "Townhouse"
         },
         {
             "name": "Noya Viva",
@@ -685,7 +705,7 @@
             "type": "Villa"
         }
     ],
-    "Sidra Community_model": [
+    "Sidra Community _model": [
         {
             "name": "Sidra Community",
             "bedroom": 3,
@@ -703,6 +723,31 @@
         }
     ],
     "The Sustainable City_model": [
+        {
+            "name": "The Sustainable City",
+            "bedroom": 1,
+            "type": "Apartment"
+        },
+        {
+            "name": "The Sustainable City",
+            "bedroom": 2,
+            "type": "Apartment"
+        },
+        {
+            "name": "The Sustainable City",
+            "bedroom": 3,
+            "type": "Apartment"
+        },
+        {
+            "name": "The Sustainable City",
+            "bedroom": 3,
+            "type": "Townhouse"
+        },
+        {
+            "name": "The Sustainable City",
+            "bedroom": 4,
+            "type": "Townhouse"
+        },
         {
             "name": "The Sustainable City",
             "bedroom": 4,
@@ -735,7 +780,22 @@
         {
             "name": "Aspens",
             "bedroom": 3,
+            "type": "Townhouse"
+        },
+        {
+            "name": "Aspens",
+            "bedroom": 3,
             "type": "Villa"
+        },
+        {
+            "name": "Aspens",
+            "bedroom": 4,
+            "type": "Duplexe"
+        },
+        {
+            "name": "Aspens",
+            "bedroom": 4,
+            "type": "Townhouse"
         },
         {
             "name": "Aspens",
@@ -760,7 +820,22 @@
         {
             "name": "Redwoods",
             "bedroom": 3,
+            "type": "Townhouse"
+        },
+        {
+            "name": "Redwoods",
+            "bedroom": 3,
             "type": "Villa"
+        },
+        {
+            "name": "Redwoods",
+            "bedroom": 4,
+            "type": "Duplexe"
+        },
+        {
+            "name": "Redwoods",
+            "bedroom": 4,
+            "type": "Townhouse"
         },
         {
             "name": "Redwoods",
@@ -770,7 +845,22 @@
         {
             "name": "The Cedars",
             "bedroom": 2,
+            "type": "Townhouse"
+        },
+        {
+            "name": "The Cedars",
+            "bedroom": 2,
             "type": "Villa"
+        },
+        {
+            "name": "The Cedars",
+            "bedroom": 3,
+            "type": "Duplexe"
+        },
+        {
+            "name": "The Cedars",
+            "bedroom": 3,
+            "type": "Townhouse"
         },
         {
             "name": "The Cedars",
@@ -780,7 +870,17 @@
         {
             "name": "The Cedars",
             "bedroom": 4,
+            "type": "Townhouse"
+        },
+        {
+            "name": "The Cedars",
+            "bedroom": 4,
             "type": "Villa"
+        },
+        {
+            "name": "The Dahlias",
+            "bedroom": 2,
+            "type": "Townhouse"
         },
         {
             "name": "The Dahlias",
@@ -790,7 +890,27 @@
         {
             "name": "The Dahlias",
             "bedroom": 3,
+            "type": "Duplexe"
+        },
+        {
+            "name": "The Dahlias",
+            "bedroom": 3,
+            "type": "Townhouse"
+        },
+        {
+            "name": "The Dahlias",
+            "bedroom": 3,
             "type": "Villa"
+        },
+        {
+            "name": "The Dahlias",
+            "bedroom": 4,
+            "type": "Duplexe"
+        },
+        {
+            "name": "The Dahlias",
+            "bedroom": 4,
+            "type": "Townhouse"
         },
         {
             "name": "The Dahlias",
@@ -810,12 +930,37 @@
         {
             "name": "The Magnolias",
             "bedroom": 2,
+            "type": "Townhouse"
+        },
+        {
+            "name": "The Magnolias",
+            "bedroom": 2,
             "type": "Villa"
         },
         {
             "name": "The Magnolias",
             "bedroom": 3,
+            "type": "Duplexe"
+        },
+        {
+            "name": "The Magnolias",
+            "bedroom": 3,
+            "type": "Townhouse"
+        },
+        {
+            "name": "The Magnolias",
+            "bedroom": 3,
             "type": "Villa"
+        },
+        {
+            "name": "The Magnolias",
+            "bedroom": 4,
+            "type": "Duplexe"
+        },
+        {
+            "name": "The Magnolias",
+            "bedroom": 4,
+            "type": "Townhouse"
         },
         {
             "name": "The Magnolias",
@@ -830,6 +975,28 @@
         {
             "name": "The Magnolias",
             "bedroom": 6,
+            "type": "Villa"
+        }
+    ],
+    "Yas Park Gate_model": [
+        {
+            "name": "Yas Park Gate",
+            "bedroom": 2,
+            "type": "Townhouse"
+        },
+        {
+            "name": "Yas Park Gate",
+            "bedroom": 3,
+            "type": "Townhouse"
+        },
+        {
+            "name": "Yas Park Gate",
+            "bedroom": 3,
+            "type": "Villa"
+        },
+        {
+            "name": "Yas Park Gate",
+            "bedroom": 4,
             "type": "Villa"
         }
     ],
@@ -847,18 +1014,6 @@
         {
             "name": "Yas Park Views",
             "bedroom": 5,
-            "type": "Villa"
-        }
-    ],
-    "Yas Park Gate_model": [
-        {
-            "name": "Yas Park Gate",
-            "bedroom": 3,
-            "type": "Villa"
-        },
-        {
-            "name": "Yas Park Gate",
-            "bedroom": 4,
             "type": "Villa"
         }
     ],

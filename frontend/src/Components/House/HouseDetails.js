@@ -1,7 +1,15 @@
 import React from "react";
-import { BiBed } from "react-icons/bi";
+import { BiBed, BiArea } from "react-icons/bi";
 
-const HouseDetails = ({ type, location, region, bedrooms, mainRegion}) => {
+const HouseDetails = ({
+  type,
+  location,
+  region,
+  bedrooms,
+  mainRegion,
+  unitArea,
+  plotArea,
+}) => {
   return (
     <div>
       <div className="mb-4 flex gap-x-2 text-sm">
@@ -17,6 +25,26 @@ const HouseDetails = ({ type, location, region, bedrooms, mainRegion}) => {
             <BiBed />
           </div>
           <div>{bedrooms}</div>
+        </div>
+        <span className=" text-secondary">|</span>
+        <div className="flex items-center text-secondary gap-1">
+          <div className="text-[20px]">
+            <BiArea />
+          </div>
+          <span className="text-[15px]">Built Up : </span>
+          <div>{unitArea} sqft</div>
+        </div>
+        <span className=" text-secondary">|</span>
+        <div className="flex items-center text-secondary gap-1">
+          <div className="text-[20px]">
+            <BiArea />
+          </div>
+          <span className="text-[15px]">Plot : </span>
+          {plotArea ? (
+            <div>{plotArea} sqft</div>
+          ) : (
+            <span className=" text-secondary">Na</span>
+          )}
         </div>
       </div>
     </div>

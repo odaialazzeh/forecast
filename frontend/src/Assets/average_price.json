@@ -1,440 +1,732 @@
 {
-    "Yas Island": [
-        {
-            "bedroom": 2,
-            "price": 2959422,
-            "area": 1753,
-            "type": "Villa"
+    "Villa": {
+        "Noya Luma": {
+            "3 Bedrooms": [
+                {
+                    "price": 3399995,
+                    "unit_area": 2022,
+                    "plot_area": 3972
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3900000,
+                    "unit_area": 2446,
+                    "plot_area": 3918
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 4600000,
+                    "unit_area": 3108,
+                    "plot_area": 4402
+                }
+            ]
         },
-        {
-            "bedroom": 3,
-            "price": 4854110,
-            "area": 3669,
-            "type": "Villa"
+        "Noya Viva": {
+            "3 Bedrooms": [
+                {
+                    "price": 3000000,
+                    "unit_area": 1792,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3999995,
+                    "unit_area": 2255,
+                    "plot_area": 3530
+                }
+            ]
         },
-        {
-            "bedroom": 4,
-            "price": 4647055,
-            "area": 3411,
-            "type": "Villa"
+        "Noya 1": {
+            "3 Bedrooms": [
+                {
+                    "price": 2735000,
+                    "unit_area": 1816,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3900000,
+                    "unit_area": 2255,
+                    "plot_area": 3495
+                }
+            ]
         },
-        {
-            "bedroom": 5,
-            "price": 7709939,
-            "area": 5229,
-            "type": "Villa"
+        "The Magnolias": {
+            "2 Bedrooms": [
+                {
+                    "price": 3300000,
+                    "unit_area": 2228,
+                    "plot_area": 2422
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4099500,
+                    "unit_area": 2825,
+                    "plot_area": 3240
+                },
+                {
+                    "price": 4450000,
+                    "unit_area": 3045,
+                    "plot_area": 4200
+                },
+                {
+                    "price": 4500000,
+                    "unit_area": 3148,
+                    "plot_area": 4327
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4650000,
+                    "unit_area": 3195,
+                    "plot_area": 4380
+                },
+                {
+                    "price": 5300000,
+                    "unit_area": 3390,
+                    "plot_area": 5726
+                },
+                {
+                    "price": 6450000,
+                    "unit_area": 4896,
+                    "plot_area": 6756
+                },
+                {
+                    "price": 6550000,
+                    "unit_area": 5113,
+                    "plot_area": 6878
+                },
+                {
+                    "price": 8000000,
+                    "unit_area": 5554,
+                    "plot_area": 7373
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 10200000,
+                    "unit_area": 7211,
+                    "plot_area": 12034
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 15000000,
+                    "unit_area": 8593,
+                    "plot_area": 13477
+                }
+            ]
         },
-        {
-            "bedroom": 6,
-            "price": 10781998,
-            "area": 8266,
-            "type": "Villa"
+        "The Dahlias": {
+            "2 Bedrooms": [
+                {
+                    "price": 3300000,
+                    "unit_area": 2228,
+                    "plot_area": 2422
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4200000,
+                    "unit_area": 3045,
+                    "plot_area": 4200
+                },
+                {
+                    "price": 4600000,
+                    "unit_area": 3148,
+                    "plot_area": 4327
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5500000,
+                    "unit_area": 3390,
+                    "plot_area": 5040
+                },
+                {
+                    "price": 5599999,
+                    "unit_area": 3600,
+                    "plot_area": 4843
+                },
+                {
+                    "price": 6450000,
+                    "unit_area": 4896,
+                    "plot_area": 6756
+                },
+                {
+                    "price": 7100000,
+                    "unit_area": 5113,
+                    "plot_area": 7112
+                },
+                {
+                    "price": 8500000,
+                    "unit_area": 5559,
+                    "plot_area": 7567
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 11000000,
+                    "unit_area": 7211,
+                    "plot_area": 12034
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 12600000,
+                    "unit_area": 8593,
+                    "plot_area": 13477
+                }
+            ]
         },
-        {
-            "bedroom": 7,
-            "price": 13139625,
-            "area": 10714,
-            "type": "Villa"
+        "Yas Park Gate": {
+            "3 Bedrooms": [
+                {
+                    "price": 2632100,
+                    "unit_area": 1754,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3800000,
+                    "unit_area": 2505,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5599999,
+                    "unit_area": 3600,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 4535000,
+                    "unit_area": 3185,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Yas Park Views": {
+            "3 Bedrooms": [
+                {
+                    "price": 3499999,
+                    "unit_area": 2072,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3965447,
+                    "unit_area": 2504,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3999450,
+                    "unit_area": 3744,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 4699999,
+                    "unit_area": 3186,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "West Yas": {
+            "4 Bedrooms": [
+                {
+                    "price": 6200000,
+                    "unit_area": 4882,
+                    "plot_area": 6450
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 7000000,
+                    "unit_area": 5672,
+                    "plot_area": 7323
+                },
+                {
+                    "price": 6800000,
+                    "unit_area": 5822,
+                    "plot_area": 7301
+                },
+                {
+                    "price": 6500000,
+                    "unit_area": 6854,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6799999,
+                    "unit_area": 6930,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7400000,
+                    "unit_area": 7120,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Aspens": {
+            "3 Bedrooms": [
+                {
+                    "price": 5250000,
+                    "unit_area": 3372,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 6500000,
+                    "unit_area": 4971,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7800000,
+                    "unit_area": 6578,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9000000,
+                    "unit_area": 6700,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 13800000,
+                    "unit_area": 6135,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Cedars": {
+            "2 Bedrooms": [
+                {
+                    "price": 3700000,
+                    "unit_area": 2331,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4695000,
+                    "unit_area": 3230,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 6200000,
+                    "unit_area": 4682,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9000000,
+                    "unit_area": 6700,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Redwoods": {
+            "3 Bedrooms": [
+                {
+                    "price": 5150000,
+                    "unit_area": 3231,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 6750000,
+                    "unit_area": 3737,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8000000,
+                    "unit_area": 4811,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8500000,
+                    "unit_area": 4900,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8500000,
+                    "unit_area": 6566,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11000000,
+                    "unit_area": 7259,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Sustainable City": {
+            "4 Bedrooms": [
+                {
+                    "price": 4150000,
+                    "unit_area": 3310,
+                    "plot_area": 0
+                }
+            ]
         }
-    ],
-    "Saadiyat Island": [
-        {
-            "bedroom": 2,
-            "price": 6508521,
-            "area": 2660,
-            "type": "Villa"
+    },
+    "Townhouse": {
+        "Noya Viva": {
+            "2 Bedrooms": [
+                {
+                    "price": 2200000,
+                    "unit_area": 1335,
+                    "plot_area": 1828
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2800000,
+                    "unit_area": 1753,
+                    "plot_area": 1825
+                },
+                {
+                    "price": 2850000,
+                    "unit_area": 1792,
+                    "plot_area": 2277
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3947500,
+                    "unit_area": 2255,
+                    "plot_area": 0
+                }
+            ]
         },
-        {
-            "bedroom": 3,
-            "price": 7012642,
-            "area": 3549,
-            "type": "Villa"
+        "Noya 1": {
+            "2 Bedrooms": [
+                {
+                    "price": 2250000,
+                    "unit_area": 1335,
+                    "plot_area": 1828
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2800000,
+                    "unit_area": 1753,
+                    "plot_area": 1825
+                },
+                {
+                    "price": 2871968,
+                    "unit_area": 1792,
+                    "plot_area": 2277
+                }
+            ]
         },
-        {
-            "bedroom": 4,
-            "price": 12160829,
-            "area": 5567,
-            "type": "Villa"
+        "The Magnolias": {
+            "2 Bedrooms": [
+                {
+                    "price": 3200000,
+                    "unit_area": 2228,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3200000,
+                    "unit_area": 2421,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4000000,
+                    "unit_area": 2825,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4450000,
+                    "unit_area": 3044,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4700000,
+                    "unit_area": 3200,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5225000,
+                    "unit_area": 3389,
+                    "plot_area": 0
+                }
+            ]
         },
-        {
-            "bedroom": 5,
-            "price": 15243984,
-            "area": 7039,
-            "type": "Villa"
+        "The Dahlias": {
+            "2 Bedrooms": [
+                {
+                    "price": 3150000,
+                    "unit_area": 2228,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3170698,
+                    "unit_area": 2308,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4200000,
+                    "unit_area": 3044,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4550000,
+                    "unit_area": 3147,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5450000,
+                    "unit_area": 3389,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5500000,
+                    "unit_area": 3600,
+                    "plot_area": 0
+                }
+            ]
         },
-        {
-            "bedroom": 6,
-            "price": 21900493,
-            "area": 10430,
-            "type": "Villa"
+        "Aspens": {
+            "3 Bedrooms": [
+                {
+                    "price": 4775000,
+                    "unit_area": 3236,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 6099950,
+                    "unit_area": 3735,
+                    "plot_area": 0
+                }
+            ]
         },
-        {
-            "bedroom": 7,
-            "price": 35776606,
-            "area": 12596,
-            "type": "Villa"
+        "The Cedars": {
+            "2 Bedrooms": [
+                {
+                    "price": 3700000,
+                    "unit_area": 2331,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3500000,
+                    "unit_area": 2422,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4750000,
+                    "unit_area": 3229,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5000000,
+                    "unit_area": 3547,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5450000,
+                    "unit_area": 3389,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5500000,
+                    "unit_area": 3600,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Redwoods": {
+            "3 Bedrooms": [
+                {
+                    "price": 5000000,
+                    "unit_area": 3230,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5749999,
+                    "unit_area": 3584,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 6750000,
+                    "unit_area": 4000,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Yas Park Gate": {
+            "2 Bedrooms": [
+                {
+                    "price": 2050000,
+                    "unit_area": 1333,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2663771,
+                    "unit_area": 1711,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2700000,
+                    "unit_area": 1753,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2775000,
+                    "unit_area": 1791,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Sustainable City": {
+            "3 Bedrooms": [
+                {
+                    "price": 3600000,
+                    "unit_area": 2892,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3960000,
+                    "unit_area": 2852,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4000000,
+                    "unit_area": 3311,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4034000,
+                    "unit_area": 3362,
+                    "plot_area": 0
+                }
+            ]
         }
-    ],
-    "Al Shamkha": [
-        {
-            "bedroom": 2,
-            "price": 1700000,
-            "area": 1520,
-            "type": "Villa"
+    },
+    "Duplexe": {
+        "The Magnolias": {
+            "3 Bedrooms": [
+                {
+                    "price": 4550000,
+                    "unit_area": 3045
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5375000,
+                    "unit_area": 3389
+                },
+                {
+                    "price": 5775000,
+                    "unit_area": 3600
+                }
+            ]
         },
-        {
-            "bedroom": 3,
-            "price": 3754898,
-            "area": 4018,
-            "type": "Villa"
+        "The Dahlias": {
+            "3 Bedrooms": [
+                {
+                    "price": 4200000,
+                    "unit_area": 3044
+                },
+                {
+                    "price": 4500000,
+                    "unit_area": 3147
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5500000,
+                    "unit_area": 3389
+                },
+                {
+                    "price": 5600000,
+                    "unit_area": 3600
+                }
+            ]
         },
-        {
-            "bedroom": 4,
-            "price": 3730843,
-            "area": 4503,
-            "type": "Villa"
+        "Aspens": {
+            "4 Bedrooms": [
+                {
+                    "price": 6300000,
+                    "unit_area": 3819
+                }
+            ]
         },
-        {
-            "bedroom": 5,
-            "price": 4172862,
-            "area": 5422,
-            "type": "Villa"
+        "The Cedars": {
+            "3 Bedrooms": [
+                {
+                    "price": 4800000,
+                    "unit_area": 4197
+                }
+            ]
         },
-        {
-            "bedroom": 6,
-            "price": 4840158,
-            "area": 5447,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 7,
-            "price": 5129248,
-            "area": 11129,
-            "type": "Villa"
+        "Redwoods": {
+            "4 Bedrooms": [
+                {
+                    "price": 6750000,
+                    "unit_area": 4900
+                }
+            ]
         }
-    ],
-    "Al Reef": [
-        {
-            "bedroom": 2,
-            "price": 1288603,
-            "area": 1782,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 3,
-            "price": 1653187,
-            "area": 2364,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 2340303,
-            "area": 2841,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 2675516,
-            "area": 3534,
-            "type": "Villa"
+    },
+    "Apartment": {
+        "The Sustainable City": {
+            "1 Bedrooms": [
+                {
+                    "price": 1053285,
+                    "unit_area": 720
+                },
+                {
+                    "price": 1095000,
+                    "unit_area": 812
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1500000,
+                    "unit_area": 1099
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2230000,
+                    "unit_area": 1555
+                }
+            ]
         }
-    ],
-    "Khalifa City": [
-        {
-            "bedroom": 2,
-            "price": 1809513,
-            "area": 1329,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 3,
-            "price": 3499039,
-            "area": 3244,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 4317939,
-            "area": 4482,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 6181059,
-            "area": 6437,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 6,
-            "price": 5330620,
-            "area": 7232,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 7,
-            "price": 6394621,
-            "area": 7653,
-            "type": "Villa"
-        }
-    ],
-    "Ramhan Island": [
-        {
-            "bedroom": 3,
-            "price": 8932142,
-            "area": 3007,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 9042099,
-            "area": 2924,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 14455570,
-            "area": 5084,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 6,
-            "price": 14366422,
-            "area": 5312,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 7,
-            "price": 22370689,
-            "area": 6877,
-            "type": "Villa"
-        }
-    ],
-    "Al Hudayriat Island": [
-        {
-            "bedroom": 3,
-            "price": 7026873,
-            "area": 4198,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 7262685,
-            "area": 4508,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 13859154,
-            "area": 7338,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 6,
-            "price": 16852953,
-            "area": 10434,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 7,
-            "price": 46905345,
-            "area": 22963,
-            "type": "Villa"
-        }
-    ],
-    "Al Reem Island": [
-        {
-            "bedroom": 3,
-            "price": 3828776,
-            "area": 2976,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 3895210,
-            "area": 3621,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 11965500,
-            "area": 11119,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 6,
-            "price": 15180572,
-            "area": 14382,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 7,
-            "price": 18277987,
-            "area": 17435,
-            "type": "Villa"
-        }
-    ],
-    "Al Raha Gardens": [
-        {
-            "bedroom": 3,
-            "price": 2352746,
-            "area": 2805,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 2809819,
-            "area": 3210,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 4198172,
-            "area": 5441,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 6,
-            "price": 5500000,
-            "area": 6200,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 7,
-            "price": 4300000,
-            "area": 6220,
-            "type": "Villa"
-        }
-    ],
-    "Baniyas": [
-        {
-            "bedroom": 3,
-            "price": 3112927,
-            "area": 3070,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 3944108,
-            "area": 6270,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 4187874,
-            "area": 6943,
-            "type": "Villa"
-        }
-    ],
-    "Rabdan": [
-        {
-            "bedroom": 2,
-            "price": 2113894,
-            "area": 1852,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 3,
-            "price": 3092316,
-            "area": 2442,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 3997022,
-            "area": 3496,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 4598424,
-            "area": 3884,
-            "type": "Villa"
-        }
-    ],
-    "Al Raha Golf Gardens": [
-        {
-            "bedroom": 4,
-            "price": 4001907,
-            "area": 3900,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 5054253,
-            "area": 5288,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 6,
-            "price": 6807857,
-            "area": 7217,
-            "type": "Villa"
-        }
-    ],
-    "Al Salam Street": [
-        {
-            "bedroom": 3,
-            "price": 3777335,
-            "area": 2685,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 5860860,
-            "area": 4064,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 6226573,
-            "area": 4574,
-            "type": "Villa"
-        }
-    ],
-    "Al Samha": [
-        {
-            "bedroom": 2,
-            "price": 1646782,
-            "area": 2343,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 3,
-            "price": 1630851,
-            "area": 2516,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 2803170,
-            "area": 4690,
-            "type": "Villa"
-        }
-    ],
-    "Madinat Zayed": [
-        {
-            "bedroom": 3,
-            "price": 2642353,
-            "area": 1851,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 4,
-            "price": 4566490,
-            "area": 3407,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 5,
-            "price": 7061255,
-            "area": 4593,
-            "type": "Villa"
-        },
-        {
-            "bedroom": 6,
-            "price": 8511266,
-            "area": 5533,
-            "type": "Villa"
-        }
-    ]
+    }
 }

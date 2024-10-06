@@ -17,7 +17,7 @@ const GlobalFilter = ({
   const handleFilterChange = (e) => {
     let value = e.target.value;
 
-    if (selectedColumn === "price" || selectedColumn === "count") {
+    if (selectedColumn === "count") {
       // Convert value to number for numeric columns
       value = value !== "" ? parseFloat(value) : undefined;
     } else {
@@ -43,11 +43,7 @@ const GlobalFilter = ({
         onChange={handleFilterChange}
         placeholder={`Search`}
         className="border rounded p-2 w-64"
-        type={
-          selectedColumn === "price" || selectedColumn === "count"
-            ? "number"
-            : "text"
-        } // Use a number input for numeric columns
+        type={selectedColumn === "count" ? "number" : "text"} // Use a number input for numeric columns
       />
     </span>
   );

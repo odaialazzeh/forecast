@@ -24,7 +24,8 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 const RegisterUser = asyncHandler(async (req, res) => {
-  const { first_name, last_name, email, password } = req.body;
+  const { first_name, last_name, email, password, phone, whatsapp, image } =
+    req.body;
 
   const userExists = await User.findOne({ email });
 
@@ -38,6 +39,9 @@ const RegisterUser = asyncHandler(async (req, res) => {
     last_name,
     email,
     password,
+    phone,
+    whatsapp,
+    image,
   });
 
   if (user) {
@@ -46,6 +50,9 @@ const RegisterUser = asyncHandler(async (req, res) => {
       first_name: user.first_name,
       last_name: user.last_name,
       email: user.email,
+      phone: user.phone,
+      whatsapp: user.whatsapp,
+      image: user.image,
     });
   } else {
     res.status(400);
@@ -95,9 +102,12 @@ const updateUser = asyncHandler(async (req, res) => {
     user.first_name = req.body.firstname || user.first_name;
     user.last_name = req.body.lastname || user.last_name;
     user.email = req.body.email || user.email;
+    user.phone = req.body.phone || user.phone;
+    user.whatsapp = req.body.whatsapp || user.whatsapp;
+    user.image = req.body.image || user.image;
 
     // Only update the password if it's provided and not empty
-    if (req.body.password && req.body.password.trim() === "") {
+    if (req.body.password && req.body.password.trim() !== "") {
       user.password = req.body.password;
     }
 
@@ -109,6 +119,9 @@ const updateUser = asyncHandler(async (req, res) => {
       first_name: updatedUser.first_name,
       last_name: updatedUser.last_name,
       email: updatedUser.email,
+      phone: updatedUser.phone,
+      whatsapp: updatedUser.whatsapp,
+      image: updatedUser.image,
       isAdmin: updatedUser.isAdmin,
       message: "User updated successfully",
     });

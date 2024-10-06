@@ -29,6 +29,13 @@ export const userApiSlice = apiSlice.injectEndpoints({
       }),
       keepUnusedDataFor: 5,
     }),
+    userImage: builder.mutation({
+      query: (data) => ({
+        url: "/api/v1/upload",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -37,4 +44,5 @@ export const {
   useLogoutMutation,
   useUpdateMutation,
   useGetUserQuery,
+  useUserImageMutation,
 } = userApiSlice;

@@ -24,6 +24,15 @@ const userSchema = mongoose.Schema(
     password: {
       type: String,
     },
+    phone: {
+      type: String,
+    },
+    whatsapp: {
+      type: String,
+    },
+    image: {
+      type: String,
+    },
     isAdmin: {
       type: Boolean,
       required: true,

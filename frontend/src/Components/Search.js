@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Alert, CircularProgress } from "@mui/material";
 import PropertyDropdown from "./PropertyDropdown";
 import BedroomDropdown from "./BedroomDropdown";
+import UnitAreaDropdown from "./AreaDropdown";
 import { RiMapPinLine } from "react-icons/ri";
 import locationData from "../Assets/abu_dhabi_sub_areas.json";
 import modelData from "../Assets/model_data.json";
@@ -18,6 +19,9 @@ const Search = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
   const [mainRegion, setMainRegion] = useState("");
+  const [unitArea, setUnitArea] = useState(""); // State for Unit Area
+  const [availableUnitAreas, setAvailableUnitAreas] = useState([]);
+  const [plotArea, setPlotArea] = useState([]);
   const [houseData, setHouseData] = useState(null); // State for the house data
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false); // State to track errors
@@ -48,6 +52,7 @@ const Search = () => {
             return {
               name: subRegion,
               path: `${region}`,
+              mainRegion: region,
               fullPath: `${region}, ${subRegion}`, // Used for filtering
             };
           }
@@ -70,17 +75,63 @@ const Search = () => {
     setSuggestions([]);
   };
 
+  useEffect(() => {
+    if (propertyType && bedrooms && selectedLocation) {
+      const data =
+        averagePrice?.[propertyType]?.[selectedLocation]?.[
+          `${bedrooms} Bedrooms`
+        ] || [];
+
+      // Ensure data is iterable (an array) before mapping
+      const unitAreas = Array.isArray(data)
+        ? data.map((item) => item.unit_area)
+        : [];
+      const plotAreas = Array.isArray(data)
+        ? data.map((item) => item.plot_area ?? null)
+        : [];
+
+      setAvailableUnitAreas(unitAreas);
+      setPlotArea(plotAreas);
+    }
+  }, [propertyType, bedrooms, selectedLocation]);
+
+  // Validate when propertyType, bedrooms, and location are selected
+  useEffect(() => {
+    if (propertyType && bedrooms && selectedLocation) {
+      const selectedModelData =
+        averagePrice[propertyType]?.[selectedLocation]?.[
+          `${bedrooms} Bedrooms`
+        ];
+
+      if (!selectedModelData) {
+        setError(true);
+      } else {
+        setError(false);
+      }
+    }
+  }, [propertyType, bedrooms, selectedLocation]);
+
   const handleSearch = async () => {
-    if (propertyType && selectedLocation && selectedRegion && bedrooms) {
+    if (
+      propertyType &&
+      selectedLocation &&
+      selectedRegion &&
+      bedrooms &&
+      unitArea
+    ) {
       try {
-        const selectedModelData = averagePrice[mainRegion]?.find(
+        const selectedModelData = averagePrice[propertyType]?.[
+          selectedLocation
+        ]?.[`${bedrooms} Bedrooms`]?.find(
           (item) =>
-            item.bedroom === parseInt(bedrooms) && item.type === propertyType
+            item.unit_area === parseInt(unitArea) &&
+            item.plot_area === parseInt(plotArea)
         );
 
         if (!selectedModelData) {
           throw new Error("No matching data found");
         }
+
         setError(false);
         setLoading(true);
         const house = {
@@ -90,29 +141,27 @@ const Search = () => {
           region: selectedRegion,
           mainRegion: mainRegion,
           bedrooms: bedrooms,
-          area: selectedModelData.area,
+          area: selectedModelData.unit_area,
+          plotArea: selectedModelData.plot_area,
           price: selectedModelData.price,
           email: userInfo.email,
         };
 
-        const response = await fetch(
-          "https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              bedroom: bedrooms,
-              propertyType: propertyType,
-              area: selectedModelData.area,
-              price: selectedModelData.price,
-              location: selectedLocation,
-              region: selectedRegion,
-              email: userInfo.email,
-            }),
-          }
-        );
+        const response = await fetch("http://127.0.0.1:5000/forecast", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            bedroom: bedrooms,
+            propertyType: propertyType,
+            area: selectedModelData.unit_area,
+            price: selectedModelData.price,
+            location: selectedLocation,
+            region: selectedRegion,
+            email: userInfo.email,
+          }),
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -193,6 +242,10 @@ const Search = () => {
 
         <PropertyDropdown onChange={setPropertyType} />
         <BedroomDropdown onChange={setBedrooms} />
+        <UnitAreaDropdown
+          unitAreas={availableUnitAreas}
+          onChange={(selectedUnitArea) => setUnitArea(selectedUnitArea)}
+        />
 
         <button
           onClick={handleSearch}

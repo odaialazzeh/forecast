@@ -60,18 +60,6 @@ const AccountLog = () => {
         id: "bedrooms",
       },
       {
-        Header: "Area",
-        accessor: "area",
-        Filter: ColumnFilter,
-        id: "area",
-      },
-      {
-        Header: "Price",
-        accessor: "price",
-        Filter: ColumnFilter,
-        id: "price",
-      },
-      {
         Header: "Count",
         accessor: "count",
         // Custom filter for exact matching

@@ -9,7 +9,6 @@
         "Yas Acres": [
             "The Magnolias",
             "The Dahlias",
-            "Lea",
             "Redwoods",
             "Aspens",
             "The Cedars"
@@ -17,94 +16,6 @@
         "Yas Park Views": [],
         "Yas Park Gate": [],
         "West Yas": [],
-        "Yas Riva": [],
-        "Mayan": [],
         "The Sustainable City": []
-    },
-    "Saadiyat Island": {
-        "Saadiyat Lagoons": [],
-        "Saadiyat Reserve": [
-            "The Dunes"
-        ],
-        "Saadiyat Beach": [
-            "Saadiyat Beach Villas"
-        ],
-        "HIDD Al Saadiyat": [],
-        "Jawaher Saadiyat": []
-    },
-    "Al Shamkha": {
-        "Fay Al Reeman II": [],
-        "Fay Alreeman": [],
-        "Alreeman": []
-    },
-    "Al Reef": {
-        "Al Reef Villas": [
-            "Arabian Style",
-            "Contemporary Style",
-            "Mediterranean Style",
-            "Desert Style"
-        ]
-    },
-    "Khalifa City": {
-        "Zayed City": [
-            "Bloom Living",
-            "Toledo"
-        ],
-        "Al Merief": [],
-        "Khalifa City A": [],
-        "Al Forsan Village": [],
-        "Golf Gardens": []
-    },
-    "Ramhan Island": {
-        "Ramhan Island Villas": []
-    },
-    "Al Hudayriat Island": {
-        "Nawayef West": [],
-        "Al Naseem": [],
-        "Nawayef East": []
-    },
-    "Al Reem Island": {
-        "Najmat Abu Dhabi": [
-            "Reem Hills",
-            "Reem Hills 2"
-        ]
-    },
-    "Al Raha Gardens": {
-        "Khannour Community": [],
-        "Lehweih Community": [],
-        "Al Mariah Community": [],
-        "Hemaim Community": [],
-        "Sidra Community": [],
-        "Yasmin Community": []
-    },
-    "Baniyas": {
-        "Baniyas East": [
-            "Bawabat Al Sharq"
-        ]
-    },
-    "Rabdan": {
-        "Seashore": []
-    },
-    "Al Raha Golf Gardens": {
-        "Narjis": [],
-        "Gardenia": []
-    },
-    "Al Salam Street": {
-        "Bloom Gardens": [
-            "Bloom Gardens Villas",
-            "Faya at Bloom Gardens"
-        ]
-    },
-    "Al Samha": {
-        "Manazel Al Reef 2": []
-    },
-    "Madinat Zayed": {
-        "Seville Bloom": []
-    },
-    "AlJurf": {
-        "Al Jurf Gardens": []
-    },
-    "Abu Dhabi Gate City": {
-        "Mangrove Village": []
     }
 }

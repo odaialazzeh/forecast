@@ -5,7 +5,7 @@ import {
   RiArrowUpSLine,
   RiCloseLine,
 } from "react-icons/ri";
-import { Menu } from "@headlessui/react";
+import { Menu, MenuItem, MenuButton, MenuItems } from "@headlessui/react";
 
 const PropertyDropdown = ({ onChange }) => {
   const [property, setProperty] = useState("Select Property");
@@ -17,13 +17,25 @@ const PropertyDropdown = ({ onChange }) => {
   const handlePropertySelect = (option) => {
     setProperty(option);
     onChange(option); // Pass the selected option to the parent component
-    setIsOpen(false); // Close the dropdown
+    setIsOpen(false); // Close the dropdown after selection
+  };
+
+  // Function to toggle the dropdown open/close
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  // Function to reset the property selection
+  const resetProperty = (e) => {
+    e.stopPropagation(); // Prevent dropdown from closing when resetting
+    setProperty("Select Property");
+    onChange(""); // Reset the value in the parent component
   };
 
   return (
     <Menu as="div" className="dropdown relative">
-      <Menu.Button
-        onClick={() => setIsOpen(!isOpen)}
+      <MenuButton
+        onClick={toggleDropdown} // Toggle the dropdown open/close
         className="dropdown-btn w-full text-left flex items-center justify-between"
       >
         <div className="flex items-center">
@@ -36,11 +48,7 @@ const PropertyDropdown = ({ onChange }) => {
           {property !== "Select Property" && (
             <RiCloseLine
               className="text-red-500 ml-2 cursor-pointer"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent dropdown from closing
-                setProperty("Select Property");
-                onChange(""); // Reset the value in the parent component as well
-              }}
+              onClick={resetProperty} // Reset the property selection
             />
           )}
           {isOpen ? (
@@ -49,20 +57,20 @@ const PropertyDropdown = ({ onChange }) => {
             <RiArrowDownSLine className="dropdown-icon-secondary ml-2" />
           )}
         </div>
-      </Menu.Button>
+      </MenuButton>
       {isOpen && (
-        <Menu.Items className="dropdown-menu">
+        <MenuItems className="dropdown-menu mt-2 p-2 rounded-lg shadow-md bg-white">
           {properties.map((option, index) => (
-            <Menu.Item
+            <MenuItem
               as="li"
               key={index}
-              className="cursor-pointer hover:text-primary transition px-4 py-0"
+              className="cursor-pointer hover:bg-primary hover:text-white transition px-4 py-1 rounded-lg"
               onClick={() => handlePropertySelect(option)}
             >
               {option}
-            </Menu.Item>
+            </MenuItem>
           ))}
-        </Menu.Items>
+        </MenuItems>
       )}
     </Menu>
   );

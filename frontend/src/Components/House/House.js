@@ -1,16 +1,23 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import HouseImage from "./HouseImage";
 import HouseDetails from "./HouseDetails";
 import HouseForecastTable from "./HouseForecastTable";
+import GeneratePDFComponent from "../../utils/GeneratePDFComponent";
 import { useAddRecordMutation } from "../../slices/recordApiSlice";
+import { useGetUserQuery } from "../../slices/usersApiSlice";
 
-const House = ({ house, data }) => {
+const House = ({ house = {}, data = [] }) => {
+  // Add default empty object for house and data
+
+  // Destructure the house properties, but ensure house is not undefined
   const {
     type,
     location,
     bedrooms,
     area,
+    plotArea,
     price,
     region,
     imageStandard,
@@ -18,7 +25,7 @@ const House = ({ house, data }) => {
     userId,
     mainRegion,
     email,
-  } = house;
+  } = house || {}; // Fallback to an empty object if house is undefined
 
   const [selectedImage, setSelectedImage] = useState("standard"); // Lifted state
   const [updatedImages, setUpdatedImage] = useState({
@@ -26,9 +33,15 @@ const House = ({ house, data }) => {
     imageStory: "", // New image story format
   });
   const [imageLoading, setImageLoading] = useState(false);
+  const [showPDF, setShowPDF] = useState(false); // New state to show the PDF option
 
   const [addRecord, { isLoading: loadingAdd, isError, error }] =
     useAddRecordMutation();
+
+  const userInfo = useSelector((state) => state.auth.userInfo);
+  const { data: user } = useGetUserQuery(userInfo?._id, {
+    skip: !userInfo?._id,
+  });
 
   const handleDownload = async () => {
     try {
@@ -86,8 +99,24 @@ const House = ({ house, data }) => {
             selectedImage={selectedImage} // Pass selectedImage as a prop
             setSelectedImage={setSelectedImage} // Pass setSelectedImage to update it
             imageLoading={imageLoading}
+            showPDF={showPDF} // Pass showPDF state to control button display
+            setShowPDF={setShowPDF} // Pass function to toggle PDF view
           />
         )}
+
+        {/* Conditionally render the Generate PDF button */}
+        <div className="ml-52">
+          {showPDF && (
+            <GeneratePDFComponent
+              user={user}
+              selectedImage={selectedImage}
+              updatedImages={updatedImages}
+              imageStandard={imageStandard}
+              imageStory={imageStory}
+              email={email}
+            />
+          )}
+        </div>
 
         <HouseDetails
           type={type}
@@ -95,8 +124,10 @@ const House = ({ house, data }) => {
           region={region}
           bedrooms={bedrooms}
           area={area}
+          plotArea={plotArea}
           price={price}
           mainRegion={mainRegion}
+          unitArea={area}
         />
       </div>
       {isError && (

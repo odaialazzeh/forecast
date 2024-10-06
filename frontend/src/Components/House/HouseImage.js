@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaImage, FaMobileAlt } from "react-icons/fa";
+import { FaImage, FaMobileAlt, FaFilePdf } from "react-icons/fa"; // Import PDF icon
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -11,6 +11,8 @@ const HouseImage = ({
   loadingAdd,
   selectedImage, // Receive from parent
   setSelectedImage, // Receive from parent
+  setShowPDF, // New prop to toggle PDF display
+  showPDF, // To control which button to show
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isIconBoxVisible, setIsIconBoxVisible] = useState(false);
@@ -28,7 +30,13 @@ const HouseImage = ({
   };
 
   const handleImageSelection = (format) => {
-    setSelectedImage(format); // Update the image format in the parent component
+    if (format === "pdf") {
+      setShowPDF(true); // Show PDF button when PDF is selected
+      setSelectedImage("standard"); // Switch to the standard image by default
+    } else {
+      setSelectedImage(format); // Update the image format in the parent component
+      setShowPDF(false); // Show the Download Image button for image formats
+    }
     setIsIconBoxVisible(false); // Close the icon box after selection
   };
 
@@ -69,16 +77,26 @@ const HouseImage = ({
             >
               <FaMobileAlt />
             </IconButton>
+            <IconButton
+              onClick={() => handleImageSelection("pdf")}
+              className={`text-black ${showPDF ? "text-primary" : ""}`}
+            >
+              <FaFilePdf />
+            </IconButton>
           </div>
         )}
       </div>
       <div className="text-center mb-4">
-        <button
-          onClick={handleDownload}
-          className="bg-primary text-white py-2 px-4 shadow-sm rounded-lg hover:bg-secondary transition"
-        >
-          {loadingAdd ? "Processing..." : "Download Image"}
-        </button>
+        {showPDF ? (
+          <></>
+        ) : (
+          <button
+            onClick={handleDownload}
+            className="bg-primary text-white py-2 px-4 shadow-sm rounded-lg hover:bg-secondary transition"
+          >
+            {loadingAdd ? "Processing..." : "Download Image"}
+          </button>
+        )}
       </div>
       <Dialog
         open={isModalOpen}

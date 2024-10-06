@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
-import PropertyDetails from "./Pages/PropertyDetails";
 import SignIn from "./Pages/sign-in/SignIn";
 import Profile from "./Admin/Profile/Profile";
 import ActivityLog from "./Admin/ActivityLog/ActivityLog";
@@ -30,7 +29,6 @@ const App = () => {
       <main className="flex-grow bg-white">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/property/:id" element={<PropertyDetails />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/activityLog" element={<ActivityLog />} />

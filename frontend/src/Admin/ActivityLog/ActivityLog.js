@@ -9,6 +9,8 @@ import {
   usePagination,
 } from "react-table";
 import { Alert, CircularProgress } from "@mui/material";
+import DatePicker from "rsuite/DatePicker";
+import "rsuite/DatePicker/styles/index.css";
 import GlobalFilter from "../tableComponent/GlobalFilter";
 import ColumnFilter from "../tableComponent/ColumnFilter";
 import TableHeader from "../tableComponent/TableHeader";
@@ -20,7 +22,7 @@ import { useGetRecordQuery } from "../../slices/recordApiSlice";
 const ActivityLog = () => {
   const [selectedColumn, setSelectedColumn] = useState(""); // Track selected column for filtering
   const [resetToggle, setResetToggle] = useState(false);
-  const [dateFilter, setDateFilter] = useState(""); // Add state for the date filter
+  const [dateFilter, setDateFilter] = useState(null); // Add state for the date filter
   const [showDateFilter, setShowDateFilter] = useState(false); // Toggle to show/hide the date input
 
   const navigate = useNavigate();
@@ -65,18 +67,6 @@ const ActivityLog = () => {
         Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value}</div>,
         Filter: ColumnFilter,
         id: "bedrooms",
-      },
-      {
-        Header: "Area",
-        accessor: "area",
-        Filter: ColumnFilter,
-        id: "area",
-      },
-      {
-        Header: "Price",
-        accessor: "price",
-        Filter: ColumnFilter,
-        id: "price",
       },
       {
         Header: "Count",
@@ -168,21 +158,24 @@ const ActivityLog = () => {
   };
 
   // Function to handle date filtering
-  const handleDateFilterChange = (e) => {
-    const { value } = e.target;
-    setDateFilter(value);
-    setFilter("updatedAt", value); // Apply the date filter to the 'updatedAt' column
+  const handleDateFilterChange = (value) => {
+    if (value) {
+      setDateFilter(value); // Set the selected date
+      setFilter("updatedAt", value); // Apply the date filter to the 'updatedAt' column
+    } else {
+      setDateFilter(""); // Clear the date filter if no value
+      setFilter("updatedAt", undefined); // Clear the filter in react-table
+    }
   };
 
   return (
     <>
       <div className="sm:flex grid grid-cols-1 sm:grid-cols-3 gap-y-4 sm:gap-x-2 mx-4">
         {showDateFilter ? (
-          <input
-            type="date"
-            value={dateFilter}
-            onChange={handleDateFilterChange}
-            className="border p-2 rounded w-64 cursor-pointer"
+          <DatePicker
+            value={dateFilter} // Bind the date filter state to the DatePicker value
+            onChange={handleDateFilterChange} // Pass the updated handleDateFilterChange function
+            className="p-2 rounded w-64 cursor-pointer"
             placeholder="Filter by Date"
           />
         ) : (
