@@ -79,7 +79,7 @@ app.use(hpp());
 
 // Enable CORS
 const corsOptions = {
-  origin: ["https://forecast-6uiy.onrender.com"], // Replace with your frontend URL
+  origin: ["https://forecast-app-zhvoc.ondigitalocean.app"], // Replace with your frontend URL
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
