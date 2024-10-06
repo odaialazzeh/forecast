@@ -65,14 +65,6 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' data:; connect-src 'self' https://forecastmetro-app-uxtiu.ondigitalocean.app; style-src 'self' 'unsafe-inline'; script-src 'self'"
-  );
-  next();
-});
-
 // Prevent XSS attacks
 app.use(xss());
 
