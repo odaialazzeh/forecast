@@ -170,7 +170,7 @@ const HouseImage = ({
         ) : (
           <button
             onClick={handleCustomDownload}
-            className="bg-primary text-white py-2 px-4 shadow-sm rounded-lg hover:bg-secondary transition"
+            className="bg-primary text-white py-2 px-4 shadow-1 rounded-lg hover:bg-secondary transition"
           >
             Download Image
           </button>

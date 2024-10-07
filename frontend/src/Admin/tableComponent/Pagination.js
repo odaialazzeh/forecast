@@ -42,7 +42,7 @@ const Pagination = ({
         <label>
           <span className="sr-only">Items Per Page</span>
           <select
-            className="mt-1 p-2 block w-full cursor-pointer rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="mt-1 p-2 block w-full cursor-pointer rounded-md border-gray-300 shadow-1 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             value={state.pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
@@ -58,7 +58,7 @@ const Pagination = ({
       {/* Pagination buttons */}
       <div>
         <nav
-          className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+          className="relative z-0 inline-flex rounded-md shadow-1 -space-x-px"
           aria-label="Pagination"
         >
           <PageButton

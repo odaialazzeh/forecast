@@ -48,7 +48,7 @@ function ForgotPassword({ open, handleClose }) {
 
         <button
           type="submit"
-          className="bg-primary hover:bg-secondary shadow-sm transition w-24 h-10 rounded-lg items-center text-white font-medium"
+          className="bg-primary hover:bg-secondary shadow-1 transition w-24 h-10 rounded-lg items-center text-white font-medium"
         >
           Continue{" "}
         </button>

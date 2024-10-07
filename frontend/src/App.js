@@ -9,6 +9,7 @@ import SignIn from "./Pages/sign-in/SignIn";
 import Profile from "./Admin/Profile/Profile";
 import ActivityLog from "./Admin/ActivityLog/ActivityLog";
 import AccountLog from "./Admin/AccountLog/AccountLog";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 const App = () => {
   const location = useLocation();
@@ -16,15 +17,15 @@ const App = () => {
   const userInfo = useSelector((state) => state.auth.userInfo);
 
   useEffect(() => {
-    if (!userInfo) {
+    if (!userInfo && location.pathname !== "/login") {
       navigate("/login");
     }
-  }, [userInfo, navigate]);
+  }, [userInfo, navigate, location.pathname]);
 
   const isLoginPage = location.pathname === "/login";
 
   return (
-    <div className=" max-w-[1440px] mx-auto flex flex-col min-h-screen bg-white">
+    <div className="max-w-[1440px] mx-auto flex flex-col min-h-screen bg-white">
       {!isLoginPage && <Header />}
       <main className="flex-grow bg-white">
         <Routes>
@@ -33,6 +34,8 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/activityLog" element={<ActivityLog />} />
           <Route path="/accountLog" element={<AccountLog />} />
+          {/* Catch-all route for 404 - NotFoundPage */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       {!isLoginPage && <Footer />}

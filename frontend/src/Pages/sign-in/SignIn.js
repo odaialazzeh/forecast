@@ -180,7 +180,7 @@ const SignIn = () => {
               <ForgotPassword open={open} handleClose={handleClose} />
               <button
                 type="submit"
-                className="bg-primary hover:bg-secondary shadow-sm transition w-full lg:max-w-[162px] h-12 rounded-lg flex justify-center items-center text-white text-lg"
+                className="bg-primary hover:bg-secondary shadow-1 transition w-full lg:max-w-[162px] h-12 rounded-lg flex justify-center items-center text-white text-lg"
               >
                 Sign in
               </button>

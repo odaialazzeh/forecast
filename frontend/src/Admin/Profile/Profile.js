@@ -174,7 +174,7 @@ const UserProfile = () => {
 
                 <label
                   htmlFor="uploadFile1"
-                  className="bg-primary hover:bg-secondary transition w-full py-1 mt-6 shadow-sm cursor-pointer lg:max-w-[162px] rounded-lg flex justify-center items-center text-white text-[16.5px]"
+                  className="bg-primary hover:bg-secondary transition w-full py-1 mt-6 shadow-1 cursor-pointer lg:max-w-[162px] rounded-lg flex justify-center items-center text-white text-[16.5px]"
                 >
                   Upload Photo
                   <input
@@ -190,7 +190,7 @@ const UserProfile = () => {
             </div>
 
             <div className="w-full md:w-9/12 h-full">
-              <div className="bg-white p-3 shadow-sm rounded-sm">
+              <div className="bg-white p-3 shadow-1 rounded-sm">
                 <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                   <span className="text-primary">
                     <svg

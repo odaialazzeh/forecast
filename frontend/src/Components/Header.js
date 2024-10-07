@@ -38,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <header className="py-4 mb-12 border-b shadow-sm">
+    <header className="py-4 mb-12 border-b shadow-1">
       <div className="ml-2 flex justify-between items-center">
         <div className="container mx-auto flex justify-between items-center gap-6">
           <Link to="/">
