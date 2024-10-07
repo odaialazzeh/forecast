@@ -73,6 +73,8 @@ const Search = () => {
     setBedrooms("");
     setUnitArea(""); // Reset UnitAreaDropdown
 
+    setHouseData(null);
+
     // Now proceed to update location-related states
     setInputValue(location);
     setSelectedLocation(location);
@@ -272,10 +274,7 @@ const Search = () => {
         </div>
 
         <div className="max-w-[1170px] w-full  flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 bg-white rounded-lg">
-          <PropertyDropdown
-            onChange={setPropertyType}
-            reset={propertyType}
-          />
+          <PropertyDropdown onChange={setPropertyType} reset={propertyType} />
 
           <BedroomDropdown onChange={setBedrooms} reset={bedrooms} />
           <UnitAreaDropdown
