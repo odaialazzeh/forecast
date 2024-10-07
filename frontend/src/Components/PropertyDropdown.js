@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   RiHome5Line,
   RiArrowDownSLine,
@@ -7,7 +7,7 @@ import {
 } from "react-icons/ri";
 import { Menu, MenuItem, MenuItems, MenuButton } from "@headlessui/react";
 
-const PropertyDropdown = ({ onChange }) => {
+const PropertyDropdown = ({ onChange, reset }) => {
   const [property, setProperty] = useState("Select Property");
 
   const properties = ["Villa", "Townhouse", "Apartment", "Duplex"];
@@ -18,7 +18,14 @@ const PropertyDropdown = ({ onChange }) => {
     onChange(option); // Pass the selected option to the parent component
   };
 
-  // Function to reset the property selection
+  // Reset the property dropdown when reset from parent is empty
+  useEffect(() => {
+    if (reset === "") {
+      setProperty("Select Property");
+    }
+  }, [reset]); // Respond to changes in propertyType immediately
+
+  // Function to reset the property selection manually
   const resetProperty = (e) => {
     e.stopPropagation(); // Prevent dropdown from closing when resetting
     setProperty("Select Property");
@@ -38,7 +45,7 @@ const PropertyDropdown = ({ onChange }) => {
           {property !== "Select Property" && (
             <RiCloseLine
               className="text-primary ml-2 cursor-pointer"
-              onClick={resetProperty} // Reset the property selection
+              onClick={resetProperty} // Reset the property selection manually
             />
           )}
           <MenuItems>
@@ -60,7 +67,7 @@ const PropertyDropdown = ({ onChange }) => {
           <MenuItem key={index}>
             {({ active }) => (
               <li
-                className={`cursor-pointer hover:bg-primary hover:text-white transition px-4 py-1 rounded-lg ${
+                className={`cursor-pointer hover:bg-primary hover:text-white transition px-4 pt-1 rounded-lg ${
                   active ? "bg-primary text-white" : ""
                 }`}
                 onClick={() => handlePropertySelect(option)}

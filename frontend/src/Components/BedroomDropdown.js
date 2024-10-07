@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   RiHotelBedLine,
   RiArrowDownSLine,
@@ -7,7 +7,7 @@ import {
 } from "react-icons/ri";
 import { Menu, MenuItem, MenuItems, MenuButton } from "@headlessui/react";
 
-const BedroomDropdown = ({ onChange }) => {
+const BedroomDropdown = ({ onChange, reset }) => {
   const [bedroom, setBedroom] = useState("Select Bedroom");
 
   const bedrooms = ["Studio", "1", "2", "3", "4", "5", "6", "7"];
@@ -17,6 +17,12 @@ const BedroomDropdown = ({ onChange }) => {
     setBedroom(option);
     onChange(option); // Notify parent of selected value
   };
+
+  useEffect(() => {
+    if (reset === "") {
+      setBedroom("Select Bedroom");
+    }
+  }, [reset]);
 
   // Function to reset the bedroom selection
   const resetBedroom = (e) => {

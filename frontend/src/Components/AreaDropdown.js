@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RiArrowDownSLine, RiArrowUpSLine, RiCloseLine } from "react-icons/ri";
 import { BiArea } from "react-icons/bi";
 import { Menu, MenuItem, MenuItems, MenuButton } from "@headlessui/react";
 
 const UnitAreaDropdown = ({ unitAreas = [], onChange }) => {
   const [unitArea, setUnitArea] = useState("Select Area");
+
+  // Reset the unit area when the parent resets the value (unitAreas change or unitArea is cleared)
+  useEffect(() => {
+    if (!unitAreas.length) {
+      setUnitArea("Select Area");
+    }
+  }, [unitAreas]);
 
   // Function to handle the unit area selection
   const handleUnitAreaSelect = (option) => {
@@ -59,7 +66,7 @@ const UnitAreaDropdown = ({ unitAreas = [], onChange }) => {
             <MenuItem key={index}>
               {({ active }) => (
                 <li
-                  className={`cursor-pointer px-4 py-2 ${
+                  className={`cursor-pointer px-4 pt-1 ${
                     active ? "text-primary" : ""
                   }`}
                   onClick={() => handleUnitAreaSelect(option)}

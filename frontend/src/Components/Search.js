@@ -68,11 +68,20 @@ const Search = () => {
   };
 
   const handleLocationSelect = (location, region, main) => {
+    // Reset dropdown states before updating location
+    setPropertyType(""); // Reset PropertyDropdown
+    setBedrooms("");
+    setUnitArea(""); // Reset UnitAreaDropdown
+
+    // Now proceed to update location-related states
     setInputValue(location);
     setSelectedLocation(location);
     setSelectedRegion(region);
     setMainRegion(main);
     setSuggestions([]);
+
+    // Reset the unit area and available areas when a new location is selected
+    setAvailableUnitAreas([]); // Clear unit areas
   };
 
   useEffect(() => {
@@ -148,21 +157,24 @@ const Search = () => {
           email: userInfo.email,
         };
 
-        const response = await fetch("https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            bedroom: bedrooms,
-            propertyType: propertyType,
-            area: selectedModelData.unit_area,
-            price: selectedModelData.price,
-            location: selectedLocation,
-            region: selectedRegion,
-            email: userInfo.email,
-          }),
-        });
+        const response = await fetch(
+          "https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              bedroom: bedrooms,
+              propertyType: propertyType,
+              area: selectedModelData.unit_area,
+              price: selectedModelData.price,
+              location: selectedLocation,
+              region: selectedRegion,
+              email: userInfo.email,
+            }),
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -260,8 +272,12 @@ const Search = () => {
         </div>
 
         <div className="max-w-[1170px] w-full  flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 bg-white rounded-lg">
-          <PropertyDropdown onChange={setPropertyType} />
-          <BedroomDropdown onChange={setBedrooms} />
+          <PropertyDropdown
+            onChange={setPropertyType}
+            reset={propertyType}
+          />
+
+          <BedroomDropdown onChange={setBedrooms} reset={bedrooms} />
           <UnitAreaDropdown
             unitAreas={availableUnitAreas}
             onChange={(selectedUnitArea) => setUnitArea(selectedUnitArea)}
