@@ -10,22 +10,37 @@ function getQuarterFromDate(dateStr) {
   const date = new Date(dateStr);
   const month = date.getMonth() + 1; // getMonth is 0-based, so add 1
   const quarter = Math.ceil(month / 3); // Q1: Jan-Mar, Q2: Apr-Jun, Q3: Jul-Sep, Q4: Oct-Dec
-  return `Q${quarter} ${date.getFullYear()}`;
+  return {
+    quarter: `Q${quarter} ${date.getFullYear()}`,
+    year: date.getFullYear(),
+    fullDate: dateStr,
+  };
 }
 
 // Function to combine the dates into quarters and calculate the average price for each quarter
-function calculateQuarterlyAverages(forecastDates, forecastPrices) {
+function calculateQuarterlyAverages(forecastDates, prices, cutoffQuarter) {
   const quarterMap = {};
 
+  // Define the cutoff date (Q2 2023)
+  const cutoffYear = 2023;
+  const cutoffQuarterNum = 2; // Q2
+
   forecastDates.forEach((date, index) => {
-    const quarter = getQuarterFromDate(date);
-    const price = forecastPrices[index];
+    const { quarter, year } = getQuarterFromDate(date);
+    const price = prices[index];
 
-    if (!quarterMap[quarter]) {
-      quarterMap[quarter] = [];
+    // Only include data from Q2 2023 onward
+    const dateQuarter = Math.ceil((new Date(date).getMonth() + 1) / 3);
+    if (
+      year > cutoffYear ||
+      (year === cutoffYear && dateQuarter >= cutoffQuarterNum)
+    ) {
+      if (!quarterMap[quarter]) {
+        quarterMap[quarter] = [];
+      }
+
+      quarterMap[quarter].push({ date, price, index });
     }
-
-    quarterMap[quarter].push({ date, price, index });
   });
 
   const quarterlyAverages = Object.keys(quarterMap).map((quarter) => {
@@ -48,48 +63,61 @@ const HouseForecastTable = ({
   housedata,
   setImageLoading,
 }) => {
-  const [isEditing, setIsEditing] = useState(null); // Track which quarter is being edited
-  const [editedAvgPrice, setEditedAvgPrice] = useState(""); // Track the edited avg price
+  const [isEditingForecast, setIsEditingForecast] = useState(null); // Track which quarter is being edited for forecast prices
+  const [isEditingPre, setIsEditingPre] = useState(null); // Track which quarter is being edited for pre prices
+  const [editedAvgForecastPrice, setEditedAvgForecastPrice] = useState(""); // Track the edited avg forecast price
+  const [editedAvgPrePrice, setEditedAvgPrePrice] = useState(""); // Track the edited avg pre price
   const [loading, setLoading] = useState(false); // Track loading state for saving
+  const [priceType, setPriceType] = useState(""); // Track selected price type (forecast or pre)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Toggle the custom dropdown
 
-  const handleEditClick = (index, avgPrice) => {
-    setIsEditing(index); // Set the index of the quarter to be edited
-    setEditedAvgPrice(avgPrice); // Set the current avg price in the input field
+  const handleEditForecastClick = (index, avgPrice) => {
+    setIsEditingForecast(index); // Set the index of the quarter to be edited for forecast prices
+    setEditedAvgForecastPrice(avgPrice); // Set the current avg forecast price in the input field
   };
 
-  const handleSaveClick = async (index, quarterData) => {
+  const handleEditPreClick = (index, avgPrice) => {
+    setIsEditingPre(index); // Set the index of the quarter to be edited for pre prices
+    setEditedAvgPrePrice(avgPrice); // Set the current avg pre price in the input field
+  };
+
+  const handleSaveClick = async (index, quarterData, type) => {
     const updatedData = { ...data };
     const datesInQuarter = quarterData.dates;
-    const newAvgPrice = Number(editedAvgPrice);
-
-    const newPriceForEachDate = newAvgPrice; // Set the new average price to each date
+    const newAvgPrice = Number(
+      type === "forecast" ? editedAvgForecastPrice : editedAvgPrePrice
+    );
 
     datesInQuarter.forEach(({ index }) => {
-      updatedData.forecast_price[index] = newPriceForEachDate;
+      if (type === "forecast") {
+        updatedData.forecast_price[index] = newAvgPrice;
+      } else {
+        updatedData.pre_price[index] = newAvgPrice;
+      }
     });
 
-    setIsEditing(null); // Exit edit mode
+    if (type === "forecast")
+      setIsEditingForecast(null); // Exit edit mode for forecast prices
+    else setIsEditingPre(null); // Exit edit mode for pre prices
 
-    // Call the API to update the image with the new forecast price
+    // Call the API to update the image with the new prices
     try {
       setLoading(true);
       setImageLoading(true);
       const response = await axios.post("https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image", {
-        prePrices: data.pre_price,
+        prePrices: updatedData.pre_price,
         forecastPrices: updatedData.forecast_price,
         preDate: data.original_dates,
         forecastDate: data.forecast_dates,
         bedroom: housedata.bedrooms,
         propertyType: housedata.type,
         location: housedata.location,
-        email: housedata.email, // Include the email if needed for watermark
+        email: housedata.email,
       });
 
-      // Convert base64 image to URL
       const standardImageUrl = await imageToUrl(response.data.image_standard);
       const storyImageUrl = await imageToUrl(response.data.image_story);
 
-      // Pass the URL to the parent component
       setUpdatedImage({
         imageStandard: standardImageUrl,
         imageStory: storyImageUrl,
@@ -102,91 +130,239 @@ const HouseForecastTable = ({
     }
   };
 
-  const handleCancelClick = () => {
-    setIsEditing(null); // Exit edit mode without saving
+  const handleCancelClick = (type) => {
+    if (type === "forecast")
+      setIsEditingForecast(null); // Exit edit mode for forecast prices
+    else setIsEditingPre(null); // Exit edit mode for pre prices
   };
 
-  // Calculate the quarterly averages
-  const quarterlyData = calculateQuarterlyAverages(
+  // Calculate the quarterly averages for forecast and pre prices
+  const quarterlyForecastData = calculateQuarterlyAverages(
     data.forecast_dates,
     data.forecast_price
   );
+  const quarterlyPreData = calculateQuarterlyAverages(
+    data.original_dates,
+    data.pre_price
+  );
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleOptionClick = (value) => {
+    setPriceType(value); // Update price type
+    setIsDropdownOpen(false); // Close dropdown
+  };
 
   return (
-    <div className="bg-white my-8 shadow-1 p-5 rounded-xl w-full max-w-[400px] lg:max-w-[700px] mx-auto hover:shadow-2xl transition md:max-w-[600px] sm:max-w-[500px]">
-      <table className="w-full table-fixed rounded-lg overflow-hidden">
-        <thead>
-          <tr className="bg-primary">
-            <th className="w-1/4 py-4 px-6 text-left text-white font-bold uppercase">
-              Quarter
-            </th>
-            <th className="w-1/4 py-4 px-6 text-left text-white font-bold uppercase">
-              Forecast Price
-            </th>
-            <th className="w-1/4 py-4 px-6 text-left text-white font-bold uppercase">
-              Actions
-            </th>
-          </tr>
-        </thead>
-        <tbody className="bg-white">
-          {quarterlyData.map((quarter, index) => (
-            <tr key={index}>
-              <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
-                {quarter.quarter}
-              </td>
-              <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
-                {isEditing === index ? (
-                  <input
-                    type="number"
-                    value={Math.round(editedAvgPrice)}
-                    onChange={(e) => setEditedAvgPrice(e.target.value)}
-                    className="border border-gray-300 px-2 py-1 rounded w-36"
-                  />
-                ) : (
-                  Math.round(quarter.avgPrice)
-                )}
-              </td>
-              <td className="py-2 pl-12 border-b font-normal text-secondary border-gray-200">
-                {isEditing === index ? (
-                  <div className="flex flex-row gap-1 ml-4">
-                    <button
-                      onClick={() => handleSaveClick(index, quarter)}
-                      disabled={loading} // Disable button while saving
-                    >
-                      <div className="relative group">
-                        <img src={saveIcon} alt="save" />
-                        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          Save
-                        </span>
+    <div className="flex flex-col flex-grow bg-white my-4 shadow-1 p-5 rounded-xl w-full max-w-[400px] lg:max-w-[700px] mx-auto hover:shadow-2xl transition md:max-w-[600px] sm:max-w-[500px]">
+      {/* Custom dropdown for selecting price type */}
+      <div className="mb-4 relative">
+        <label htmlFor="price-type" className="font-bold mr-4 text-secondary">
+          Select Quarter To Edit:
+        </label>
+        <div
+          className="border p-2 rounded bg-gray-100 text-secondary cursor-pointer flex justify-between items-center"
+          onClick={toggleDropdown}
+        >
+          {priceType === ""
+            ? "Select Quarter Type"
+            : priceType === "forecast"
+            ? "Forecast Quarters"
+            : "Original Quarters"}
+          <span className="ml-2">▼</span>{" "}
+        </div>
+
+        {isDropdownOpen && (
+          <ul className="absolute left-0 z-10 w-full mt-2 bg-white border border-gray-300 rounded shadow-lg">
+            <li
+              className="p-2 cursor-pointer text-secondary hover:bg-primary hover:text-white"
+              onClick={() => handleOptionClick("")}
+            >
+              Select Quarter Type
+            </li>
+            <li
+              className="p-2 cursor-pointer text-secondary hover:bg-primary hover:text-white"
+              onClick={() => handleOptionClick("forecast")}
+            >
+              Forecast Quarters
+            </li>
+            <li
+              className="p-2 cursor-pointer text-secondary hover:bg-primary hover:text-white"
+              onClick={() => handleOptionClick("pre")}
+            >
+              Original Quarters
+            </li>
+          </ul>
+        )}
+      </div>
+
+      {/* Conditional Rendering: Show Forecast Price Table */}
+      {priceType === "forecast" && (
+        <>
+          <table className="w-full table-fixed rounded-lg overflow-hidden mb-8">
+            <thead>
+              <tr className="bg-primary">
+                <th className="w-1/3 py-[12px] px-6 text-left text-white font-bold uppercase">
+                  Quarter
+                </th>
+                <th className="w-1/3 py-[12px] px-6 text-left text-white font-bold uppercase">
+                  Price
+                </th>
+                <th className="w-1/3 py-[12px] pl-16 text-left text-white font-bold uppercase">
+                  Edit
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white">
+              {quarterlyForecastData.map((quarter, index) => (
+                <tr key={index}>
+                  <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
+                    {quarter.quarter}
+                  </td>
+                  <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
+                    {isEditingForecast === index ? (
+                      <input
+                        type="number"
+                        value={Math.round(editedAvgForecastPrice)}
+                        onChange={(e) =>
+                          setEditedAvgForecastPrice(e.target.value)
+                        }
+                        className="border border-gray-300 px-2 py-1 rounded w-36"
+                      />
+                    ) : (
+                      Math.round(quarter.avgPrice)
+                    )}
+                  </td>
+                  <td className="py-2 pl-12 border-b font-normal text-secondary border-gray-200">
+                    {isEditingForecast === index ? (
+                      <div className="flex flex-row gap-3 ml-4">
+                        <button
+                          onClick={() =>
+                            handleSaveClick(index, quarter, "forecast")
+                          }
+                          disabled={loading}
+                        >
+                          <div className="relative group">
+                            <img src={saveIcon} alt="save" />
+                            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Save
+                            </span>
+                          </div>
+                        </button>
+                        <button onClick={() => handleCancelClick("forecast")}>
+                          <div className="relative group">
+                            <img src={cancelIcon} alt="cancel" />
+                            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Cancel
+                            </span>
+                          </div>
+                        </button>
                       </div>
-                    </button>
-                    <button onClick={handleCancelClick}>
-                      <div className="relative group">
-                        <img src={cancelIcon} alt="cancel" />
-                        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          Cancel
-                        </span>
+                    ) : (
+                      <button
+                        onClick={() =>
+                          handleEditForecastClick(index, quarter.avgPrice)
+                        }
+                        className="ml-5 pt-1"
+                      >
+                        <div className="relative group">
+                          <img src={editIcon} alt="edit" />
+                          <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Edit
+                          </span>
+                        </div>
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {/* Conditional Rendering: Show Pre Price Table */}
+      {priceType === "pre" && (
+        <>
+          <table className="w-full table-fixed rounded-lg overflow-hidden">
+            <thead>
+              <tr className="bg-primary">
+                <th className="w-1/3 py-[12px] px-6 text-left text-white font-bold uppercase">
+                  Quarter
+                </th>
+                <th className="w-1/3 py-[12px] px-6 text-left text-white font-bold uppercase">
+                  Price
+                </th>
+                <th className="w-1/3 py-[12px] px-6 pl-16 text-left text-white font-bold uppercase">
+                  Edit
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white">
+              {quarterlyPreData.map((quarter, index) => (
+                <tr key={index}>
+                  <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
+                    {quarter.quarter}
+                  </td>
+                  <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
+                    {isEditingPre === index ? (
+                      <input
+                        type="number"
+                        value={Math.round(editedAvgPrePrice)}
+                        onChange={(e) => setEditedAvgPrePrice(e.target.value)}
+                        className="border border-gray-300 px-2 py-1 rounded w-36"
+                      />
+                    ) : (
+                      Math.round(quarter.avgPrice)
+                    )}
+                  </td>
+                  <td className="py-2 pl-12 border-b font-normal text-secondary border-gray-200">
+                    {isEditingPre === index ? (
+                      <div className="flex flex-row gap-3 ml-4">
+                        <button
+                          onClick={() => handleSaveClick(index, quarter, "pre")}
+                          disabled={loading}
+                        >
+                          <div className="relative group">
+                            <img src={saveIcon} alt="save" />
+                            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Save
+                            </span>
+                          </div>
+                        </button>
+                        <button onClick={() => handleCancelClick("pre")}>
+                          <div className="relative group">
+                            <img src={cancelIcon} alt="cancel" />
+                            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Cancel
+                            </span>
+                          </div>
+                        </button>
                       </div>
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => handleEditClick(index, quarter.avgPrice)}
-                    className="ml-5 pt-1"
-                  >
-                    <div className="relative group">
-                      <img src={editIcon} alt="edit" />
-                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Edit
-                      </span>
-                    </div>
-                  </button>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                    ) : (
+                      <button
+                        onClick={() =>
+                          handleEditPreClick(index, quarter.avgPrice)
+                        }
+                        className="ml-5 pt-1"
+                      >
+                        <div className="relative group">
+                          <img src={editIcon} alt="edit" />
+                          <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-700 bg-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Edit
+                          </span>
+                        </div>
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
     </div>
   );
 };

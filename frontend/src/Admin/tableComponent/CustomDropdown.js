@@ -47,9 +47,6 @@ const CustomDropdown = ({
 
   return (
     <div ref={dropdownRef} className="relative inline-block w-48">
-      {" "}
-      {/* Adjust width here */}
-      {/* Dropdown Button */}
       <div
         className="border p-2 rounded bg-gray-100 cursor-pointer"
         onClick={toggleDropdown}
