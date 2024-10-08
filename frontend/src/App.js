@@ -25,9 +25,9 @@ const App = () => {
   const isLoginPage = location.pathname === "/login";
 
   return (
-    <div className="max-w-[1440px] mx-auto flex flex-col min-h-screen bg-white">
+    <div className="max-w-[1440px] mx-auto flex flex-col xl:h-[150rem] lg:h-[150rem] bg-white">
       {!isLoginPage && <Header />}
-      <main className="flex-grow bg-white">
+      <main className="flex-grow  bg-white">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />

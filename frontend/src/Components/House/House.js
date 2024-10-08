@@ -37,7 +37,7 @@ const House = ({ house = {}, data = [] }) => {
 
   return (
     <div>
-      <div className="bg-white shadow-1 p-5 rounded-xl w-full max-w-[400px] lg:max-w-[700px] mx-auto hover:shadow-2xl transition md:max-w-[600px] sm:max-w-[500px]">
+      <div className="bg-white shadow-1 p-5 rounded-xl w-full max-w-[400px] lg:max-w-[700px] mx-auto hover:shadow-2xl transition md:max-w-[600px] sm:max-w-[500px] ">
         {imageLoading ? (
           <div className="flex justify-center items-center w-full h-[400px]">
             <CircularProgress />

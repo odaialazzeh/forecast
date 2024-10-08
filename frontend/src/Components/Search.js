@@ -294,7 +294,7 @@ const Search = () => {
           <CircularProgress />
         </div>
       ) : error ? (
-        <Alert severity="warning" className="m-4">
+        <Alert severity="warning" className="mx-10 my-8 xl:mx-40 xl:my-10">
           {model.filter(
             (property) =>
               property.name === selectedLocation &&
