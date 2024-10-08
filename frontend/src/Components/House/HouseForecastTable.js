@@ -107,16 +107,19 @@ const HouseForecastTable = ({
     try {
       setLoading(true);
       setImageLoading(true);
-      const response = await axios.post("https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image", {
-        prePrices: updatedData.pre_price,
-        forecastPrices: updatedData.forecast_price,
-        preDate: data.original_dates, // Keep the original dates as quarters
-        forecastDate: data.forecast_dates, // Send updated forecast dates in months
-        bedroom: housedata.bedrooms,
-        propertyType: housedata.type,
-        location: housedata.location,
-        email: housedata.email,
-      });
+      const response = await axios.post(
+        "https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image",
+        {
+          prePrices: updatedData.pre_price,
+          forecastPrices: updatedData.forecast_price,
+          preDate: data.original_dates, // Keep the original dates as quarters
+          forecastDate: data.forecast_dates, // Send updated forecast dates in months
+          bedroom: housedata.bedrooms,
+          propertyType: housedata.type,
+          location: housedata.location,
+          email: housedata.email,
+        }
+      );
 
       const standardImageUrl = await imageToUrl(response.data.image_standard);
       const storyImageUrl = await imageToUrl(response.data.image_story);
@@ -212,7 +215,7 @@ const HouseForecastTable = ({
             <thead>
               <tr className="bg-primary">
                 <th className="w-1/3 py-[12px] px-6 text-left text-white font-bold uppercase">
-                  Quarter
+                  Month
                 </th>
                 <th className="w-1/3 py-[12px] px-6 text-left text-white font-bold uppercase">
                   Price

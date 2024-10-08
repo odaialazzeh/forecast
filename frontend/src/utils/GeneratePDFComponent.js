@@ -68,7 +68,7 @@ const GeneratePDFComponent = ({
       pdf.setDrawColor(200, 200, 200);
       pdf.line(20, pdfHeight, 190, pdfHeight);
 
-      pdfHeight += 22;
+      pdfHeight += 10;
 
       // Property Information (Left Side)
       pdf.setFontSize(10); // Smaller font size for property info
@@ -81,12 +81,12 @@ const GeneratePDFComponent = ({
       pdf.setFillColor(1, 174, 230); // Green background for type badge
       pdf.roundedRect(20, pdfHeight + 1, 15, 6, 3, 3, "F");
       pdf.setTextColor(255, 255, 255); // White text for type
-      pdf.text(typeBadge, 24, pdfHeight + 5);
+      pdf.text(typeBadge, 24, pdfHeight + 5.2);
 
       // Sale Status badge
       pdf.setFillColor(0, 90, 140); // Blue background for sale status
       pdf.roundedRect(36, pdfHeight + 1, 22, 6, 3, 3, "F");
-      pdf.text(saleStatus, 40, pdfHeight + 5);
+      pdf.text(saleStatus, 40, pdfHeight + 5.2);
 
       pdfHeight += 18; // Move down after the badges
 
@@ -117,14 +117,20 @@ const GeneratePDFComponent = ({
 
       pdfHeight += 10;
 
+      // Line separator between sections
+      pdf.setDrawColor(200, 200, 200);
+      pdf.line(20, pdfHeight, 190, pdfHeight);
+
+      pdfHeight += 62;
+
       // User Information (Right Side)
-      const userInfoStartX = 117; // X-position for the user information on the right
+      const userInfoStartX = 55; // X-position for the user information on the right
 
       // User image below the house image (circular, using JPEG with white background)
       if (user.image) {
         const img = await loadImage(user.image);
 
-        const diameter = 50; // Size of the circular image
+        const diameter = 35; // Size of the circular image
         const imgCanvas = document.createElement("canvas");
         const imgCtx = imgCanvas.getContext("2d");
 
@@ -158,22 +164,22 @@ const GeneratePDFComponent = ({
         pdf.addImage(
           circularImageData,
           "JPEG",
-          userInfoStartX,
-          pdfHeight - 65,
+          15,
+          pdfHeight - 55,
           diameter,
           diameter
         ); // Scale the circular image to fit the desired size
       }
 
-      pdfHeight -= 3;
-      // Full Name
+      pdfHeight -= 47;
+      // Name
       pdf.setFontSize(14);
       pdf.setFont("helvetica", "bold");
       pdf.text("Agent Information", userInfoStartX + 5, pdfHeight - 2); // Start user info on the right
 
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(11);
-      pdf.text("Full Name", userInfoStartX, pdfHeight + 8);
+      pdf.text("Name", userInfoStartX, pdfHeight + 8);
       const fullName = `${user.first_name || "N/A"} ${
         user.last_name || ""
       }`.trim();
@@ -247,7 +253,7 @@ const GeneratePDFComponent = ({
         url: companyprofile,
       });
       pdf.line(
-        userInfoStartX ,
+        userInfoStartX,
         pdfHeight + 49,
         userInfoStartX + pdf.getTextWidth(whatsappNumber),
         pdfHeight + 49
