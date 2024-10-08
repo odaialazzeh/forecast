@@ -71,7 +71,7 @@ const getRecordsByUserId = asyncHandler(async (req, res) => {
     res.json(records);
   } else {
     res.status(404);
-    throw new Error("No records found for this user");
+    throw new Error("There are no records");
   }
 });
 

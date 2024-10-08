@@ -14,6 +14,8 @@ const GeneratePDFComponent = ({
   plotArea,
   email,
   loadingAdd,
+  region,
+  mainRegion,
 }) => {
   const loadImage = (src) => {
     return new Promise((resolve, reject) => {
@@ -31,7 +33,7 @@ const GeneratePDFComponent = ({
     pdf.setFont("helvetica", "normal");
     pdf.setTextColor(50);
 
-    let pdfHeight = 40; // This will dynamically update based on content height
+    let pdfHeight = 40; // Starting height for content
 
     const selectedImgSrc =
       selectedImage === "standard"
@@ -54,37 +56,69 @@ const GeneratePDFComponent = ({
         const imgHeight =
           (selectedImage.naturalHeight / selectedImage.naturalWidth) *
           pdfWidth *
-          1.4; // Increase height
+          1.4;
 
         // Add house image to the PDF
         pdf.addImage(imgData, "JPEG", 25, 30, pdfWidth, imgHeight);
 
-        // Update pdfHeight to position the next content below the image
-        pdfHeight = imgHeight + 35; // Add 50px padding below the image
+        pdfHeight = imgHeight + 35; // Adjust height after image
       }
 
-      // Add the dynamic sentence before the line separator
-      pdf.setFontSize(10);
-      pdf.setFont("helvetica", "normal");
-
-      const bedroomText =
-        bedrooms === "studio" ? "studio" : `${bedrooms} bedroom(s)`;
-      const plotAreaText = plotArea ? `and plot area ${plotArea} sqft` : "";
-
-      const dynamicSentence = `Past 18 months, Upcoming 6 months for ${bedroomText} ${type} in ${location} with Built up area ${area} sqft ${plotAreaText}`;
-
-      // Get the width of the text to calculate the center position
-      const pageWidth = pdf.internal.pageSize.getWidth();
-      const textWidth = pdf.getTextWidth(dynamicSentence);
-      const xOffset = (pageWidth - textWidth) / 2; // Calculate the center X position
-
-      pdf.text(dynamicSentence.trim(), xOffset, pdfHeight); // Add centered dynamic text
-
-      pdfHeight += 10; // Adjust height after adding the dynamic sentence
-
-      // Line separator under the dynamic text
+      // Line separator between sections
       pdf.setDrawColor(200, 200, 200);
       pdf.line(20, pdfHeight, 190, pdfHeight);
+
+      pdfHeight += 22;
+
+      // Property Information (Left Side)
+      pdf.setFontSize(10); // Smaller font size for property info
+      pdf.setFont("helvetica", "bold");
+
+      // Type badge
+      const typeBadge = `${type}`;
+      const saleStatus = "For Sale";
+
+      pdf.setFillColor(1, 174, 230); // Green background for type badge
+      pdf.roundedRect(20, pdfHeight + 1, 15, 6, 3, 3, "F");
+      pdf.setTextColor(255, 255, 255); // White text for type
+      pdf.text(typeBadge, 24, pdfHeight + 5);
+
+      // Sale Status badge
+      pdf.setFillColor(0, 90, 140); // Blue background for sale status
+      pdf.roundedRect(36, pdfHeight + 1, 22, 6, 3, 3, "F");
+      pdf.text(saleStatus, 40, pdfHeight + 5);
+
+      pdfHeight += 18; // Move down after the badges
+
+      // Location, Bedrooms, Area (Left)
+      pdf.setTextColor(0, 90, 140); // Reset to black text
+      pdf.setFontSize(15); // Smaller font size
+      pdf.text(`${location}, ${region}, ${mainRegion}`, 20, pdfHeight);
+
+      pdfHeight += 10;
+
+      // Bedrooms
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(10); // Smaller font size
+      pdf.text(`- Bedroom(s): ${bedrooms} `, 20, pdfHeight);
+
+      pdfHeight += 10;
+      // Built-up Area
+      pdf.text(`- Built-up Area: ${area} sqft`, 20, pdfHeight);
+
+      pdfHeight += 10;
+
+      // Plot Area
+      pdf.text(
+        `- Plot Area: ${plotArea ? plotArea + " sqft" : "N/A"}`,
+        20,
+        pdfHeight
+      );
+
+      pdfHeight += 10;
+
+      // User Information (Right Side)
+      const userInfoStartX = 117; // X-position for the user information on the right
 
       // User image below the house image (circular, using JPEG with white background)
       if (user.image) {
@@ -124,118 +158,116 @@ const GeneratePDFComponent = ({
         pdf.addImage(
           circularImageData,
           "JPEG",
-          17,
-          pdfHeight + 10,
+          userInfoStartX,
+          pdfHeight - 65,
           diameter,
           diameter
         ); // Scale the circular image to fit the desired size
       }
 
-      // Add user information with modern design
+      pdfHeight -= 3;
+      // Full Name
       pdf.setFontSize(14);
       pdf.setFont("helvetica", "bold");
-      pdf.text("Agent Information", 20, pdfHeight + 70); // Start user information further down
+      pdf.text("Agent Information", userInfoStartX + 5, pdfHeight - 2); // Start user info on the right
 
-      // Add a subtle separator
-      pdf.setDrawColor(230, 230, 230);
-      pdf.line(20, pdfHeight + 72, 190, pdfHeight + 72);
-
-      // Start adding user information
-      pdf.setFontSize(12);
-      pdf.setFont("helvetica", "normal");
-
-      // Add the full name
-      pdf.text("Full Name", 20, pdfHeight + 80);
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(11);
+      pdf.text("Full Name", userInfoStartX, pdfHeight + 8);
       const fullName = `${user.first_name || "N/A"} ${
         user.last_name || ""
       }`.trim();
-      pdf.setFont("helvetica", "bold");
-      pdf.text(fullName, 60, pdfHeight + 80);
-
-      // Add clickable email with underline
       pdf.setFont("helvetica", "normal");
-      pdf.text("Email", 20, pdfHeight + 90);
-      pdf.setFont("helvetica", "bold");
+      pdf.text(fullName, userInfoStartX + 26, pdfHeight + 8);
 
+      // Email
+      pdf.setFont("helvetica", "bold");
+      pdf.text("Email", userInfoStartX, pdfHeight + 18);
+      pdf.setFont("helvetica", "normal");
       const emailText = String(email || "N/A");
 
       if (email) {
-        // Change text color to blue to indicate it's clickable
-        pdf.setTextColor(0, 0, 255); // RGB for blue color
-
-        // Add clickable email link
-        pdf.textWithLink(emailText, 60, pdfHeight + 90, {
+        pdf.setTextColor(0, 90, 140); // Blue for clickable text
+        pdf.textWithLink(emailText, userInfoStartX + 26, pdfHeight + 18, {
           url: `mailto:${emailText}`,
         });
-
-        // Add underline
         pdf.line(
-          60,
-          pdfHeight + 91,
-          60 + pdf.getTextWidth(emailText),
-          pdfHeight + 91
-        ); // Underline the email text
-
-        // Reset text color back to black for the rest of the document
-        pdf.setTextColor(0, 0, 0); // RGB for black color
+          userInfoStartX + 26,
+          pdfHeight + 19,
+          userInfoStartX + 26 + pdf.getTextWidth(emailText),
+          pdfHeight + 19
+        ); // Underline
+        pdf.setTextColor(0, 0, 0); // Reset text color to black
       } else {
-        // If email is not available, just add N/A
-        pdf.text("N/A", 60, pdfHeight + 90);
+        pdf.text("N/A", userInfoStartX + 26, pdfHeight + 18);
       }
 
-      // Add phone number
-      pdf.setFont("helvetica", "normal");
-      pdf.text("Phone", 20, pdfHeight + 100);
+      // Phone Number
       pdf.setFont("helvetica", "bold");
-      pdf.text(String(user.phone || "N/A"), 60, pdfHeight + 100);
-
-      // Add clickable WhatsApp number with underline
+      pdf.setTextColor(0, 90, 140);
+      pdf.text("Phone", userInfoStartX, pdfHeight + 28);
       pdf.setFont("helvetica", "normal");
-      pdf.text("WhatsApp", 20, pdfHeight + 110);
-      pdf.setFont("helvetica", "bold");
+      pdf.text(
+        String(user.phone || "N/A"),
+        userInfoStartX + 26,
+        pdfHeight + 28
+      );
 
-      // Construct the WhatsApp URL
+      // WhatsApp Number
+      pdf.setFont("helvetica", "bold");
+      pdf.setTextColor(0, 90, 140);
+      pdf.text("WhatsApp", userInfoStartX, pdfHeight + 38);
+      pdf.setFont("helvetica", "normal");
+
       const whatsappNumber = String(user.whatsapp || "N/A");
-      const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`; // Format the number correctly
+      const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`;
 
       if (user.whatsapp) {
-        // Change text color to blue to indicate it's clickable
-        pdf.setTextColor(0, 0, 255); // RGB for blue color
-
-        // Add clickable WhatsApp link
-        pdf.textWithLink(whatsappNumber, 60, pdfHeight + 110, {
+        pdf.setTextColor(0, 90, 140); // Blue for clickable text
+        pdf.textWithLink(whatsappNumber, userInfoStartX + 26, pdfHeight + 38, {
           url: whatsappLink,
         });
-
-        // Add underline
         pdf.line(
-          60,
-          pdfHeight + 111,
-          60 + pdf.getTextWidth(whatsappNumber),
-          pdfHeight + 111
-        ); // Underline the WhatsApp text
-
-        // Reset text color back to black for the rest of the document
-        pdf.setTextColor(0, 0, 0); // RGB for black color
+          userInfoStartX + 26,
+          pdfHeight + 39,
+          userInfoStartX + 26 + pdf.getTextWidth(whatsappNumber),
+          pdfHeight + 39
+        ); // Underline
+        pdf.setTextColor(0, 0, 0); // Reset text color to black
       } else {
-        // If WhatsApp number is not available, just add N/A
-        pdf.text("N/A", 60, pdfHeight + 110);
+        pdf.text("N/A", userInfoStartX + 40, pdfHeight + 38);
       }
 
-      // Add footer or company info if needed
+      const companyprofile =
+        "https://drive.google.com/file/d/14ZxLzxWCM21lDYVqM__pHEQXeoYFVX2w/view?usp=sharing";
+
+      pdf.setFont("helvetica", "bold");
+      pdf.setTextColor(0, 90, 140);
+      pdf.textWithLink("Company Profile", userInfoStartX, pdfHeight + 48, {
+        url: companyprofile,
+      });
+      pdf.line(
+        userInfoStartX ,
+        pdfHeight + 49,
+        userInfoStartX + pdf.getTextWidth(whatsappNumber),
+        pdfHeight + 49
+      ); // Underline
+      pdf.setFont("helvetica", "normal");
+
+      /* Footer or additional info if needed
       pdf.setFont("helvetica", "italic");
       pdf.setFontSize(10);
       pdf.text(
         "Generated on: " + new Date().toLocaleDateString(),
         20,
-        pdfHeight + 140
-      );
+        pdfHeight + 70
+      ); */
 
       // Save the PDF
       pdf.save("user_profile.pdf");
     } catch (error) {
       console.error(error);
-      pdf.save("user_profile.pdf");
+      pdf.save("user_profile.pdf"); // Save the PDF even in case of an error
     }
   };
 

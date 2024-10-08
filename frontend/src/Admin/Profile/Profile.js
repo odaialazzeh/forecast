@@ -155,8 +155,8 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="flex flex-grow items-start justify-center mb-10 ">
-      <div className="bg-white w-full">
+    <div className="flex flex-grow items-start justify-center mb-10">
+      <div className="bg-white w-full xl:h-[40rem] lg:h-[40rem] md:h-[40rem]">
         <div className="container mx-auto my-2 p-2">
           <div className="md:flex no-wrap md:mx-2">
             <div className="w-full md:w-4/12 mr-6">

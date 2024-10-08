@@ -70,6 +70,8 @@ const House = ({ house = {}, data = [] }) => {
                 bedrooms={bedrooms}
                 area={area}
                 plotArea={plotArea}
+                mainRegion={mainRegion}
+                region={region}
                 email={email}
               />
             )}

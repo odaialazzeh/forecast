@@ -17,6 +17,10 @@ function getQuarterFromDate(dateStr) {
   };
 }
 
+function getMonthFromDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleString("default", { month: "long", year: "numeric" });
+}
 // Function to combine the dates into quarters and calculate the average price for each quarter
 function calculateQuarterlyAverages(forecastDates, prices, cutoffQuarter) {
   const quarterMap = {};
@@ -84,21 +88,20 @@ const HouseForecastTable = ({
   const handleSaveClick = async (index, quarterData, type) => {
     const updatedData = { ...data };
     const datesInQuarter = quarterData.dates;
-    const newAvgPrice = Number(
+    const newPrice = Number(
       type === "forecast" ? editedAvgForecastPrice : editedAvgPrePrice
     );
 
-    datesInQuarter.forEach(({ index }) => {
-      if (type === "forecast") {
-        updatedData.forecast_price[index] = newAvgPrice;
-      } else {
-        updatedData.pre_price[index] = newAvgPrice;
-      }
-    });
-
-    if (type === "forecast")
-      setIsEditingForecast(null); // Exit edit mode for forecast prices
-    else setIsEditingPre(null); // Exit edit mode for pre prices
+    if (type === "forecast") {
+      updatedData.forecast_price[quarterData] = newPrice;
+      setIsEditingForecast(null);
+    } // Exit edit mode for forecast prices
+    else {
+      datesInQuarter.forEach(({ index }) => {
+        updatedData.pre_price[index] = newPrice;
+      });
+      setIsEditingPre(null);
+    } // Exit edit mode for pre prices
 
     // Call the API to update the image with the new prices
     try {
@@ -107,8 +110,8 @@ const HouseForecastTable = ({
       const response = await axios.post("https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image", {
         prePrices: updatedData.pre_price,
         forecastPrices: updatedData.forecast_price,
-        preDate: data.original_dates,
-        forecastDate: data.forecast_dates,
+        preDate: data.original_dates, // Keep the original dates as quarters
+        forecastDate: data.forecast_dates, // Send updated forecast dates in months
         bedroom: housedata.bedrooms,
         propertyType: housedata.type,
         location: housedata.location,
@@ -136,11 +139,6 @@ const HouseForecastTable = ({
     else setIsEditingPre(null); // Exit edit mode for pre prices
   };
 
-  // Calculate the quarterly averages for forecast and pre prices
-  const quarterlyForecastData = calculateQuarterlyAverages(
-    data.forecast_dates,
-    data.forecast_price
-  );
   const quarterlyPreData = calculateQuarterlyAverages(
     data.original_dates,
     data.pre_price
@@ -155,22 +153,31 @@ const HouseForecastTable = ({
     setIsDropdownOpen(false); // Close dropdown
   };
 
+  const forecastData = data.forecast_dates
+    .filter((date) => new Date(date) >= new Date("2024-10-01")) // Filter dates from November 2024 onward
+    .slice(0, 3) // Take only the first 3 dates
+    .map((date, index) => ({
+      month: getMonthFromDate(date),
+      price: data.forecast_price[data.forecast_dates.indexOf(date)], // Get the price corresponding to the date
+      index: data.forecast_dates.indexOf(date), // Get the correct index of the date
+    }));
+
   return (
     <div className="flex flex-col flex-grow bg-white my-4 shadow-1 p-5 rounded-xl w-full max-w-[400px] lg:max-w-[700px] mx-auto hover:shadow-2xl transition md:max-w-[600px] sm:max-w-[500px]">
       {/* Custom dropdown for selecting price type */}
       <div className="mb-4 relative">
         <label htmlFor="price-type" className="font-bold mr-4 text-secondary">
-          Select Quarter To Edit:
+          Select Data To Edit:
         </label>
         <div
           className="border p-2 rounded bg-gray-100 text-secondary cursor-pointer flex justify-between items-center"
           onClick={toggleDropdown}
         >
           {priceType === ""
-            ? "Select Quarter Type"
+            ? "Select Type"
             : priceType === "forecast"
-            ? "Forecast Quarters"
-            : "Original Quarters"}
+            ? "Forecast in Months"
+            : "Original in Quarters"}
           <span className="ml-2">▼</span>{" "}
         </div>
 
@@ -180,19 +187,19 @@ const HouseForecastTable = ({
               className="p-2 cursor-pointer text-secondary hover:bg-primary hover:text-white"
               onClick={() => handleOptionClick("")}
             >
-              Select Quarter Type
+              Select Type
             </li>
             <li
               className="p-2 cursor-pointer text-secondary hover:bg-primary hover:text-white"
               onClick={() => handleOptionClick("forecast")}
             >
-              Forecast Quarters
+              Forecast in Months
             </li>
             <li
               className="p-2 cursor-pointer text-secondary hover:bg-primary hover:text-white"
               onClick={() => handleOptionClick("pre")}
             >
-              Original Quarters
+              Original in Quarters
             </li>
           </ul>
         )}
@@ -216,10 +223,10 @@ const HouseForecastTable = ({
               </tr>
             </thead>
             <tbody className="bg-white">
-              {quarterlyForecastData.map((quarter, index) => (
+              {forecastData.map((monthData, index) => (
                 <tr key={index}>
                   <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
-                    {quarter.quarter}
+                    {monthData.month}
                   </td>
                   <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
                     {isEditingForecast === index ? (
@@ -232,7 +239,7 @@ const HouseForecastTable = ({
                         className="border border-gray-300 px-2 py-1 rounded w-36"
                       />
                     ) : (
-                      Math.round(quarter.avgPrice)
+                      Math.round(monthData.price)
                     )}
                   </td>
                   <td className="py-2 pl-12 border-b font-normal text-secondary border-gray-200">
@@ -240,7 +247,7 @@ const HouseForecastTable = ({
                       <div className="flex flex-row gap-3 ml-4">
                         <button
                           onClick={() =>
-                            handleSaveClick(index, quarter, "forecast")
+                            handleSaveClick(index, monthData.index, "forecast")
                           }
                           disabled={loading}
                         >
@@ -263,7 +270,7 @@ const HouseForecastTable = ({
                     ) : (
                       <button
                         onClick={() =>
-                          handleEditForecastClick(index, quarter.avgPrice)
+                          handleEditForecastClick(index, monthData.price)
                         }
                         className="ml-5 pt-1"
                       >

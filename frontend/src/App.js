@@ -24,10 +24,22 @@ const App = () => {
 
   const isLoginPage = location.pathname === "/login";
 
+  // Define pages where you want to exclude the height style
+  const excludeHeightStylePages = ["/profile", "/activityLog", "/accountLog"];
+  const shouldApplyHeightStyle = !excludeHeightStylePages.includes(
+    location.pathname
+  );
+
   return (
-    <div className="max-w-[1440px] mx-auto flex flex-col xl:h-[150rem] lg:h-[150rem] bg-white">
+    <div
+      className={`max-w-[1440px] mx-auto flex flex-col ${
+        shouldApplyHeightStyle
+          ? "xl:h-[150rem] lg:h-[150rem] md:h-[130rem]"
+          : ""
+      } bg-white`}
+    >
       {!isLoginPage && <Header />}
-      <main className="flex-grow  bg-white">
+      <main className="flex-grow bg-white">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />
