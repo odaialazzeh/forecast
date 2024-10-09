@@ -7,15 +7,14 @@ import {
 } from "react-icons/ri";
 import { Menu, MenuItem, MenuItems, MenuButton } from "@headlessui/react";
 
-const BedroomDropdown = ({ onChange, reset }) => {
+const BedroomDropdown = ({ onChange, reset, availableBedrooms, resetArea }) => {
   const [bedroom, setBedroom] = useState("Select Bedroom");
-
-  const bedrooms = ["Studio", "1", "2", "3", "4", "5", "6", "7"];
 
   // Function to handle bedroom selection
   const handleBedroomSelect = (option) => {
     setBedroom(option);
     onChange(option); // Notify parent of selected value
+    resetArea(); // Reset the area when a new bedroom is selected
   };
 
   useEffect(() => {
@@ -29,6 +28,7 @@ const BedroomDropdown = ({ onChange, reset }) => {
     e.stopPropagation(); // Prevent dropdown from closing
     setBedroom("Select Bedroom");
     onChange(""); // Notify parent of reset value
+    resetArea(); // Reset the area when the bedroom is reset
   };
 
   return (
@@ -63,20 +63,24 @@ const BedroomDropdown = ({ onChange, reset }) => {
 
       <MenuItems className="dropdown-menu mt-2 p-4">
         <div className="flex flex-wrap gap-1 justify-start">
-          {bedrooms.map((option, index) => (
-            <MenuItem key={index}>
-              {({ active }) => (
-                <div
-                  className={`cursor-pointer text-center text-white transition px-4 py-2 w-14 h-10 flex items-center justify-center rounded-lg ${
-                    active ? "bg-primary" : "bg-gray-500"
-                  }`}
-                  onClick={() => handleBedroomSelect(option)}
-                >
-                  {option}
-                </div>
-              )}
-            </MenuItem>
-          ))}
+          {availableBedrooms.length === 0 ? (
+            <div className="px-4 py-2 text-gray-500">No Bedrooms Available</div>
+          ) : (
+            availableBedrooms.map((option, index) => (
+              <MenuItem key={index}>
+                {({ active }) => (
+                  <div
+                    className={`cursor-pointer text-center text-white transition px-4 py-2 w-14 h-10 flex items-center justify-center rounded-lg ${
+                      active ? "bg-primary" : "bg-secondary"
+                    }`}
+                    onClick={() => handleBedroomSelect(option)}
+                  >
+                    {option}
+                  </div>
+                )}
+              </MenuItem>
+            ))
+          )}
         </div>
       </MenuItems>
     </Menu>

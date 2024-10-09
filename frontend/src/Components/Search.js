@@ -26,8 +26,18 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false); // State to track errors
   const [model, setModel] = useState([]);
+  const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]);
+  const [availableBedrooms, setAvailableBedrooms] = useState([]);
 
   const userInfo = useSelector((state) => state.auth.userInfo);
+
+  const resetArea = () => {
+    setUnitArea(""); // Reset the Unit Area state
+    setAvailableUnitAreas([]); // Optionally reset available unit areas if necessary
+  };
+  const resetBedrooms = () => {
+    setBedrooms(""); // Reset the Unit Area state
+  };
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -85,6 +95,28 @@ const Search = () => {
     // Reset the unit area and available areas when a new location is selected
     setAvailableUnitAreas([]); // Clear unit areas
   };
+
+  useEffect(() => {
+    if (selectedLocation) {
+      const filteredPropertyTypes = Object.keys(averagePrice).filter(
+        (propertyType) => averagePrice[propertyType][selectedLocation]
+      );
+      setAvailablePropertyTypes(filteredPropertyTypes);
+    } else {
+      setAvailablePropertyTypes([]); // Reset if no location is selected
+    }
+  }, [selectedLocation]);
+
+  useEffect(() => {
+    if (propertyType && selectedLocation) {
+      const bedroomsForLocation = Object.keys(
+        averagePrice?.[propertyType]?.[selectedLocation] || {}
+      ).map((bedroom) => bedroom.replace(" Bedrooms", ""));
+      setAvailableBedrooms(bedroomsForLocation);
+    } else {
+      setAvailableBedrooms([]); // Reset if no property type or location is selected
+    }
+  }, [propertyType, selectedLocation]);
 
   useEffect(() => {
     if (propertyType && bedrooms && selectedLocation) {
@@ -274,9 +306,20 @@ const Search = () => {
         </div>
 
         <div className="max-w-[1170px] w-full  flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 bg-white rounded-lg">
-          <PropertyDropdown onChange={setPropertyType} reset={propertyType} />
+          <PropertyDropdown
+            onChange={setPropertyType}
+            reset={propertyType}
+            availablePropertyTypes={availablePropertyTypes}
+            resetArea={() => resetArea()}
+            resetBedrooms={() => resetBedrooms()}
+          />
 
-          <BedroomDropdown onChange={setBedrooms} reset={bedrooms} />
+          <BedroomDropdown
+            onChange={setBedrooms}
+            reset={bedrooms}
+            resetArea={() => resetArea()}
+            availableBedrooms={availableBedrooms}
+          />
           <UnitAreaDropdown
             unitAreas={availableUnitAreas}
             onChange={(selectedUnitArea) => setUnitArea(selectedUnitArea)}

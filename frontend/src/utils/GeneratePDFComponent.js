@@ -78,15 +78,23 @@ const GeneratePDFComponent = ({
       const typeBadge = `${type}`;
       const saleStatus = "For Sale";
 
-      pdf.setFillColor(1, 174, 230); // Green background for type badge
-      pdf.roundedRect(20, pdfHeight + 1, 15, 6, 3, 3, "F");
-      pdf.setTextColor(255, 255, 255); // White text for type
-      pdf.text(typeBadge, 24, pdfHeight + 5.2);
-
       // Sale Status badge
+      pdf.setTextColor(255, 255, 255); // White text for type
       pdf.setFillColor(0, 90, 140); // Blue background for sale status
-      pdf.roundedRect(36, pdfHeight + 1, 22, 6, 3, 3, "F");
-      pdf.text(saleStatus, 40, pdfHeight + 5.2);
+      pdf.roundedRect(20, pdfHeight + 1, 22, 6, 3, 3, "F");
+      pdf.text(saleStatus, 24, pdfHeight + 5.2);
+
+      pdf.setFillColor(1, 174, 230);
+      const xPosition =
+        typeBadge === "Townhouse" || typeBadge === "Apartment"
+          ? 26
+          : typeBadge === "Duplex"
+          ? 20
+          : 15;
+      pdf.roundedRect(45, pdfHeight + 1, xPosition, 6, 3, 3, "F");
+      const txtPosition =
+        typeBadge === "Townhouse" || typeBadge === "Apartment" ? 48 : 49;
+      pdf.text(typeBadge, txtPosition, pdfHeight + 5.2);
 
       pdfHeight += 18; // Move down after the badges
 

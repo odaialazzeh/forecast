@@ -7,29 +7,36 @@ import {
 } from "react-icons/ri";
 import { Menu, MenuItem, MenuItems, MenuButton } from "@headlessui/react";
 
-const PropertyDropdown = ({ onChange, reset }) => {
-  const [property, setProperty] = useState("Select Property");
-
-  const properties = ["Villa", "Townhouse", "Apartment", "Duplex"];
+const PropertyDropdown = ({
+  onChange,
+  reset,
+  availablePropertyTypes,
+  resetBedrooms,
+  resetArea,
+}) => {
+  const [property, setProperty] = useState("Select Property Type");
 
   // Function to handle the property selection
   const handlePropertySelect = (option) => {
     setProperty(option);
     onChange(option); // Pass the selected option to the parent component
+    resetBedrooms(); // Reset bedrooms when property type is selected
+    resetArea(); // Reset area when property type is selected
   };
 
-  // Reset the property dropdown when reset from parent is empty
   useEffect(() => {
     if (reset === "") {
-      setProperty("Select Property");
+      setProperty("Select Property Type");
     }
-  }, [reset]); // Respond to changes in propertyType immediately
+  }, [reset]);
 
-  // Function to reset the property selection manually
+  // Function to reset the property selection
   const resetProperty = (e) => {
     e.stopPropagation(); // Prevent dropdown from closing when resetting
-    setProperty("Select Property");
-    onChange(""); // Reset the value in the parent component
+    setProperty("Select Property Type");
+    onChange(""); // Notify the parent component of the reset
+    resetBedrooms(); // Reset bedrooms when property type is reset
+    resetArea(); // Reset area when property type is reset
   };
 
   return (
@@ -42,10 +49,10 @@ const PropertyDropdown = ({ onChange, reset }) => {
           </div>
         </div>
         <div className="flex items-center">
-          {property !== "Select Property" && (
+          {property !== "Select Property Type" && (
             <RiCloseLine
               className="text-primary ml-2 cursor-pointer"
-              onClick={resetProperty} // Reset the property selection manually
+              onClick={resetProperty} // Reset the property selection
             />
           )}
           <MenuItems>
@@ -62,21 +69,27 @@ const PropertyDropdown = ({ onChange, reset }) => {
         </div>
       </MenuButton>
 
-      <MenuItems className="dropdown-menu mt-2 p-2 rounded-lg shadow-md bg-white">
-        {properties.map((option, index) => (
-          <MenuItem key={index}>
-            {({ active }) => (
-              <li
-                className={`cursor-pointer hover:bg-primary hover:text-white transition px-4 pt-1 rounded-lg ${
-                  active ? "bg-primary text-white" : ""
-                }`}
-                onClick={() => handlePropertySelect(option)}
-              >
-                {option}
-              </li>
-            )}
-          </MenuItem>
-        ))}
+      <MenuItems className="dropdown-menu mt-1 p-4">
+        <div className="flex flex-col gap-2 justify-start">
+          {availablePropertyTypes.length === 0 ? (
+            <div className="px-4 py-2 text-gray-500">No Types Available</div>
+          ) : (
+            availablePropertyTypes.map((option, index) => (
+              <MenuItem key={index}>
+                {({ active }) => (
+                  <li
+                    className={`cursor-pointer px-4 pt-4 ${
+                      active ? "text-primary" : ""
+                    }`}
+                    onClick={() => handlePropertySelect(option)}
+                  >
+                    {option}
+                  </li>
+                )}
+              </MenuItem>
+            ))
+          )}
+        </div>
       </MenuItems>
     </Menu>
   );

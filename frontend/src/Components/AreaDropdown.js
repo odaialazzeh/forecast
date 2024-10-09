@@ -56,17 +56,15 @@ const UnitAreaDropdown = ({ unitAreas = [], onChange }) => {
         </div>
       </MenuButton>
 
-      <MenuItems className="dropdown-menu absolute w-full bg-white shadow-md rounded-lg py-2 z-10">
+      <MenuItems className="dropdown-menu mt-1 p-4">
         {unitAreas.length === 0 ? (
-          <MenuItem disabled as="li" className="px-4 py-2 text-gray-500">
-            No unit areas available
-          </MenuItem>
+          <div className="px-4 py-2 text-gray-500">No Areas Available</div>
         ) : (
           unitAreas.map((option, index) => (
             <MenuItem key={index}>
               {({ active }) => (
                 <li
-                  className={`cursor-pointer px-4 pt-1 ${
+                  className={`cursor-pointer px-4 ${
                     active ? "text-primary" : ""
                   }`}
                   onClick={() => handleUnitAreaSelect(option)}

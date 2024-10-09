@@ -109,7 +109,7 @@ const UserProfile = () => {
       .catch((error) => {
         setAlert({
           type: "error",
-          message: error?.data?.message || "Update failed. Please try again.",
+          message: "Update failed. Please try again.",
         });
       });
   };
@@ -150,7 +150,10 @@ const UserProfile = () => {
       setFormData((prev) => ({ ...prev, image: updatedFile }));
       // Update local state
     } catch (err) {
-      toast.error(err?.data?.message || err.error);
+      setAlert({
+        type: "error",
+        message: "Upload Photo failed. Please try again.",
+      });
     }
   };
 
