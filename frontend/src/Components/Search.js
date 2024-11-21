@@ -6,7 +6,6 @@ import BedroomDropdown from "./BedroomDropdown";
 import UnitAreaDropdown from "./AreaDropdown";
 import { RiMapPinLine } from "react-icons/ri";
 import locationData from "../Assets/abu_dhabi_sub_areas.json";
-import modelData from "../Assets/model_data.json";
 import averagePrice from "../Assets/average_price.json";
 import House from "./House/House";
 import { imageToUrl } from "../utils/ImageToUrl";
@@ -120,10 +119,9 @@ const Search = () => {
 
   useEffect(() => {
     if (propertyType && bedrooms && selectedLocation) {
+      const key = bedrooms === "studio" ? "studio" : `${bedrooms} Bedrooms`;
       const data =
-        averagePrice?.[propertyType]?.[selectedLocation]?.[
-          `${bedrooms} Bedrooms`
-        ] || [];
+        averagePrice?.[propertyType]?.[selectedLocation]?.[key] || [];
 
       // Ensure data is iterable (an array) before mapping
       const unitAreas = Array.isArray(data)
@@ -143,7 +141,7 @@ const Search = () => {
     if (propertyType && bedrooms && selectedLocation) {
       const selectedModelData =
         averagePrice[propertyType]?.[selectedLocation]?.[
-          `${bedrooms} Bedrooms`
+          bedrooms === "studio" ? "studio" : `${bedrooms} Bedrooms`
         ];
 
       if (!selectedModelData) {
@@ -165,7 +163,7 @@ const Search = () => {
       try {
         const selectedModelData = averagePrice[propertyType]?.[
           selectedLocation
-        ]?.[`${bedrooms} Bedrooms`]?.find(
+        ]?.[bedrooms === "studio" ? "studio" : `${bedrooms} Bedrooms`]?.find(
           (item) =>
             item.unit_area === parseInt(unitArea) &&
             item.plot_area === parseInt(plotArea)
@@ -191,24 +189,21 @@ const Search = () => {
           email: userInfo.email,
         };
 
-        const response = await fetch(
-          "https://forecastmetro-app-uxtiu.ondigitalocean.app/forecast",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              bedroom: bedrooms,
-              propertyType: propertyType,
-              area: selectedModelData.unit_area,
-              price: selectedModelData.price,
-              location: selectedLocation,
-              region: selectedRegion,
-              email: userInfo.email,
-            }),
-          }
-        );
+        const response = await fetch("http://127.0.0.1:5000/forecast", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            bedroom: bedrooms,
+            propertyType: propertyType,
+            area: selectedModelData.unit_area,
+            price: selectedModelData.price,
+            location: selectedLocation,
+            region: selectedRegion,
+            email: userInfo.email,
+          }),
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -238,18 +233,12 @@ const Search = () => {
     }
   };
 
-  useEffect(() => {
-    const transformedData = [];
-    Object.keys(modelData).forEach((key) => {
-      transformedData.push(...modelData[key]);
-    });
-    setModel(transformedData);
-  }, []);
-
   const handleClearInput = () => {
     setInputValue("");
     setSelectedLocation(""); // Reset location selection
   };
+
+  console.log(bedrooms);
 
   return (
     <>
@@ -349,24 +338,9 @@ const Search = () => {
           ) : (
             <div className="flex flex-row flex-wrap gap-2">
               <p>
-                <span>The available data for a</span> {propertyType}{" "}
-                <span>in</span> {selectedLocation} <span>are for:</span>
+                No available data for {bedrooms} Bedroom(s) {propertyType} in{" "}
+                {selectedLocation}.
               </p>
-              <div className="flex flex-row gap-1">
-                {model
-                  .filter(
-                    (property) =>
-                      property.name === selectedLocation &&
-                      property.type === propertyType
-                  )
-                  .map((property, index) => (
-                    <p key={index}>
-                      {property.bedroom}
-                      <span>,</span>
-                    </p>
-                  ))}
-              </div>
-              <p>Bedroom(s)</p>
             </div>
           )}
         </Alert>

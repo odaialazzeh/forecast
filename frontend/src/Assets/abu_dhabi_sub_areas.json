@@ -10,11 +10,253 @@
             "The Dahlias",
             "Redwoods",
             "Aspens",
-            "The Cedars"
+            "The Cedars",
+            "lea"
         ],
         "Yas Park Views": [],
         "Yas Park Gate": [],
+        "Yas Golf Collection": [
+            "Residences D",
+            "Views A",
+            "Residences C",
+            "Residences E",
+            "Views B",
+            "Views F",
+            "Apartments 1"
+        ],
         "West Yas": [],
-        "The Sustainable City": []
+        "Ansam": [
+            "Ansam 1",
+            "Ansam 2",
+            "Ansam 3",
+            "Ansam 4"
+        ],
+        "Gardenia Bay": [],
+        "Mayan": [
+            "Mayan 1",
+            "Mayan 2",
+            "Mayan 3",
+            "Mayan 4"
+        ],
+        "Waters Edge": [],
+        "Diva": [],
+        "The Sustainable City": [],
+        "Yas Bay": [
+            "Perla 1",
+            "Yas Beach Residence",
+            "Sea La Vie"
+        ]
+    },
+    "Al Reem Island": {
+        "City of Lights": [
+            "Hydra Avenue Towers"
+        ],
+        "Julphar Residence": [
+            "Julphar Residence"
+        ],
+        "Al Reem": [
+            "Elie Saab Residences"
+        ],
+        "Najmat Abu Dhabi": [
+            "Marina Bay by DAMAC",
+            "The Wave"
+        ],
+        "Shams Abu Dhabi": [
+            "Parkside Residence",
+            "Amaya Towers",
+            "Azure",
+            "Beach Towers",
+            "Mangrove Place",
+            "Meera",
+            "Oceanscape",
+            "Reem Five",
+            "Reem Nine",
+            "Reem One",
+            "Reflection",
+            "Sky Tower",
+            "Sun Tower",
+            "The Boardwalk Residence",
+            "The Bridges",
+            "The Gate Tower"
+        ],
+        "Makers District": [
+            "Pixel"
+        ],
+        "Marina Square": [
+            "Tala Tower",
+            "Ocean Terrace",
+            "RAK Tower",
+            "MAG 5",
+            "Marina Heights 2",
+            "Marina Blue Tower",
+            "Burooj Views",
+            "Marina Heights",
+            "Al Maha Tower"
+        ],
+        "Park View": [
+            "Park View"
+        ],
+        "Reem Hills": [
+            "Reem Hills",
+            "Reem Hills-Phase 2D"
+        ],
+        "Yasmina Residence": [
+            "Yasmina Residence"
+        ]
+    },
+    "Saadiyat Island": {
+        "HIDD Al Saadiyat": [
+            "HIDD Al Saadiyat"
+        ],
+        "Jawaher Saadiyat": [
+            "Jawaher Saadiyat"
+        ],
+        "Manarat Living": [
+            "Manarat Living"
+        ],
+        "Murjan Al Saadiyat": [
+            "Murjan Al Saadiyat"
+        ],
+        "Saadiyat Beach": [
+            "Saadiyat Beach",
+            "St. Regis",
+            "Saadiyat Beach Residences"
+        ],
+        "Nobu Residences": [
+            "Nobu Residences"
+        ],
+        "Park View": [
+            "Park View"
+        ],
+        "Grove Beach Views": [
+            "Grove Beach Views"
+        ],
+        "Saadiyat Cultural District": [
+            "Louvre Abu Dhabi Residences",
+            "Mamsha Al Saadiyat",
+            "The Source",
+            "The Source II",
+            "Saadiyat Grove"
+        ],
+        "Saadiyat Lagoons": [
+            "Saadiyat Lagoons"
+        ],
+        "Saadiyat Reserve": [
+            "The Dunes"
+        ],
+        "Soho Square": [
+            "Soho Square"
+        ]
+    },
+    "Al Raha Beach": {
+        "Al Bandar": [
+            "Al Hadeel"
+        ],
+        "Al Muneera Island": [
+            "Al Muneera Island"
+        ],
+        "Al Zeina": [
+            "Building A"
+        ],
+        "Jamam Residence": [
+            "Jamam Residence"
+        ],
+        "The View": [
+            "The View"
+        ],
+        "Al Raha Lofts": [
+            "Al Raha Lofts"
+        ],
+        "Al Seef": [
+            "Lamar Residences"
+        ]
+    },
+    "Al Shamkha": {
+        "Alreeman": [
+            "Alreeman"
+        ],
+        "Fay Alreeman": [
+            "Fay Alreeman"
+        ],
+        "Reeman Living": [
+            "Reeman Living",
+            "Reeman Living 2"
+        ]
+    },
+    "Ghantoot": {
+        "Al Jurf": [
+            "Al Jurf Gardens",
+            "Al Jurf Kayan 2"
+        ]
+    },
+    "Al Qurm": {
+        "Al Gurm Resort": [
+            "Al Gurm Resort"
+        ]
+    },
+    "The Marina": {
+        "Fairmont Marina Residences": [],
+        "Marina Sunset Bay": []
+    },
+    "Ramhan Island": {
+        "Ramhan Island Villas": []
+    },
+    "Masdar City": {
+        "Royal Park": [],
+        "Oasis Residences": [
+            "Oasis 1",
+            "Oasis 2"
+        ],
+        "The Gate": [],
+        "Plaza": [],
+        "Ville 11": []
+    },
+    "Khalifa City": {
+        "Zayed City": [
+            "Bloom Living",
+            "Toledo"
+        ],
+        "Khalifa City A": [],
+        "Reportage Village Khalifa City": [],
+        "Al Merief": []
+    },
+    "Al Salam Street": {
+        "Bloom Gardens": [
+            "Aldhay at Bloom Gardens",
+            "Faya at Bloom Gardens",
+            "Bloom Gardens Villas"
+        ]
+    },
+    "Al Reef": {
+        "Al Reef Villas": [
+            "Arabian Style",
+            "Contemporary Style",
+            "Desert Style",
+            "Mediterranean Style"
+        ],
+        "Al Reef Downtown": []
+    },
+    "Al Raha Gardens": {
+        "Khannour Community": [],
+        "Yasmin Community": [],
+        "Lehweih Community": [],
+        "Samra Community": [],
+        "Sidra Community": []
+    },
+    "Al Ghadeer": {
+        "Al Ghadeer 2": [],
+        "Al Waha": [],
+        "Al Sabeel Building": [],
+        "Al Khaleej Village": [],
+        "Waterfall District": []
+    },
+    "Al Bateen": {
+        "Al Bateen Villas": []
+    },
+    "Al Jubail Island": {
+        "Seef Al Jubail": [],
+        "Nad Al Dhabi": [],
+        "Souk Al Jubail": [],
+        "Ain Al Maha": []
     }
 }

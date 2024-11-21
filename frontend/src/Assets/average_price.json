@@ -381,6 +381,1607 @@
                     "plot_area": 0
                 }
             ]
+        },
+        "Lea": {
+            "4 Bedrooms": [
+                {
+                    "price": 7760000,
+                    "unit_area": 5404,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7159600,
+                    "unit_area": 5489,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 7959999,
+                    "unit_area": 5404,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7924666,
+                    "unit_area": 5489,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 9830083,
+                    "unit_area": 8072,
+                    "plot_area": 0
+                },
+                {
+                    "price": 16999977,
+                    "unit_area": 11800,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem Hills": {
+            "4 Bedrooms": [
+                {
+                    "price": 8411525,
+                    "unit_area": 7006,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8105000,
+                    "unit_area": 6394,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7585414,
+                    "unit_area": 6036,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5797725,
+                    "unit_area": 3742,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5221247,
+                    "unit_area": 3887,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 12795603,
+                    "unit_area": 10487,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11870974,
+                    "unit_area": 11119,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 15910750,
+                    "unit_area": 14381,
+                    "plot_area": 0
+                },
+                {
+                    "price": 14866406,
+                    "unit_area": 13108,
+                    "plot_area": 0
+                }
+            ],
+            "7 Bedrooms": [
+                {
+                    "price": 21599749,
+                    "unit_area": 17435,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem Hills-Phase 2D": {
+            "4 Bedrooms": [
+                {
+                    "price": 7566100,
+                    "unit_area": 6036,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4966800,
+                    "unit_area": 3886,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "HIDD Al Saadiyat": {
+            "4 Bedrooms": [
+                {
+                    "price": 15200000,
+                    "unit_area": 4725,
+                    "plot_area": 0
+                },
+                {
+                    "price": 14730000,
+                    "unit_area": 6592,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 17793750,
+                    "unit_area": 6254,
+                    "plot_area": 0
+                }
+            ],
+            "7 Bedrooms": [
+                {
+                    "price": 53200000,
+                    "unit_area": 10075,
+                    "plot_area": 0
+                },
+                {
+                    "price": 48999999,
+                    "unit_area": 10570,
+                    "plot_area": 0
+                },
+                {
+                    "price": 37199799,
+                    "unit_area": 12237,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Jawaher Saadiyat": {
+            "4 Bedrooms": [
+                {
+                    "price": 16500000,
+                    "unit_area": 7388,
+                    "plot_area": 0
+                },
+                {
+                    "price": 15200000,
+                    "unit_area": 6849,
+                    "plot_area": 0
+                },
+                {
+                    "price": 14499999,
+                    "unit_area": 9859,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 30666666,
+                    "unit_area": 8503,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Murjan Al Saadiyat": {
+            "6 Bedrooms": [
+                {
+                    "price": 37499500,
+                    "unit_area": 13433,
+                    "plot_area": 0
+                }
+            ],
+            "7 Bedrooms": [
+                {
+                    "price": 93333333,
+                    "unit_area": 13670,
+                    "plot_area": 0
+                },
+                {
+                    "price": 82000000,
+                    "unit_area": 14143,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Saadiyat Beach": {
+            "3 Bedrooms": [
+                {
+                    "price": 7516000,
+                    "unit_area": 4074,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 12337500,
+                    "unit_area": 5191,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 14358250,
+                    "unit_area": 5834,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13642855,
+                    "unit_area": 6117,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "St. Regis": {
+            "4 Bedrooms": [
+                {
+                    "price": 26666666,
+                    "unit_area": 7478,
+                    "plot_area": 0
+                },
+                {
+                    "price": 24500000,
+                    "unit_area": 11324,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 35000000,
+                    "unit_area": 12000,
+                    "plot_area": 0
+                },
+                {
+                    "price": 29000000,
+                    "unit_area": 8258,
+                    "plot_area": 0
+                },
+                {
+                    "price": 28250000,
+                    "unit_area": 7478,
+                    "plot_area": 0
+                }
+            ],
+            "7 Bedrooms": [
+                {
+                    "price": 26500000,
+                    "unit_area": 11324,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Saadiyat Lagoons": {
+            "4 Bedrooms": [
+                {
+                    "price": 8175743,
+                    "unit_area": 4999,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8039998,
+                    "unit_area": 5789,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7962499,
+                    "unit_area": 7759,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7943000,
+                    "unit_area": 5337,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7508331,
+                    "unit_area": 5862,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 10500000,
+                    "unit_area": 5970,
+                    "plot_area": 0
+                },
+                {
+                    "price": 10466430,
+                    "unit_area": 8522,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9830000,
+                    "unit_area": 5787,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9829702,
+                    "unit_area": 5860,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9640635,
+                    "unit_area": 6232,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9601477,
+                    "unit_area": 8960,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8603769,
+                    "unit_area": 8787,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 12131475,
+                    "unit_area": 6351,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11832785,
+                    "unit_area": 8526,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11474296,
+                    "unit_area": 6736,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11400000,
+                    "unit_area": 6419,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Dunes": {
+            "4 Bedrooms": [
+                {
+                    "price": 9855999,
+                    "unit_area": 6774,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8999998,
+                    "unit_area": 5789,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8875000,
+                    "unit_area": 7057,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8816250,
+                    "unit_area": 5059,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8577799,
+                    "unit_area": 6587,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 12460000,
+                    "unit_area": 7388,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11750000,
+                    "unit_area": 10785,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11026043,
+                    "unit_area": 6852,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Alreeman": {
+            "4 Bedrooms": [
+                {
+                    "price": 4195699,
+                    "unit_area": 5490,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 4312500,
+                    "unit_area": 5490,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4183333,
+                    "unit_area": 4036,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 5133000,
+                    "unit_area": 8072,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4731800,
+                    "unit_area": 5489,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Fay Alreeman": {
+            "3 Bedrooms": [
+                {
+                    "price": 3223000,
+                    "unit_area": 3347,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4161333,
+                    "unit_area": 4208,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3811296,
+                    "unit_area": 7891,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3644173,
+                    "unit_area": 5489,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 4957550,
+                    "unit_area": 5467,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4273598,
+                    "unit_area": 5130,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4229809,
+                    "unit_area": 8073,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 5123844,
+                    "unit_area": 5396,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4952908,
+                    "unit_area": 5222,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Jurf Kayan 2": {
+            "4 Bedrooms": [
+                {
+                    "price": 5361277,
+                    "unit_area": 3547,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5236777,
+                    "unit_area": 5511,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 7741277,
+                    "unit_area": 7836,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6801138,
+                    "unit_area": 4428,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6492518,
+                    "unit_area": 6630,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Jurf Gardens": {
+            "2 Bedrooms": [
+                {
+                    "price": 3250000,
+                    "unit_area": 1451,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2950000,
+                    "unit_area": 3350,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 5575000,
+                    "unit_area": 4122,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5416666,
+                    "unit_area": 8140,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5399925,
+                    "unit_area": 4510,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3943996,
+                    "unit_area": 2001,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 6899000,
+                    "unit_area": 4135,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6833333,
+                    "unit_area": 5805,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6533333,
+                    "unit_area": 8140,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6250000,
+                    "unit_area": 4745,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5450000,
+                    "unit_area": 3380,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5361277,
+                    "unit_area": 3547,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5345944,
+                    "unit_area": 3188,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5236777,
+                    "unit_area": 5511,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5006777,
+                    "unit_area": 5382,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4983888,
+                    "unit_area": 3701,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3999500,
+                    "unit_area": 5738,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 21850000,
+                    "unit_area": 10732,
+                    "plot_area": 0
+                },
+                {
+                    "price": 10000000,
+                    "unit_area": 19000,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9250000,
+                    "unit_area": 6216,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9080000,
+                    "unit_area": 6835,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8500000,
+                    "unit_area": 9472,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7850000,
+                    "unit_area": 8438,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7798777,
+                    "unit_area": 5296,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7741277,
+                    "unit_area": 7836,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6952777,
+                    "unit_area": 6635,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6919055,
+                    "unit_area": 4428,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6546888,
+                    "unit_area": 6005,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 28600000,
+                    "unit_area": 13864,
+                    "plot_area": 0
+                }
+            ],
+            "7 Bedrooms": [
+                {
+                    "price": 19250000,
+                    "unit_area": 21789,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13500000,
+                    "unit_area": 8934,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Gurm Resort": {
+            "3 Bedrooms": [
+                {
+                    "price": 23000000,
+                    "unit_area": 12310,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 27500000,
+                    "unit_area": 13500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 24500000,
+                    "unit_area": 12303,
+                    "plot_area": 0
+                },
+                {
+                    "price": 24500000,
+                    "unit_area": 16500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 22999990,
+                    "unit_area": 14900,
+                    "plot_area": 0
+                },
+                {
+                    "price": 22450000,
+                    "unit_area": 16570,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 25999999,
+                    "unit_area": 20999,
+                    "plot_area": 0
+                },
+                {
+                    "price": 25500000,
+                    "unit_area": 13640,
+                    "plot_area": 0
+                },
+                {
+                    "price": 24000000,
+                    "unit_area": 9601,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Marina Sunset Bay": {
+            "5 Bedrooms": [
+                {
+                    "price": 14450000,
+                    "unit_area": 8817,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13750000,
+                    "unit_area": 5928,
+                    "plot_area": 0
+                },
+                {
+                    "price": 12999000,
+                    "unit_area": 8934,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11000000,
+                    "unit_area": 6500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 10699000,
+                    "unit_area": 6000,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 20500000,
+                    "unit_area": 7696,
+                    "plot_area": 0
+                },
+                {
+                    "price": 19000000,
+                    "unit_area": 7800,
+                    "plot_area": 0
+                },
+                {
+                    "price": 19000000,
+                    "unit_area": 8015,
+                    "plot_area": 0
+                },
+                {
+                    "price": 16000000,
+                    "unit_area": 12916,
+                    "plot_area": 0
+                }
+            ],
+            "7 Bedrooms": [
+                {
+                    "price": 45000000,
+                    "unit_area": 8503,
+                    "plot_area": 0
+                },
+                {
+                    "price": 45000000,
+                    "unit_area": 20605,
+                    "plot_area": 0
+                },
+                {
+                    "price": 45000000,
+                    "unit_area": 12916,
+                    "plot_area": 0
+                },
+                {
+                    "price": 34500000,
+                    "unit_area": 10171,
+                    "plot_area": 0
+                },
+                {
+                    "price": 33000000,
+                    "unit_area": 1285,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ramhan Island Villas": {
+            "3 Bedrooms": [
+                {
+                    "price": 9549499,
+                    "unit_area": 3559,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9500000,
+                    "unit_area": 3730,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9195470,
+                    "unit_area": 3007,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 19777498,
+                    "unit_area": 4974,
+                    "plot_area": 0
+                },
+                {
+                    "price": 10922746,
+                    "unit_area": 3356,
+                    "plot_area": 0
+                },
+                {
+                    "price": 10014285,
+                    "unit_area": 3801,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9833333,
+                    "unit_area": 4833,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9788765,
+                    "unit_area": 2862,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 17368764,
+                    "unit_area": 5496,
+                    "plot_area": 0
+                },
+                {
+                    "price": 17137333,
+                    "unit_area": 5373,
+                    "plot_area": 0
+                },
+                {
+                    "price": 15250000,
+                    "unit_area": 5909,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13357996,
+                    "unit_area": 4885,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 14598925,
+                    "unit_area": 5512,
+                    "plot_area": 0
+                },
+                {
+                    "price": 14569324,
+                    "unit_area": 5376,
+                    "plot_area": 0
+                },
+                {
+                    "price": 14427139,
+                    "unit_area": 4873,
+                    "plot_area": 0
+                }
+            ],
+            "7 Bedrooms": [
+                {
+                    "price": 28514221,
+                    "unit_area": 8519,
+                    "plot_area": 0
+                },
+                {
+                    "price": 27137896,
+                    "unit_area": 7539,
+                    "plot_area": 0
+                },
+                {
+                    "price": 20391629,
+                    "unit_area": 5548,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Bloom Living": {
+            "3 Bedrooms": [
+                {
+                    "price": 3508333,
+                    "unit_area": 2723,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4966666,
+                    "unit_area": 6318,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4862111,
+                    "unit_area": 3412,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4799999,
+                    "unit_area": 5231,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4776733,
+                    "unit_area": 4843,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 6902972,
+                    "unit_area": 4593,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5801837,
+                    "unit_area": 6888,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 8618000,
+                    "unit_area": 5511,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Toledo": {
+            "3 Bedrooms": [
+                {
+                    "price": 3489666,
+                    "unit_area": 2730,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4361200,
+                    "unit_area": 3405,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Khalifa City A Villas": {
+            "5 Bedrooms": [
+                {
+                    "price": 5450000,
+                    "unit_area": 11250,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 8875000,
+                    "unit_area": 15000,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Merief": {
+            "5 Bedrooms": [
+                {
+                    "price": 9083333,
+                    "unit_area": 10000,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 7750000,
+                    "unit_area": 12500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7400000,
+                    "unit_area": 13000,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Bloom Gardens Villas": {
+            "3 Bedrooms": [
+                {
+                    "price": 4000000,
+                    "unit_area": 3220,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3833333,
+                    "unit_area": 2250,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3700000,
+                    "unit_area": 2640,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 11000000,
+                    "unit_area": 4960,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7749500,
+                    "unit_area": 5430,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5074990,
+                    "unit_area": 4556,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Faya at Bloom Gardens": {
+            "5 Bedrooms": [
+                {
+                    "price": 6650000,
+                    "unit_area": 3101,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5499500,
+                    "unit_area": 3160,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5333333,
+                    "unit_area": 2631,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Arabian Style": {
+            "2 Bedrooms": [
+                {
+                    "price": 1233333,
+                    "unit_area": 1204,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1224937,
+                    "unit_area": 1262,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1216663,
+                    "unit_area": 1850,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1706250,
+                    "unit_area": 1872,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1568333,
+                    "unit_area": 2424,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2364285,
+                    "unit_area": 1939,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2349750,
+                    "unit_area": 3036,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2192749,
+                    "unit_area": 2858,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 2500000,
+                    "unit_area": 2941,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2539400,
+                    "unit_area": 3749,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Contemporary Style": {
+            "2 Bedrooms": [
+                {
+                    "price": 1243499,
+                    "unit_area": 1832,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1690000,
+                    "unit_area": 1874,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1639464,
+                    "unit_area": 2424,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2449750,
+                    "unit_area": 1939,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2277700,
+                    "unit_area": 2858,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 2647357,
+                    "unit_area": 2942,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2574927,
+                    "unit_area": 3750,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Desert Style": {
+            "2 Bedrooms": [
+                {
+                    "price": 1256250,
+                    "unit_area": 1262,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1231250,
+                    "unit_area": 1832,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1693749,
+                    "unit_area": 1873,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1583383,
+                    "unit_area": 2424,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2243333,
+                    "unit_area": 2424,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2241250,
+                    "unit_area": 2858,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2194285,
+                    "unit_area": 1939,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 2525000,
+                    "unit_area": 2942,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2508500,
+                    "unit_area": 3750,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mediterranean Style": {
+            "2 Bedrooms": [
+                {
+                    "price": 1295909,
+                    "unit_area": 1832,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1617390,
+                    "unit_area": 2424,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1612250,
+                    "unit_area": 1874,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2330000,
+                    "unit_area": 2858,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2237500,
+                    "unit_area": 1939,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 2616666,
+                    "unit_area": 2943,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2588222,
+                    "unit_area": 3750,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Khannour Community": {
+            "3 Bedrooms": [
+                {
+                    "price": 2779999,
+                    "unit_area": 3875,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2687500,
+                    "unit_area": 3750,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2675000,
+                    "unit_area": 3496,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2616333,
+                    "unit_area": 3563,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Yasmin Community": {
+            "3 Bedrooms": [
+                {
+                    "price": 2800000,
+                    "unit_area": 3503,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 4450000,
+                    "unit_area": 6894,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Lehweih Community": {
+            "5 Bedrooms": [
+                {
+                    "price": 5162500,
+                    "unit_area": 6200,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4999999,
+                    "unit_area": 3901,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4875000,
+                    "unit_area": 5200,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4650000,
+                    "unit_area": 4800,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3650000,
+                    "unit_area": 5266,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 5500000,
+                    "unit_area": 6200,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Samra Community": {
+            "4 Bedrooms": [
+                {
+                    "price": 3920000,
+                    "unit_area": 4311,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3000000,
+                    "unit_area": 3703,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2699995,
+                    "unit_area": 3272,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 4050000,
+                    "unit_area": 4312,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Sidra Community": {
+            "3 Bedrooms": [
+                {
+                    "price": 2640000,
+                    "unit_area": 2723,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3400000,
+                    "unit_area": 4324,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3357500,
+                    "unit_area": 3132,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Bateen Villas": {
+            "4 Bedrooms": [
+                {
+                    "price": 6320000,
+                    "unit_area": 4700,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Seef Al Jubail": {
+            "4 Bedrooms": [
+                {
+                    "price": 8699999,
+                    "unit_area": 4650,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8283333,
+                    "unit_area": 4553,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8225000,
+                    "unit_area": 4134,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7999999,
+                    "unit_area": 9429,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7500000,
+                    "unit_area": 3625,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7199999,
+                    "unit_area": 3381,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 15450000,
+                    "unit_area": 6685,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13962500,
+                    "unit_area": 6243,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13950000,
+                    "unit_area": 6555,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13450000,
+                    "unit_area": 6997,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13125000,
+                    "unit_area": 5704,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11250000,
+                    "unit_area": 5964,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Nad Al Dhabi": {
+            "4 Bedrooms": [
+                {
+                    "price": 8000000,
+                    "unit_area": 9888,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 16000000,
+                    "unit_area": 13262,
+                    "plot_area": 0
+                },
+                {
+                    "price": 15000000,
+                    "unit_area": 6685,
+                    "plot_area": 0
+                },
+                {
+                    "price": 12870000,
+                    "unit_area": 6243,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9750000,
+                    "unit_area": 5145,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9250000,
+                    "unit_area": 10168,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Souk Al Jubail": {
+            "4 Bedrooms": [
+                {
+                    "price": 8800000,
+                    "unit_area": 4553,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7828333,
+                    "unit_area": 3627,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 14500000,
+                    "unit_area": 13500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 14100000,
+                    "unit_area": 6662,
+                    "plot_area": 0
+                },
+                {
+                    "price": 12040000,
+                    "unit_area": 10171,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9650000,
+                    "unit_area": 5145,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 18500000,
+                    "unit_area": 8729,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ain Al Maha": {
+            "4 Bedrooms": [
+                {
+                    "price": 7525000,
+                    "unit_area": 3627,
+                    "plot_area": 0
+                },
+                {
+                    "price": 7350000,
+                    "unit_area": 4068,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 15333333,
+                    "unit_area": 6662,
+                    "plot_area": 0
+                },
+                {
+                    "price": 14833333,
+                    "unit_area": 5704,
+                    "plot_area": 0
+                }
+            ],
+            "6 Bedrooms": [
+                {
+                    "price": 29000000,
+                    "unit_area": 9149,
+                    "plot_area": 0
+                },
+                {
+                    "price": 20250000,
+                    "unit_area": 9052,
+                    "plot_area": 0
+                },
+                {
+                    "price": 15800000,
+                    "unit_area": 8729,
+                    "plot_area": 0
+                }
+            ]
         }
     },
     "Townhouse": {
@@ -635,6 +2236,572 @@
                     "plot_area": 0
                 }
             ]
+        },
+        "Reem Hills": {
+            "3 Bedrooms": [
+                {
+                    "price": 4030569,
+                    "unit_area": 3113,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3712975,
+                    "unit_area": 2666,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3649999,
+                    "unit_area": 2960,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3594383,
+                    "unit_area": 2769,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3581250,
+                    "unit_area": 2378,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3440000,
+                    "unit_area": 2152,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5365580,
+                    "unit_area": 3886,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem Hills-Phase 2D": {
+            "3 Bedrooms": [
+                {
+                    "price": 3529377,
+                    "unit_area": 2377,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Murjan Al Saadiyat": {
+            "3 Bedrooms": [
+                {
+                    "price": 10930000,
+                    "unit_area": 2774,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 12833000,
+                    "unit_area": 3141,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mamsha Al Saadiyat": {
+            "2 Bedrooms": [
+                {
+                    "price": 12759989,
+                    "unit_area": 3402,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9100000,
+                    "unit_area": 2292,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 12550000,
+                    "unit_area": 3343,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Lamar Residences": {
+            "2 Bedrooms": [
+                {
+                    "price": 3106220,
+                    "unit_area": 3051,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3796000,
+                    "unit_area": 3600,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4878250,
+                    "unit_area": 4255,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4314600,
+                    "unit_area": 3711,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Royal Park": {
+            "4 Bedrooms": [
+                {
+                    "price": 2607300,
+                    "unit_area": 3498,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2568155,
+                    "unit_area": 2725,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2492893,
+                    "unit_area": 2622,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2277202,
+                    "unit_area": 2376,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2150331,
+                    "unit_area": 3083,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 1995350,
+                    "unit_area": 2600,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Plaza": {
+            "3 Bedrooms": [
+                {
+                    "price": 1600000,
+                    "unit_area": 2150,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2050000,
+                    "unit_area": 2285,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2027774,
+                    "unit_area": 2221,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1884333,
+                    "unit_area": 2350,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Bloom Living": {
+            "2 Bedrooms": [
+                {
+                    "price": 2133000,
+                    "unit_area": 1339,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2033333,
+                    "unit_area": 2024,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1896818,
+                    "unit_area": 1735,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1878333,
+                    "unit_area": 2430,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1800000,
+                    "unit_area": 1950,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1776666,
+                    "unit_area": 1614,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1675000,
+                    "unit_area": 1850,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3421250,
+                    "unit_area": 2730,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3030974,
+                    "unit_area": 2323,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2838852,
+                    "unit_area": 1848,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2680418,
+                    "unit_area": 2545,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2639385,
+                    "unit_area": 2064,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2562250,
+                    "unit_area": 1603,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2483333,
+                    "unit_area": 1722,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2086333,
+                    "unit_area": 2200,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Toledo": {
+            "2 Bedrooms": [
+                {
+                    "price": 2020666,
+                    "unit_area": 2430,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1985908,
+                    "unit_area": 1325,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2816666,
+                    "unit_area": 1840,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2293193,
+                    "unit_area": 1629,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Khalifa City A": {
+            "4 Bedrooms": [
+                {
+                    "price": 3476666,
+                    "unit_area": 4450,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3325894,
+                    "unit_area": 4120,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2625000,
+                    "unit_area": 2500,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reportage Village Khalifa City": {
+            "3 Bedrooms": [
+                {
+                    "price": 4573876,
+                    "unit_area": 4175,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4481078,
+                    "unit_area": 4119,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4409469,
+                    "unit_area": 2837,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4293935,
+                    "unit_area": 2907,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3036219,
+                    "unit_area": 4120,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2549333,
+                    "unit_area": 5226,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Aldhay at Bloom Gardens": {
+            "2 Bedrooms": [
+                {
+                    "price": 2524750,
+                    "unit_area": 1157,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3199000,
+                    "unit_area": 2330,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3175000,
+                    "unit_area": 1970,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2816666,
+                    "unit_area": 1683,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2716666,
+                    "unit_area": 1525,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2600000,
+                    "unit_area": 1157,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5005000,
+                    "unit_area": 2781,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 5749000,
+                    "unit_area": 2789,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Faya at Bloom Gardens": {
+            "3 Bedrooms": [
+                {
+                    "price": 3733333,
+                    "unit_area": 2914,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3100000,
+                    "unit_area": 4556,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 5500000,
+                    "unit_area": 4556,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5300000,
+                    "unit_area": 4923,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5000000,
+                    "unit_area": 4370,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5000000,
+                    "unit_area": 4429,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4999990,
+                    "unit_area": 2630,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4800000,
+                    "unit_area": 3157,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Khannour Community": {
+            "3 Bedrooms": [
+                {
+                    "price": 2757142,
+                    "unit_area": 2694,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2299750,
+                    "unit_area": 2058,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2900000,
+                    "unit_area": 3244,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2683333,
+                    "unit_area": 2755,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Yasmin Community": {
+            "3 Bedrooms": [
+                {
+                    "price": 2471412,
+                    "unit_area": 3150,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2400000,
+                    "unit_area": 2529,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2299666,
+                    "unit_area": 2163,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2744166,
+                    "unit_area": 2596,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Ghadeer 2": {
+            "2 Bedrooms": [
+                {
+                    "price": 2000000,
+                    "unit_area": 2775,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1819749,
+                    "unit_area": 1700,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1669500,
+                    "unit_area": 2147,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2374750,
+                    "unit_area": 3922,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2183333,
+                    "unit_area": 2147,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2100000,
+                    "unit_area": 1636,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2016666,
+                    "unit_area": 2375,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Khaleej Village": {
+            "2 Bedrooms": [
+                {
+                    "price": 1900000,
+                    "unit_area": 1990,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1450000,
+                    "unit_area": 1735,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1433333,
+                    "unit_area": 1301,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1225000,
+                    "unit_area": 1188,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Waterfall District": {
+            "2 Bedrooms": [
+                {
+                    "price": 1366666,
+                    "unit_area": 1277,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1350000,
+                    "unit_area": 1188,
+                    "plot_area": 0
+                }
+            ]
         }
     },
     "Duplex": {
@@ -711,6 +2878,87 @@
                     "plot_area": 0
                 }
             ]
+        },
+        "Al Raha Lofts": {
+            "2 Bedrooms": [
+                {
+                    "price": 1287500,
+                    "unit_area": 1070,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 2783000,
+                    "unit_area": 2245,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Oasis 1": {
+            "2 Bedrooms": [
+                {
+                    "price": 1074500,
+                    "unit_area": 1150,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Qasis 2": {
+            "1 Bedrooms": [
+                {
+                    "price": 775000,
+                    "unit_area": 640,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1300000,
+                    "unit_area": 911,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ville 11": {
+            "2 Bedrooms": [
+                {
+                    "price": 1143666,
+                    "unit_area": 1060,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1452333,
+                    "unit_area": 2359,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1074000,
+                    "unit_area": 1307,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 1760000,
+                    "unit_area": 2000,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1254000,
+                    "unit_area": 1838,
+                    "plot_area": 0
+                }
+            ],
+            "5 Bedrooms": [
+                {
+                    "price": 1434000,
+                    "unit_area": 2000,
+                    "plot_area": 0
+                }
+            ]
         }
     },
     "Apartment": {
@@ -738,6 +2986,3840 @@
                 {
                     "price": 2230000,
                     "unit_area": 1555,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Residences D": {
+            "1 Bedrooms": [
+                {
+                    "price": 1399263,
+                    "unit_area": 852,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1497527,
+                    "unit_area": 875,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2306881,
+                    "unit_area": 1235,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3164789,
+                    "unit_area": 1806,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3048585,
+                    "unit_area": 1807,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Views A": {
+            "1 Bedrooms": [
+                {
+                    "price": 1402000,
+                    "unit_area": 850,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1472850,
+                    "unit_area": 851,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1446867,
+                    "unit_area": 853,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2326949,
+                    "unit_area": 1235,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Residences C": {
+            "1 Bedrooms": [
+                {
+                    "price": 1458869,
+                    "unit_area": 865,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1616780,
+                    "unit_area": 875,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 3075230,
+                    "unit_area": 1802,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3085416,
+                    "unit_area": 1806,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3074383,
+                    "unit_area": 1808,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Residences E": {
+            "2 Bedrooms": [
+                {
+                    "price": 2344706,
+                    "unit_area": 1235,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2630067,
+                    "unit_area": 1236,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3194503,
+                    "unit_area": 1806,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3175175,
+                    "unit_area": 1807,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Views B": {
+            "2 Bedrooms": [
+                {
+                    "price": 2322000,
+                    "unit_area": 1236,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Views F": {
+            "1 Bedrooms": [
+                {
+                    "price": 1505854,
+                    "unit_area": 894,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2245135,
+                    "unit_area": 1235,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2209479,
+                    "unit_area": 1236,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3407166,
+                    "unit_area": 1802,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Apartments 1": {
+            "studio": [
+                {
+                    "price": 904285,
+                    "unit_area": 582,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ansam 1": {
+            "1 Bedrooms": [
+                {
+                    "price": 1778000,
+                    "unit_area": 1276,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1910062,
+                    "unit_area": 1276,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1892846,
+                    "unit_area": 1296,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 847000,
+                    "unit_area": 530,
+                    "plot_area": 0
+                },
+                {
+                    "price": 841428,
+                    "unit_area": 547,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ansam 2": {
+            "1 Bedrooms": [
+                {
+                    "price": 1269999,
+                    "unit_area": 886,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2193750,
+                    "unit_area": 1276,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2255555,
+                    "unit_area": 1281,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1908000,
+                    "unit_area": 1363,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2149999,
+                    "unit_area": 1366,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ansam 4": {
+            "2 Bedrooms": [
+                {
+                    "price": 2032498,
+                    "unit_area": 1408,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ansam 3": {
+            "2 Bedrooms": [
+                {
+                    "price": 2197747,
+                    "unit_area": 1366,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Gardenia Bay": {
+            "1 Bedrooms": [
+                {
+                    "price": 1869900,
+                    "unit_area": 792,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1771364,
+                    "unit_area": 793,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1595610,
+                    "unit_area": 794,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1718370,
+                    "unit_area": 799,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1545308,
+                    "unit_area": 800,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1549945,
+                    "unit_area": 803,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1495554,
+                    "unit_area": 804,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1512042,
+                    "unit_area": 805,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1479143,
+                    "unit_area": 806,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1456216,
+                    "unit_area": 807,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1463130,
+                    "unit_area": 808,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1521347,
+                    "unit_area": 809,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1486516,
+                    "unit_area": 810,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1473947,
+                    "unit_area": 812,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1559127,
+                    "unit_area": 813,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1499364,
+                    "unit_area": 815,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1448404,
+                    "unit_area": 818,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1551045,
+                    "unit_area": 824,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1473990,
+                    "unit_area": 848,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1488005,
+                    "unit_area": 871,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1517428,
+                    "unit_area": 936,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1527647,
+                    "unit_area": 937,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2104629,
+                    "unit_area": 1145,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2352187,
+                    "unit_area": 1163,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2063823,
+                    "unit_area": 1207,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2183827,
+                    "unit_area": 1250,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2208308,
+                    "unit_area": 1290,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2362101,
+                    "unit_area": 1291,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2176529,
+                    "unit_area": 1293,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2642466,
+                    "unit_area": 1295,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2355935,
+                    "unit_area": 1296,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2358941,
+                    "unit_area": 1300,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2189571,
+                    "unit_area": 1310,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3034536,
+                    "unit_area": 1665,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2954623,
+                    "unit_area": 1667,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3159114,
+                    "unit_area": 1668,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3069121,
+                    "unit_area": 1669,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3844879,
+                    "unit_area": 1738,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3534911,
+                    "unit_area": 1739,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 812000,
+                    "unit_area": 417,
+                    "plot_area": 0
+                },
+                {
+                    "price": 865000,
+                    "unit_area": 420,
+                    "plot_area": 0
+                },
+                {
+                    "price": 865741,
+                    "unit_area": 462,
+                    "plot_area": 0
+                },
+                {
+                    "price": 872591,
+                    "unit_area": 464,
+                    "plot_area": 0
+                },
+                {
+                    "price": 908632,
+                    "unit_area": 465,
+                    "plot_area": 0
+                },
+                {
+                    "price": 903571,
+                    "unit_area": 468,
+                    "plot_area": 0
+                },
+                {
+                    "price": 928793,
+                    "unit_area": 469,
+                    "plot_area": 0
+                },
+                {
+                    "price": 914219,
+                    "unit_area": 470,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1053183,
+                    "unit_area": 471,
+                    "plot_area": 0
+                },
+                {
+                    "price": 883544,
+                    "unit_area": 473,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1002567,
+                    "unit_area": 482,
+                    "plot_area": 0
+                },
+                {
+                    "price": 920790,
+                    "unit_area": 484,
+                    "plot_area": 0
+                },
+                {
+                    "price": 900714,
+                    "unit_area": 485,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1066365,
+                    "unit_area": 497,
+                    "plot_area": 0
+                },
+                {
+                    "price": 988584,
+                    "unit_area": 502,
+                    "plot_area": 0
+                },
+                {
+                    "price": 956161,
+                    "unit_area": 503,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1024342,
+                    "unit_area": 505,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1010998,
+                    "unit_area": 506,
+                    "plot_area": 0
+                },
+                {
+                    "price": 937065,
+                    "unit_area": 513,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mayan 1": {
+            "1 Bedrooms": [
+                {
+                    "price": 1712500,
+                    "unit_area": 886,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1799666,
+                    "unit_area": 909,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1775000,
+                    "unit_area": 926,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1740000,
+                    "unit_area": 936,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1881247,
+                    "unit_area": 940,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1925000,
+                    "unit_area": 973,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1900000,
+                    "unit_area": 976,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2983333,
+                    "unit_area": 1210,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3400000,
+                    "unit_area": 1487,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3466666,
+                    "unit_area": 1540,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 6311648,
+                    "unit_area": 2180,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6400000,
+                    "unit_area": 2207,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mayan 2": {
+            "2 Bedrooms": [
+                {
+                    "price": 2655554,
+                    "unit_area": 1636,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3371414,
+                    "unit_area": 1648,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3159750,
+                    "unit_area": 1663,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mayan 4": {
+            "2 Bedrooms": [
+                {
+                    "price": 2523750,
+                    "unit_area": 1201,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2529166,
+                    "unit_area": 1226,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2882142,
+                    "unit_area": 1433,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mayan 3": {
+            "2 Bedrooms": [
+                {
+                    "price": 2508266,
+                    "unit_area": 1465,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Waters Edge": {
+            "1 Bedrooms": [
+                {
+                    "price": 1499649,
+                    "unit_area": 678,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1057999,
+                    "unit_area": 680,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1014285,
+                    "unit_area": 681,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1070333,
+                    "unit_area": 683,
+                    "plot_area": 0
+                },
+                {
+                    "price": 968666,
+                    "unit_area": 685,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1001110,
+                    "unit_area": 686,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1112449,
+                    "unit_area": 688,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1018750,
+                    "unit_area": 689,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1042000,
+                    "unit_area": 690,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1070000,
+                    "unit_area": 693,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1035000,
+                    "unit_area": 694,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1031428,
+                    "unit_area": 695,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1113090,
+                    "unit_area": 696,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1069333,
+                    "unit_area": 697,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1106249,
+                    "unit_area": 698,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1092500,
+                    "unit_area": 699,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1045329,
+                    "unit_area": 700,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1089566,
+                    "unit_area": 701,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1016000,
+                    "unit_area": 706,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1487500,
+                    "unit_area": 1043,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1563817,
+                    "unit_area": 1044,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1650000,
+                    "unit_area": 1045,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1537500,
+                    "unit_area": 1048,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1525555,
+                    "unit_area": 1066,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1510988,
+                    "unit_area": 1067,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1550000,
+                    "unit_area": 1068,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1552499,
+                    "unit_area": 1069,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1516666,
+                    "unit_area": 1071,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1490000,
+                    "unit_area": 1073,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1546000,
+                    "unit_area": 1074,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1516183,
+                    "unit_area": 1075,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1523953,
+                    "unit_area": 1076,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1518583,
+                    "unit_area": 1077,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1535833,
+                    "unit_area": 1080,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1521862,
+                    "unit_area": 1082,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1521099,
+                    "unit_area": 1100,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1700000,
+                    "unit_area": 1214,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1450000,
+                    "unit_area": 1215,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1444444,
+                    "unit_area": 1216,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1425000,
+                    "unit_area": 1228,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1912857,
+                    "unit_area": 1397,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1899999,
+                    "unit_area": 1399,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2034260,
+                    "unit_area": 1400,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1950368,
+                    "unit_area": 1402,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2241666,
+                    "unit_area": 1404,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1982461,
+                    "unit_area": 1405,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2141111,
+                    "unit_area": 1407,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1951175,
+                    "unit_area": 1410,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2040000,
+                    "unit_area": 1417,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1899475,
+                    "unit_area": 1422,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2127777,
+                    "unit_area": 1500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2119142,
+                    "unit_area": 1506,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2192500,
+                    "unit_area": 1507,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2065000,
+                    "unit_area": 1513,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2116666,
+                    "unit_area": 1520,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2137375,
+                    "unit_area": 1602,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 775000,
+                    "unit_area": 450,
+                    "plot_area": 0
+                },
+                {
+                    "price": 789999,
+                    "unit_area": 458,
+                    "plot_area": 0
+                },
+                {
+                    "price": 779000,
+                    "unit_area": 462,
+                    "plot_area": 0
+                },
+                {
+                    "price": 780000,
+                    "unit_area": 481,
+                    "plot_area": 0
+                },
+                {
+                    "price": 845000,
+                    "unit_area": 489,
+                    "plot_area": 0
+                },
+                {
+                    "price": 806105,
+                    "unit_area": 490,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Diva": {
+            "1 Bedrooms": [
+                {
+                    "price": 835666,
+                    "unit_area": 525,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1402666,
+                    "unit_area": 800,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1450000,
+                    "unit_area": 872,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1412500,
+                    "unit_area": 908,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1655600,
+                    "unit_area": 927,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1518000,
+                    "unit_area": 1119,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1503646,
+                    "unit_area": 842,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1488026,
+                    "unit_area": 846,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1571152,
+                    "unit_area": 848,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 727500,
+                    "unit_area": 360,
+                    "plot_area": 0
+                },
+                {
+                    "price": 656333,
+                    "unit_area": 365,
+                    "plot_area": 0
+                },
+                {
+                    "price": 703000,
+                    "unit_area": 366,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Sea La Vie": {
+            "1 Bedrooms": [
+                {
+                    "price": 1575502,
+                    "unit_area": 785,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1573800,
+                    "unit_area": 790,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1592000,
+                    "unit_area": 796,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1635531,
+                    "unit_area": 799,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1597499,
+                    "unit_area": 803,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1657777,
+                    "unit_area": 804,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1578857,
+                    "unit_area": 805,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1527580,
+                    "unit_area": 814,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1615943,
+                    "unit_area": 914,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1925000,
+                    "unit_area": 936,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1913662,
+                    "unit_area": 937,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2672500,
+                    "unit_area": 1248,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2838000,
+                    "unit_area": 1400,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2662500,
+                    "unit_area": 1429,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3091666,
+                    "unit_area": 1624,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2922892,
+                    "unit_area": 1637,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4192486,
+                    "unit_area": 2111,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4149999,
+                    "unit_area": 2112,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4239800,
+                    "unit_area": 2548,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5100000,
+                    "unit_area": 2956,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Yas Beach Residence": {
+            "1 Bedrooms": [
+                {
+                    "price": 865900,
+                    "unit_area": 742,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1949833,
+                    "unit_area": 1503,
+                    "plot_area": 0
+                }
+            ],
+            "studio Bedrooms": [
+                {
+                    "price": 546666,
+                    "unit_area": 489,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Perla 1": {
+            "1 Bedrooms": [
+                {
+                    "price": 1769718,
+                    "unit_area": 923,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1950000,
+                    "unit_area": 1109,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1746500,
+                    "unit_area": 1650,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2500000,
+                    "unit_area": 1247,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1862892,
+                    "unit_area": 1296,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1734333,
+                    "unit_area": 1368,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Julphar Residence": {
+            "1 Bedrooms": [
+                {
+                    "price": 904454,
+                    "unit_area": 745,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1649780,
+                    "unit_area": 1430,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Hydra Avenue Towers": {
+            "1 Bedrooms": [
+                {
+                    "price": 885118,
+                    "unit_area": 944,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1515714,
+                    "unit_area": 1782,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1429230,
+                    "unit_area": 1704,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1356229,
+                    "unit_area": 1373,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 744686,
+                    "unit_area": 815,
+                    "plot_area": 0
+                },
+                {
+                    "price": 611223,
+                    "unit_area": 556,
+                    "plot_area": 0
+                },
+                {
+                    "price": 572856,
+                    "unit_area": 424,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Elie Saab Residences": {
+            "1 Bedrooms": [
+                {
+                    "price": 2450000,
+                    "unit_area": 967,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2345000,
+                    "unit_area": 1302,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2050000,
+                    "unit_area": 1200,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1925000,
+                    "unit_area": 814,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 4000000,
+                    "unit_area": 1937,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3647500,
+                    "unit_area": 1820,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4849500,
+                    "unit_area": 2118,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3375000,
+                    "unit_area": 1798,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Marina Bay by DAMAC": {
+            "1 Bedrooms": [
+                {
+                    "price": 839993,
+                    "unit_area": 1220,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1154166,
+                    "unit_area": 1140,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1095000,
+                    "unit_area": 1212,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Wave": {
+            "1 Bedrooms": [
+                {
+                    "price": 872855,
+                    "unit_area": 815,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1612222,
+                    "unit_area": 1363,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1600000,
+                    "unit_area": 1281,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2350000,
+                    "unit_area": 1929,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Parkside Residence": {
+            "1 Bedrooms": [
+                {
+                    "price": 1130123,
+                    "unit_area": 764,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1762500,
+                    "unit_area": 1206,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Amaya Towers": {
+            "1 Bedrooms": [
+                {
+                    "price": 907500,
+                    "unit_area": 888,
+                    "plot_area": 0
+                },
+                {
+                    "price": 839321,
+                    "unit_area": 805,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1573000,
+                    "unit_area": 1355,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1568737,
+                    "unit_area": 1507,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2365998,
+                    "unit_area": 2190,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2300000,
+                    "unit_area": 1943,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Beach Towers": {
+            "1 Bedrooms": [
+                {
+                    "price": 1243791,
+                    "unit_area": 1011,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1064863,
+                    "unit_area": 954,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 4856485,
+                    "unit_area": 1686,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2074999,
+                    "unit_area": 1435,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2900000,
+                    "unit_area": 2342,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2363561,
+                    "unit_area": 2090,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 3879798,
+                    "unit_area": 2749,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mangrove Place": {
+            "1 Bedrooms": [
+                {
+                    "price": 849750,
+                    "unit_area": 688,
+                    "plot_area": 0
+                },
+                {
+                    "price": 771666,
+                    "unit_area": 770,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1150000,
+                    "unit_area": 915,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1027765,
+                    "unit_area": 1053,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2083333,
+                    "unit_area": 1991,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Meera": {
+            "1 Bedrooms": [
+                {
+                    "price": 898750,
+                    "unit_area": 680,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1529749,
+                    "unit_area": 1272,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1970250,
+                    "unit_area": 1385,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Oceanscape": {
+            "1 Bedrooms": [
+                {
+                    "price": 967500,
+                    "unit_area": 1076,
+                    "plot_area": 0
+                },
+                {
+                    "price": 907497,
+                    "unit_area": 950,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1204449,
+                    "unit_area": 1200,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem Five": {
+            "2 Bedrooms": [
+                {
+                    "price": 3298000,
+                    "unit_area": 1595,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3114841,
+                    "unit_area": 2100,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2821313,
+                    "unit_area": 1719,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2791682,
+                    "unit_area": 1515,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2785414,
+                    "unit_area": 1897,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4250000,
+                    "unit_area": 2316,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem Nine": {
+            "1 Bedrooms": [
+                {
+                    "price": 1893218,
+                    "unit_area": 967,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1791600,
+                    "unit_area": 798,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 3242351,
+                    "unit_area": 2022,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3149750,
+                    "unit_area": 1624,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3114064,
+                    "unit_area": 1862,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2456249,
+                    "unit_area": 1348,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem One": {
+            "2 Bedrooms": [
+                {
+                    "price": 4060000,
+                    "unit_area": 2285,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3954999,
+                    "unit_area": 2015,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2890000,
+                    "unit_area": 1576,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 5975000,
+                    "unit_area": 2690,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reflection": {
+            "1 Bedrooms": [
+                {
+                    "price": 1086428,
+                    "unit_area": 700,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1497499,
+                    "unit_area": 1067,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2399999,
+                    "unit_area": 1559,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Sky Tower": {
+            "1 Bedrooms": [
+                {
+                    "price": 1239999,
+                    "unit_area": 914,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2331727,
+                    "unit_area": 1719,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1879999,
+                    "unit_area": 1439,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1866663,
+                    "unit_area": 1319,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2989833,
+                    "unit_area": 1971,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2560000,
+                    "unit_area": 1719,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4124975,
+                    "unit_area": 2568,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Sun Tower": {
+            "1 Bedrooms": [
+                {
+                    "price": 1275866,
+                    "unit_area": 1014,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1266666,
+                    "unit_area": 940,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1056432,
+                    "unit_area": 857,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1890899,
+                    "unit_area": 1565,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1725000,
+                    "unit_area": 1252,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2301413,
+                    "unit_area": 1774,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2227810,
+                    "unit_area": 1942,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Boardwalk Residence": {
+            "2 Bedrooms": [
+                {
+                    "price": 1782500,
+                    "unit_area": 1336,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2177500,
+                    "unit_area": 1616,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Bridges": {
+            "1 Bedrooms": [
+                {
+                    "price": 830000,
+                    "unit_area": 646,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1399975,
+                    "unit_area": 1000,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1362798,
+                    "unit_area": 1070,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2140714,
+                    "unit_area": 1437,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2049999,
+                    "unit_area": 1377,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Gate Tower": {
+            "1 Bedrooms": [
+                {
+                    "price": 1007240,
+                    "unit_area": 968,
+                    "plot_area": 0
+                },
+                {
+                    "price": 900161,
+                    "unit_area": 850,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1400000,
+                    "unit_area": 1421,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1359857,
+                    "unit_area": 1277,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1300000,
+                    "unit_area": 1340,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2222500,
+                    "unit_area": 1915,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Pixel": {
+            "1 Bedrooms": [
+                {
+                    "price": 1381428,
+                    "unit_area": 1162,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1343749,
+                    "unit_area": 721,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1318823,
+                    "unit_area": 880,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2850000,
+                    "unit_area": 2288,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2499996,
+                    "unit_area": 1858,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2009312,
+                    "unit_area": 1252,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1991996,
+                    "unit_area": 1410,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1812500,
+                    "unit_area": 1337,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2924916,
+                    "unit_area": 2571,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2887500,
+                    "unit_area": 2510,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2869975,
+                    "unit_area": 1704,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2728412,
+                    "unit_area": 1573,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 1060000,
+                    "unit_area": 600,
+                    "plot_area": 0
+                },
+                {
+                    "price": 937499,
+                    "unit_area": 694,
+                    "plot_area": 0
+                },
+                {
+                    "price": 914000,
+                    "unit_area": 516,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Tala Tower": {
+            "1 Bedrooms": [
+                {
+                    "price": 966665,
+                    "unit_area": 1097,
+                    "plot_area": 0
+                },
+                {
+                    "price": 965230,
+                    "unit_area": 893,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1565174,
+                    "unit_area": 1528,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1558333,
+                    "unit_area": 1453,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2866666,
+                    "unit_area": 2012,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ocean Terrace": {
+            "1 Bedrooms": [
+                {
+                    "price": 953719,
+                    "unit_area": 904,
+                    "plot_area": 0
+                },
+                {
+                    "price": 915000,
+                    "unit_area": 839,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1728571,
+                    "unit_area": 1500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1700000,
+                    "unit_area": 1615,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2422249,
+                    "unit_area": 2196,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "RAK Tower": {
+            "1 Bedrooms": [
+                {
+                    "price": 1152181,
+                    "unit_area": 1000,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1824999,
+                    "unit_area": 1650,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1714448,
+                    "unit_area": 1528,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2505833,
+                    "unit_area": 2153,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "MAG 5": {
+            "1 Bedrooms": [
+                {
+                    "price": 1377499,
+                    "unit_area": 1355,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2294089,
+                    "unit_area": 2002,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1910525,
+                    "unit_area": 1722,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3875000,
+                    "unit_area": 2996,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3338777,
+                    "unit_area": 2669,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2341666,
+                    "unit_area": 2002,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4646498,
+                    "unit_area": 4176,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3839799,
+                    "unit_area": 2983,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Marina Heights 2": {
+            "1 Bedrooms": [
+                {
+                    "price": 915000,
+                    "unit_area": 893,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1249888,
+                    "unit_area": 1108,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1196752,
+                    "unit_area": 1173,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Marina Blue Tower": {
+            "1 Bedrooms": [
+                {
+                    "price": 877000,
+                    "unit_area": 915,
+                    "plot_area": 0
+                },
+                {
+                    "price": 843793,
+                    "unit_area": 807,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1359800,
+                    "unit_area": 1410,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1230526,
+                    "unit_area": 1162,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Burooj Views": {
+            "1 Bedrooms": [
+                {
+                    "price": 814898,
+                    "unit_area": 861,
+                    "plot_area": 0
+                },
+                {
+                    "price": 767475,
+                    "unit_area": 721,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1219395,
+                    "unit_area": 1356,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Marina Heights": {
+            "2 Bedrooms": [
+                {
+                    "price": 1500000,
+                    "unit_area": 1350,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1268750,
+                    "unit_area": 1173,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2493636,
+                    "unit_area": 2271,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1741285,
+                    "unit_area": 1700,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Maha Tower": {
+            "1 Bedrooms": [
+                {
+                    "price": 985714,
+                    "unit_area": 861,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1267714,
+                    "unit_area": 1173,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1201427,
+                    "unit_area": 1108,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Park View": {
+            "2 Bedrooms": [
+                {
+                    "price": 2750666,
+                    "unit_area": 1783,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2300000,
+                    "unit_area": 1580,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem Hills": {
+            "1 Bedrooms": [
+                {
+                    "price": 1497500,
+                    "unit_area": 1205,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1427236,
+                    "unit_area": 1286,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1306183,
+                    "unit_area": 1057,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1268718,
+                    "unit_area": 995,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1169166,
+                    "unit_area": 936,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2100777,
+                    "unit_area": 1860,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2040224,
+                    "unit_area": 1612,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2038409,
+                    "unit_area": 1218,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2036000,
+                    "unit_area": 1308,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2013000,
+                    "unit_area": 1548,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2005611,
+                    "unit_area": 1744,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1968703,
+                    "unit_area": 1957,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2846675,
+                    "unit_area": 2405,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2595526,
+                    "unit_area": 2171,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reem Hills-Phase 2D": {
+            "1 Bedrooms": [
+                {
+                    "price": 1451725,
+                    "unit_area": 1192,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1367466,
+                    "unit_area": 1286,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1332210,
+                    "unit_area": 1038,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2049714,
+                    "unit_area": 1612,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2014950,
+                    "unit_area": 1692,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2014675,
+                    "unit_area": 1835,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1984760,
+                    "unit_area": 1957,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1955000,
+                    "unit_area": 1751,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Yasmina Residence": {
+            "2 Bedrooms": [
+                {
+                    "price": 2850000,
+                    "unit_area": 1370,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2800000,
+                    "unit_area": 1482,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 5500000,
+                    "unit_area": 2950,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3999999,
+                    "unit_area": 2092,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Manarat Living": {
+            "1 Bedrooms": [
+                {
+                    "price": 1870000,
+                    "unit_area": 747,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1685000,
+                    "unit_area": 662,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1654980,
+                    "unit_area": 807,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 3671583,
+                    "unit_area": 1550,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2764756,
+                    "unit_area": 1206,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2751103,
+                    "unit_area": 1125,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2725000,
+                    "unit_area": 1362,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2416875,
+                    "unit_area": 1069,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2383333,
+                    "unit_area": 1010,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2382937,
+                    "unit_area": 1263,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3604145,
+                    "unit_area": 2303,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 1163824,
+                    "unit_area": 400,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1036217,
+                    "unit_area": 340,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Saadiyat Beach Residences": {
+            "1 Bedrooms": [
+                {
+                    "price": 2100000,
+                    "unit_area": 1050,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1974750,
+                    "unit_area": 1139,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3583333,
+                    "unit_area": 2142,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3401000,
+                    "unit_area": 2280,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 5250000,
+                    "unit_area": 3142,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Nobu Residences": {
+            "1 Bedrooms": [
+                {
+                    "price": 8146000,
+                    "unit_area": 1207,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1974750,
+                    "unit_area": 1139,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 19574500,
+                    "unit_area": 2922,
+                    "plot_area": 0
+                },
+                {
+                    "price": 19194007,
+                    "unit_area": 2852,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3533333,
+                    "unit_area": 2164,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3401000,
+                    "unit_area": 2280,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Park View-Saadiyat": {
+            "1 Bedrooms": [
+                {
+                    "price": 1333141,
+                    "unit_area": 908,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1212497,
+                    "unit_area": 844,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2010000,
+                    "unit_area": 1589,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1832142,
+                    "unit_area": 1343,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 3000000,
+                    "unit_area": 1587,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 899985,
+                    "unit_area": 554,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Grove Beach Views": {
+            "1 Bedrooms": [
+                {
+                    "price": 2444444,
+                    "unit_area": 987,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2224875,
+                    "unit_area": 729,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 3812000,
+                    "unit_area": 1277,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3480000,
+                    "unit_area": 1151,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 1522860,
+                    "unit_area": 633,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1384375,
+                    "unit_area": 513,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Louvre Abu Dhabi Residences": {
+            "1 Bedrooms": [
+                {
+                    "price": 5224833,
+                    "unit_area": 988,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4517500,
+                    "unit_area": 825,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 6185714,
+                    "unit_area": 1258,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5833333,
+                    "unit_area": 1598,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5600000,
+                    "unit_area": 1530,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4252857,
+                    "unit_area": 1458,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 11149999,
+                    "unit_area": 1905,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 1837500,
+                    "unit_area": 495,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Mamsha Al Saadiyat": {
+            "1 Bedrooms": [
+                {
+                    "price": 6423500,
+                    "unit_area": 1640,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4914071,
+                    "unit_area": 1498,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 11500000,
+                    "unit_area": 2131,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11133333,
+                    "unit_area": 1893,
+                    "plot_area": 0
+                },
+                {
+                    "price": 10325000,
+                    "unit_area": 2432,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9775000,
+                    "unit_area": 2371,
+                    "plot_area": 0
+                },
+                {
+                    "price": 9624999,
+                    "unit_area": 2065,
+                    "plot_area": 0
+                },
+                {
+                    "price": 8250000,
+                    "unit_area": 2000,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 20500000,
+                    "unit_area": 3241,
+                    "plot_area": 0
+                },
+                {
+                    "price": 13125000,
+                    "unit_area": 3495,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11949747,
+                    "unit_area": 3428,
+                    "plot_area": 0
+                },
+                {
+                    "price": 11000000,
+                    "unit_area": 3153,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 18714285,
+                    "unit_area": 5244,
+                    "plot_area": 0
+                },
+                {
+                    "price": 18000000,
+                    "unit_area": 5315,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Source": {
+            "1 Bedrooms": [
+                {
+                    "price": 3198333,
+                    "unit_area": 838,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 6925555,
+                    "unit_area": 1615,
+                    "plot_area": 0
+                },
+                {
+                    "price": 6908333,
+                    "unit_area": 1515,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3687500,
+                    "unit_area": 1246,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 9271250,
+                    "unit_area": 2366,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Source II": {
+            "1 Bedrooms": [
+                {
+                    "price": 4124875,
+                    "unit_area": 931,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 6375000,
+                    "unit_area": 1991,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5367880,
+                    "unit_area": 1425,
+                    "plot_area": 0
+                },
+                {
+                    "price": 5131470,
+                    "unit_area": 1851,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4037500,
+                    "unit_area": 1360,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 10660000,
+                    "unit_area": 2362,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Soho Square": {
+            "1 Bedrooms": [
+                {
+                    "price": 1230000,
+                    "unit_area": 908,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1181666,
+                    "unit_area": 836,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2009999,
+                    "unit_area": 1253,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1940000,
+                    "unit_area": 1403,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 760000,
+                    "unit_area": 431,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Hadeel": {
+            "1 Bedrooms": [
+                {
+                    "price": 1450000,
+                    "unit_area": 914,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1349998,
+                    "unit_area": 1042,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1344999,
+                    "unit_area": 1158,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1292500,
+                    "unit_area": 978,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1187500,
+                    "unit_area": 818,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2372487,
+                    "unit_area": 1516,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2038571,
+                    "unit_area": 1373,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4040000,
+                    "unit_area": 2713,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3850000,
+                    "unit_area": 2380,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 995989,
+                    "unit_area": 505,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Building A": {
+            "1 Bedrooms": [
+                {
+                    "price": 1560000,
+                    "unit_area": 944,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1550000,
+                    "unit_area": 1060,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 3350000,
+                    "unit_area": 1746,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2730000,
+                    "unit_area": 2520,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 4600000,
+                    "unit_area": 3375,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Jamam Residence": {
+            "1 Bedrooms": [
+                {
+                    "price": 1480283,
+                    "unit_area": 1057,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2386245,
+                    "unit_area": 2386,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2126151,
+                    "unit_area": 1518,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1655098,
+                    "unit_area": 1350,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1619179,
+                    "unit_area": 1451,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The View": {
+            "1 Bedrooms": [
+                {
+                    "price": 1025000,
+                    "unit_area": 951,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 2292000,
+                    "unit_area": 2022,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1697666,
+                    "unit_area": 1550,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2335000,
+                    "unit_area": 1875,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Raha Lofts": {
+            "1 Bedrooms": [
+                {
+                    "price": 1095000,
+                    "unit_area": 633,
+                    "plot_area": 0
+                },
+                {
+                    "price": 773956,
+                    "unit_area": 550,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1561250,
+                    "unit_area": 1251,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1554993,
+                    "unit_area": 1390,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1416666,
+                    "unit_area": 1175,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1350000,
+                    "unit_area": 995,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Lamar Residences": {
+            "1 Bedrooms": [
+                {
+                    "price": 1221080,
+                    "unit_area": 1006,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1178500,
+                    "unit_area": 934,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1885750,
+                    "unit_area": 1565,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1716975,
+                    "unit_area": 1505,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1690333,
+                    "unit_area": 1417,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1553030,
+                    "unit_area": 1354,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2551400,
+                    "unit_area": 2066,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2462128,
+                    "unit_area": 1899,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2336033,
+                    "unit_area": 1955,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2225500,
+                    "unit_area": 1820,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 4387566,
+                    "unit_area": 4331,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3642000,
+                    "unit_area": 2343,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reeman Living": {
+            "1 Bedrooms": [
+                {
+                    "price": 737626,
+                    "unit_area": 486,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 985366,
+                    "unit_area": 743,
+                    "plot_area": 0
+                },
+                {
+                    "price": 930261,
+                    "unit_area": 799,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1344508,
+                    "unit_area": 1061,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 548333,
+                    "unit_area": 279,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Reeman Living 2": {
+            "1 Bedrooms": [
+                {
+                    "price": 738995,
+                    "unit_area": 485,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 935000,
+                    "unit_area": 793,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 470750,
+                    "unit_area": 280,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Saadiyat Grove": {
+            "1 Bedrooms": [
+                {
+                    "price": 2533000,
+                    "unit_area": 721,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2454999,
+                    "unit_area": 987,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2430236,
+                    "unit_area": 1060,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 4468000,
+                    "unit_area": 1274,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4140000,
+                    "unit_area": 1733,
+                    "plot_area": 0
+                },
+                {
+                    "price": 3490967,
+                    "unit_area": 1150,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 1461666,
+                    "unit_area": 488,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Fairmont Marina Residences": {
+            "1 Bedrooms": [
+                {
+                    "price": 3119999,
+                    "unit_area": 1040,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 4250000,
+                    "unit_area": 1624,
+                    "plot_area": 0
+                },
+                {
+                    "price": 4058038,
+                    "unit_area": 1520,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 6734829,
+                    "unit_area": 2388,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 10277666,
+                    "unit_area": 3644,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Royal Park": {
+            "1 Bedrooms": [
+                {
+                    "price": 802382,
+                    "unit_area": 571,
+                    "plot_area": 0
+                },
+                {
+                    "price": 610000,
+                    "unit_area": 700,
+                    "plot_area": 0
+                },
+                {
+                    "price": 530611,
+                    "unit_area": 486,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 3201474,
+                    "unit_area": 900,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1188919,
+                    "unit_area": 1016,
+                    "plot_area": 0
+                },
+                {
+                    "price": 917500,
+                    "unit_area": 1250,
+                    "plot_area": 0
+                },
+                {
+                    "price": 915379,
+                    "unit_area": 840,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 1663522,
+                    "unit_area": 1453,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1523446,
+                    "unit_area": 1381,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1468463,
+                    "unit_area": 1662,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1289666,
+                    "unit_area": 2050,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1115000,
+                    "unit_area": 1900,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Oasis 1": {
+            "1 Bedrooms": [
+                {
+                    "price": 1156663,
+                    "unit_area": 1192,
+                    "plot_area": 0
+                },
+                {
+                    "price": 821250,
+                    "unit_area": 733,
+                    "plot_area": 0
+                },
+                {
+                    "price": 805000,
+                    "unit_area": 882,
+                    "plot_area": 0
+                },
+                {
+                    "price": 716666,
+                    "unit_area": 675,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1313333,
+                    "unit_area": 1068,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1162497,
+                    "unit_area": 1200,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1812500,
+                    "unit_area": 1906,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 599999,
+                    "unit_area": 384,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Qasis 2": {
+            "1 Bedrooms": [
+                {
+                    "price": 743333,
+                    "unit_area": 640,
+                    "plot_area": 0
+                },
+                {
+                    "price": 719230,
+                    "unit_area": 504,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1083333,
+                    "unit_area": 908,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "The Gate": {
+            "1 Bedrooms": [
+                {
+                    "price": 819189,
+                    "unit_area": 495,
+                    "plot_area": 0
+                },
+                {
+                    "price": 790000,
+                    "unit_area": 552,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1466333,
+                    "unit_area": 1277,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1437434,
+                    "unit_area": 1146,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1259090,
+                    "unit_area": 922,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2120000,
+                    "unit_area": 1771,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 1958090,
+                    "unit_area": 2885,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 576666,
+                    "unit_area": 334,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Plaza": {
+            "1 Bedrooms": [
+                {
+                    "price": 963812,
+                    "unit_area": 657,
+                    "plot_area": 0
+                },
+                {
+                    "price": 955333,
+                    "unit_area": 743,
+                    "plot_area": 0
+                },
+                {
+                    "price": 843333,
+                    "unit_area": 538,
+                    "plot_area": 0
+                },
+                {
+                    "price": 533000,
+                    "unit_area": 600,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1231271,
+                    "unit_area": 845,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1030000,
+                    "unit_area": 1074,
+                    "plot_area": 0
+                },
+                {
+                    "price": 884000,
+                    "unit_area": 1250,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 1385500,
+                    "unit_area": 2350,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 635750,
+                    "unit_area": 372,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Ville 11": {
+            "1 Bedrooms": [
+                {
+                    "price": 604000,
+                    "unit_area": 780,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1239200,
+                    "unit_area": 1000,
+                    "plot_area": 0
+                },
+                {
+                    "price": 916500,
+                    "unit_area": 1350,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1349666,
+                    "unit_area": 1520,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1246666,
+                    "unit_area": 1462,
+                    "plot_area": 0
+                }
+            ],
+            "4 Bedrooms": [
+                {
+                    "price": 1432928,
+                    "unit_area": 1567,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1418545,
+                    "unit_area": 1700,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Bloom Living": {
+            "1 Bedrooms": [
+                {
+                    "price": 1133333,
+                    "unit_area": 1096,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1115999,
+                    "unit_area": 721,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1041869,
+                    "unit_area": 834,
+                    "plot_area": 0
+                },
+                {
+                    "price": 993924,
+                    "unit_area": 624,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1931404,
+                    "unit_area": 1500,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1651000,
+                    "unit_area": 1151,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1520166,
+                    "unit_area": 1085,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 2395000,
+                    "unit_area": 2898,
+                    "plot_area": 0
+                },
+                {
+                    "price": 2196976,
+                    "unit_area": 1828,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1983142,
+                    "unit_area": 1884,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 731794,
+                    "unit_area": 478,
+                    "plot_area": 0
+                },
+                {
+                    "price": 670742,
+                    "unit_area": 397,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Reef Downtown": {
+            "1 Bedrooms": [
+                {
+                    "price": 708625,
+                    "unit_area": 1016,
+                    "plot_area": 0
+                },
+                {
+                    "price": 694285,
+                    "unit_area": 1130,
+                    "plot_area": 0
+                },
+                {
+                    "price": 646666,
+                    "unit_area": 958,
+                    "plot_area": 0
+                },
+                {
+                    "price": 635000,
+                    "unit_area": 861,
+                    "plot_area": 0
+                },
+                {
+                    "price": 628750,
+                    "unit_area": 796,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1001000,
+                    "unit_area": 1292,
+                    "plot_area": 0
+                },
+                {
+                    "price": 920000,
+                    "unit_area": 1582,
+                    "plot_area": 0
+                },
+                {
+                    "price": 893000,
+                    "unit_area": 1396,
+                    "plot_area": 0
+                },
+                {
+                    "price": 868000,
+                    "unit_area": 1217,
+                    "plot_area": 0
+                },
+                {
+                    "price": 857499,
+                    "unit_area": 1147,
+                    "plot_area": 0
+                },
+                {
+                    "price": 800000,
+                    "unit_area": 980,
+                    "plot_area": 0
+                },
+                {
+                    "price": 764998,
+                    "unit_area": 1055,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1399999,
+                    "unit_area": 1888,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1266666,
+                    "unit_area": 2010,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1250000,
+                    "unit_area": 1560,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1225000,
+                    "unit_area": 1483,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1199999,
+                    "unit_area": 1423,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1187500,
+                    "unit_area": 1788,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1144388,
+                    "unit_area": 1689,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 475995,
+                    "unit_area": 456,
+                    "plot_area": 0
+                },
+                {
+                    "price": 458333,
+                    "unit_area": 516,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Ghadeer 2": {
+            "1 Bedrooms": [
+                {
+                    "price": 949970,
+                    "unit_area": 597,
+                    "plot_area": 0
+                },
+                {
+                    "price": 725000,
+                    "unit_area": 731,
+                    "plot_area": 0
+                },
+                {
+                    "price": 694500,
+                    "unit_area": 663,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 1250000,
+                    "unit_area": 1057,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1175000,
+                    "unit_area": 915,
+                    "plot_area": 0
+                },
+                {
+                    "price": 874999,
+                    "unit_area": 1143,
+                    "plot_area": 0
+                }
+            ],
+            "3 Bedrooms": [
+                {
+                    "price": 1799499,
+                    "unit_area": 1723,
+                    "plot_area": 0
+                },
+                {
+                    "price": 1537500,
+                    "unit_area": 1140,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 479000,
+                    "unit_area": 376,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Waha": {
+            "1 Bedrooms": [
+                {
+                    "price": 565000,
+                    "unit_area": 667,
+                    "plot_area": 0
+                },
+                {
+                    "price": 560000,
+                    "unit_area": 725,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 899999,
+                    "unit_area": 1065,
+                    "plot_area": 0
+                },
+                {
+                    "price": 835000,
+                    "unit_area": 1143,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 525000,
+                    "unit_area": 484,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Sabeel Building": {
+            "1 Bedrooms": [
+                {
+                    "price": 600000,
+                    "unit_area": 735,
+                    "plot_area": 0
+                },
+                {
+                    "price": 581000,
+                    "unit_area": 679,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 933333,
+                    "unit_area": 1060,
+                    "plot_area": 0
+                }
+            ],
+            "studio": [
+                {
+                    "price": 440000,
+                    "unit_area": 483,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Al Khaleej Village": {
+            "1 Bedrooms": [
+                {
+                    "price": 610000,
+                    "unit_area": 685,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 875000,
+                    "unit_area": 1143,
+                    "plot_area": 0
+                },
+                {
+                    "price": 793750,
+                    "unit_area": 1050,
+                    "plot_area": 0
+                }
+            ]
+        },
+        "Waterfall District": {
+            "1 Bedrooms": [
+                {
+                    "price": 742500,
+                    "unit_area": 992,
+                    "plot_area": 0
+                },
+                {
+                    "price": 635000,
+                    "unit_area": 685,
+                    "plot_area": 0
+                }
+            ],
+            "2 Bedrooms": [
+                {
+                    "price": 833333,
+                    "unit_area": 1143,
                     "plot_area": 0
                 }
             ]
