@@ -53,7 +53,7 @@ app.use(
         defaultSrc: ["'self'"],
         connectSrc: [
           "'self'",
-          "https://forecastmetro-app-uxtiu.ondigitalocean.app", // External API
+          "https://flask-app-6shfu.ondigitalocean.app", // External API
         ],
         scriptSrc: ["'self'", "https://trusted-scripts.com"], // Example for script sources
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"], // Allow Google Fonts
