@@ -189,21 +189,24 @@ const Search = () => {
           email: userInfo.email,
         };
 
-        const response = await fetch("http://127.0.0.1:5000/forecast", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            bedroom: bedrooms,
-            propertyType: propertyType,
-            area: selectedModelData.unit_area,
-            price: selectedModelData.price,
-            location: selectedLocation,
-            region: selectedRegion,
-            email: userInfo.email,
-          }),
-        });
+        const response = await fetch(
+          "https://flask-app-6shfu.ondigitalocean.app/forecast",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              bedroom: bedrooms,
+              propertyType: propertyType,
+              area: selectedModelData.unit_area,
+              price: selectedModelData.price,
+              location: selectedLocation,
+              region: selectedRegion,
+              email: userInfo.email,
+            }),
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

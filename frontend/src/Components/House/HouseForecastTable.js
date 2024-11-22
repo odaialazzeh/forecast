@@ -108,7 +108,7 @@ const HouseForecastTable = ({
       setLoading(true);
       setImageLoading(true);
       const response = await axios.post(
-        "https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image",
+        "https://flask-app-6shfu.ondigitalocean.app/update-image",
         {
           prePrices: updatedData.pre_price,
           forecastPrices: updatedData.forecast_price,
