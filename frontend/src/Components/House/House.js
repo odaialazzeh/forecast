@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import HouseImage from "./HouseImage";
 import HouseDetails from "./HouseDetails";
-import HouseForecastTable from "./HouseForecastTable";
 import GeneratePDFComponent from "../../utils/GeneratePDFComponent";
 import { useGetUserQuery } from "../../slices/usersApiSlice";
 
@@ -90,13 +89,6 @@ const House = ({ house = {}, data = [] }) => {
           unitArea={area}
         />
       </div>
-
-      <HouseForecastTable
-        data={data}
-        housedata={house}
-        setUpdatedImage={setUpdatedImage}
-        setImageLoading={setImageLoading}
-      />
     </div>
   );
 };

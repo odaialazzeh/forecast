@@ -29,7 +29,7 @@ function calculateQuarterlyAverages(forecastDates, prices, cutoffQuarter) {
   const cutoffYear = 2023;
   const cutoffQuarterNum = 2; // Q2
 
-  forecastDates.forEach((date, index) => {
+  forecastDates?.forEach((date, index) => {
     const { quarter, year } = getQuarterFromDate(date);
     const price = prices[index];
 
@@ -47,8 +47,8 @@ function calculateQuarterlyAverages(forecastDates, prices, cutoffQuarter) {
     }
   });
 
-  const quarterlyAverages = Object.keys(quarterMap).map((quarter) => {
-    const prices = quarterMap[quarter].map((item) => item.price);
+  const quarterlyAverages = Object.keys(quarterMap)?.map((quarter) => {
+    const prices = quarterMap[quarter]?.map((item) => item.price);
     const avgPrice =
       prices.reduce((acc, price) => acc + price, 0) / prices.length;
     return {
@@ -84,8 +84,7 @@ const HouseForecastTable = ({
     setIsEditingPre(index); // Set the index of the quarter to be edited for pre prices
     setEditedAvgPrePrice(avgPrice); // Set the current avg pre price in the input field
   };
-
-  const handleSaveClick = async (index, quarterData, type) => {
+    const handleSaveClick = async (index, quarterData, type) => {
     const updatedData = { ...data };
     const datesInQuarter = quarterData.dates;
     const newPrice = Number(
@@ -108,7 +107,7 @@ const HouseForecastTable = ({
       setLoading(true);
       setImageLoading(true);
       const response = await axios.post(
-        "https://flask-app-6shfu.ondigitalocean.app/update-image",
+        "https://forecastmetro-app-uxtiu.ondigitalocean.app/update-image",
         {
           prePrices: updatedData.pre_price,
           forecastPrices: updatedData.forecast_price,
@@ -143,8 +142,8 @@ const HouseForecastTable = ({
   };
 
   const quarterlyPreData = calculateQuarterlyAverages(
-    data.original_dates,
-    data.pre_price
+    data.original_values.map((item) => item.Date), // Extract dates from original_values
+    data.pre_price // Use pre_price for prices
   );
 
   const toggleDropdown = () => {
@@ -156,14 +155,11 @@ const HouseForecastTable = ({
     setIsDropdownOpen(false); // Close dropdown
   };
 
-  const forecastData = data.forecast_dates
-    .filter((date) => new Date(date) >= new Date("2024-10-01")) // Filter dates from November 2024 onward
-    .slice(0, 3) // Take only the first 3 dates
-    .map((date, index) => ({
-      month: getMonthFromDate(date),
-      price: data.forecast_price[data.forecast_dates.indexOf(date)], // Get the price corresponding to the date
-      index: data.forecast_dates.indexOf(date), // Get the correct index of the date
-    }));
+  const forecastData = data.forecast?.map((item, index) => ({
+    month: getMonthFromDate(item.Date), // Convert the date to the month format
+    price: data.forecast_price, // Use the Value property for the price
+    index, // Use the current index
+  }));
 
   return (
     <div className="flex flex-col flex-grow bg-white my-4 shadow-1 p-5 rounded-xl w-full max-w-[400px] lg:max-w-[700px] mx-auto hover:shadow-2xl transition md:max-w-[600px] sm:max-w-[500px]">
@@ -226,7 +222,7 @@ const HouseForecastTable = ({
               </tr>
             </thead>
             <tbody className="bg-white">
-              {forecastData.map((monthData, index) => (
+              {forecastData?.map((monthData, index) => (
                 <tr key={index}>
                   <td className="py-2 px-6 border-b font-normal text-secondary border-gray-200">
                     {monthData.month}

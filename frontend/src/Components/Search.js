@@ -241,8 +241,6 @@ const Search = () => {
     setSelectedLocation(""); // Reset location selection
   };
 
-  console.log(bedrooms);
-
   return (
     <>
       <div className="relative px-[30px] py-6 -mb-4 max-w-[1170px] mx-auto flex flex-col lg:flex-col justify-between gap-4 lg:gap-x-3 lg:shadow-1 bg-white rounded-lg">

@@ -11,7 +11,7 @@
             "Redwoods",
             "Aspens",
             "The Cedars",
-            "lea"
+            "Lea"
         ],
         "Yas Park Views": [],
         "Yas Park Gate": [],
@@ -43,7 +43,7 @@
         "The Sustainable City": [],
         "Yas Bay": [
             "Perla 1",
-            "Yas Beach Residence",
+            "Yas Beach Residences",
             "Sea La Vie"
         ]
     },
@@ -64,7 +64,6 @@
         "Shams Abu Dhabi": [
             "Parkside Residence",
             "Amaya Towers",
-            "Azure",
             "Beach Towers",
             "Mangrove Place",
             "Meera",
@@ -126,7 +125,7 @@
             "Nobu Residences"
         ],
         "Park View": [
-            "Park View"
+            "Park View-Saadiyat"
         ],
         "Grove Beach Views": [
             "Grove Beach Views"
@@ -151,9 +150,6 @@
     "Al Raha Beach": {
         "Al Bandar": [
             "Al Hadeel"
-        ],
-        "Al Muneera Island": [
-            "Al Muneera Island"
         ],
         "Al Zeina": [
             "Building A"

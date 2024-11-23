@@ -4141,7 +4141,7 @@
                 }
             ]
         },
-        "Yas Beach Residence": {
+        "Yas Beach Residences": {
             "1 Bedrooms": [
                 {
                     "price": 865900,
@@ -4156,7 +4156,7 @@
                     "plot_area": 0
                 }
             ],
-            "studio Bedrooms": [
+            "studio": [
                 {
                     "price": 546666,
                     "unit_area": 489,
@@ -5470,18 +5470,6 @@
                     "unit_area": 2852,
                     "plot_area": 0
                 }
-            ],
-            "3 Bedrooms": [
-                {
-                    "price": 3533333,
-                    "unit_area": 2164,
-                    "plot_area": 0
-                },
-                {
-                    "price": 3401000,
-                    "unit_area": 2280,
-                    "plot_area": 0
-                }
             ]
         },
         "Park View-Saadiyat": {
@@ -6650,18 +6638,6 @@
                 {
                     "price": 1144388,
                     "unit_area": 1689,
-                    "plot_area": 0
-                }
-            ],
-            "studio": [
-                {
-                    "price": 475995,
-                    "unit_area": 456,
-                    "plot_area": 0
-                },
-                {
-                    "price": 458333,
-                    "unit_area": 516,
                     "plot_area": 0
                 }
             ]
